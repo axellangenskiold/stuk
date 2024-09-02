@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A201C222C85F45F00A07848 /* stukApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C212C85F45F00A07848 /* stukApp.swift */; };
+		1A201C242C85F45F00A07848 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C232C85F45F00A07848 /* ContentView.swift */; };
+		1A201C262C85F45F00A07848 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C252C85F45F00A07848 /* Item.swift */; };
+		1A201C282C85F46100A07848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A201C272C85F46100A07848 /* Assets.xcassets */; };
+		1A201C2B2C85F46100A07848 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A201C2A2C85F46100A07848 /* Preview Assets.xcassets */; };
+		1A201C352C85F46100A07848 /* stukTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C342C85F46100A07848 /* stukTests.swift */; };
+		1A201C3F2C85F46100A07848 /* stukUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C3E2C85F46100A07848 /* stukUITests.swift */; };
+		1A201C412C85F46100A07848 /* stukUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C402C85F46100A07848 /* stukUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A201C312C85F46100A07848 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A201C162C85F45F00A07848 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A201C1D2C85F45F00A07848;
+			remoteInfo = stuk;
+		};
+		1A201C3B2C85F46100A07848 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A201C162C85F45F00A07848 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A201C1D2C85F45F00A07848;
+			remoteInfo = stuk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A201C1E2C85F45F00A07848 /* stuk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stuk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A201C212C85F45F00A07848 /* stukApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stukApp.swift; sourceTree = "<group>"; };
+		1A201C232C85F45F00A07848 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1A201C252C85F45F00A07848 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		1A201C272C85F46100A07848 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A201C2A2C85F46100A07848 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1A201C302C85F46100A07848 /* stukTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stukTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A201C342C85F46100A07848 /* stukTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stukTests.swift; sourceTree = "<group>"; };
+		1A201C3A2C85F46100A07848 /* stukUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stukUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A201C3E2C85F46100A07848 /* stukUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stukUITests.swift; sourceTree = "<group>"; };
+		1A201C402C85F46100A07848 /* stukUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stukUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A201C1B2C85F45F00A07848 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A201C2D2C85F46100A07848 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A201C372C85F46100A07848 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A201C152C85F45F00A07848 = {
+			isa = PBXGroup;
+			children = (
+				1A201C202C85F45F00A07848 /* stuk */,
+				1A201C332C85F46100A07848 /* stukTests */,
+				1A201C3D2C85F46100A07848 /* stukUITests */,
+				1A201C1F2C85F45F00A07848 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1A201C1F2C85F45F00A07848 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A201C1E2C85F45F00A07848 /* stuk.app */,
+				1A201C302C85F46100A07848 /* stukTests.xctest */,
+				1A201C3A2C85F46100A07848 /* stukUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A201C202C85F45F00A07848 /* stuk */ = {
+			isa = PBXGroup;
+			children = (
+				1A201C212C85F45F00A07848 /* stukApp.swift */,
+				1A201C232C85F45F00A07848 /* ContentView.swift */,
+				1A201C252C85F45F00A07848 /* Item.swift */,
+				1A201C272C85F46100A07848 /* Assets.xcassets */,
+				1A201C292C85F46100A07848 /* Preview Content */,
+			);
+			path = stuk;
+			sourceTree = "<group>";
+		};
+		1A201C292C85F46100A07848 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1A201C2A2C85F46100A07848 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1A201C332C85F46100A07848 /* stukTests */ = {
+			isa = PBXGroup;
+			children = (
+				1A201C342C85F46100A07848 /* stukTests.swift */,
+			);
+			path = stukTests;
+			sourceTree = "<group>";
+		};
+		1A201C3D2C85F46100A07848 /* stukUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1A201C3E2C85F46100A07848 /* stukUITests.swift */,
+				1A201C402C85F46100A07848 /* stukUITestsLaunchTests.swift */,
+			);
+			path = stukUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A201C1D2C85F45F00A07848 /* stuk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A201C442C85F46100A07848 /* Build configuration list for PBXNativeTarget "stuk" */;
+			buildPhases = (
+				1A201C1A2C85F45F00A07848 /* Sources */,
+				1A201C1B2C85F45F00A07848 /* Frameworks */,
+				1A201C1C2C85F45F00A07848 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = stuk;
+			productName = stuk;
+			productReference = 1A201C1E2C85F45F00A07848 /* stuk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1A201C2F2C85F46100A07848 /* stukTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A201C472C85F46100A07848 /* Build configuration list for PBXNativeTarget "stukTests" */;
+			buildPhases = (
+				1A201C2C2C85F46100A07848 /* Sources */,
+				1A201C2D2C85F46100A07848 /* Frameworks */,
+				1A201C2E2C85F46100A07848 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A201C322C85F46100A07848 /* PBXTargetDependency */,
+			);
+			name = stukTests;
+			productName = stukTests;
+			productReference = 1A201C302C85F46100A07848 /* stukTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1A201C392C85F46100A07848 /* stukUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A201C4A2C85F46100A07848 /* Build configuration list for PBXNativeTarget "stukUITests" */;
+			buildPhases = (
+				1A201C362C85F46100A07848 /* Sources */,
+				1A201C372C85F46100A07848 /* Frameworks */,
+				1A201C382C85F46100A07848 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A201C3C2C85F46100A07848 /* PBXTargetDependency */,
+			);
+			name = stukUITests;
+			productName = stukUITests;
+			productReference = 1A201C3A2C85F46100A07848 /* stukUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A201C162C85F45F00A07848 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					1A201C1D2C85F45F00A07848 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					1A201C2F2C85F46100A07848 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 1A201C1D2C85F45F00A07848;
+					};
+					1A201C392C85F46100A07848 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 1A201C1D2C85F45F00A07848;
+					};
+				};
+			};
+			buildConfigurationList = 1A201C192C85F45F00A07848 /* Build configuration list for PBXProject "stuk" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A201C152C85F45F00A07848;
+			productRefGroup = 1A201C1F2C85F45F00A07848 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A201C1D2C85F45F00A07848 /* stuk */,
+				1A201C2F2C85F46100A07848 /* stukTests */,
+				1A201C392C85F46100A07848 /* stukUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A201C1C2C85F45F00A07848 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A201C2B2C85F46100A07848 /* Preview Assets.xcassets in Resources */,
+				1A201C282C85F46100A07848 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A201C2E2C85F46100A07848 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A201C382C85F46100A07848 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A201C1A2C85F45F00A07848 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A201C242C85F45F00A07848 /* ContentView.swift in Sources */,
+				1A201C262C85F45F00A07848 /* Item.swift in Sources */,
+				1A201C222C85F45F00A07848 /* stukApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A201C2C2C85F46100A07848 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A201C352C85F46100A07848 /* stukTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A201C362C85F46100A07848 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A201C3F2C85F46100A07848 /* stukUITests.swift in Sources */,
+				1A201C412C85F46100A07848 /* stukUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A201C322C85F46100A07848 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A201C1D2C85F45F00A07848 /* stuk */;
+			targetProxy = 1A201C312C85F46100A07848 /* PBXContainerItemProxy */;
+		};
+		1A201C3C2C85F46100A07848 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A201C1D2C85F45F00A07848 /* stuk */;
+			targetProxy = 1A201C3B2C85F46100A07848 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1A201C422C85F46100A07848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1A201C432C85F46100A07848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1A201C452C85F46100A07848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"stuk/Preview Content\"";
+				DEVELOPMENT_TEAM = 7WN3ACZRL9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.axellangenskiold.stuk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A201C462C85F46100A07848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"stuk/Preview Content\"";
+				DEVELOPMENT_TEAM = 7WN3ACZRL9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.axellangenskiold.stuk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1A201C482C85F46100A07848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7WN3ACZRL9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.axellangenskiold.stukTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/stuk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/stuk";
+			};
+			name = Debug;
+		};
+		1A201C492C85F46100A07848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7WN3ACZRL9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.axellangenskiold.stukTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/stuk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/stuk";
+			};
+			name = Release;
+		};
+		1A201C4B2C85F46100A07848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7WN3ACZRL9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.axellangenskiold.stukUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = stuk;
+			};
+			name = Debug;
+		};
+		1A201C4C2C85F46100A07848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7WN3ACZRL9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.axellangenskiold.stukUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = stuk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A201C192C85F45F00A07848 /* Build configuration list for PBXProject "stuk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A201C422C85F46100A07848 /* Debug */,
+				1A201C432C85F46100A07848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A201C442C85F46100A07848 /* Build configuration list for PBXNativeTarget "stuk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A201C452C85F46100A07848 /* Debug */,
+				1A201C462C85F46100A07848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A201C472C85F46100A07848 /* Build configuration list for PBXNativeTarget "stukTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A201C482C85F46100A07848 /* Debug */,
+				1A201C492C85F46100A07848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A201C4A2C85F46100A07848 /* Build configuration list for PBXNativeTarget "stukUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A201C4B2C85F46100A07848 /* Debug */,
+				1A201C4C2C85F46100A07848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A201C162C85F45F00A07848 /* Project object */;
+}
