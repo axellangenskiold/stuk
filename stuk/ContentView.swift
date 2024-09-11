@@ -9,8 +9,8 @@ struct ContentView: View {
         ZStack {
             Rectangle()
                 .frame(width: .infinity, height: .infinity)
-                .aspectRatio(contentMode: .fill)
                 .foregroundStyle(.white)
+            
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
                     VStack {
@@ -127,27 +127,30 @@ struct ContentView: View {
                     }
                 }
             }
+            .padding(.top, 220)
             
             
-            //top bar
+//            top bar
             ZStack {
                 Rectangle()
                     .foregroundStyle(.white)
                     .frame(width: .infinity, height: 200)
                     .aspectRatio(contentMode: .fill)
-                    .padding(.bottom, 800)
-                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    .padding(.bottom, 820)
+                    .shadow(radius: 1)
             }
-            
-            // bottom bar
+            .frame(maxHeight: .infinity, alignment: .top)
+//
+//            // bottom bar
             ZStack {
                 Rectangle()
                     .foregroundStyle(.white)
                     .frame(width: .infinity, height: 200)
                     .aspectRatio(contentMode: .fill)
                     .padding(.top, 860)
-                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    .shadow(radius: 1)
             }
+            .frame(maxHeight: .infinity, alignment: .bottom)
         }
     }
 
