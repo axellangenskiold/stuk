@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  stuk
-//
-//  Created by Axel Langenskiöld on 2024-09-02.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -13,29 +6,137 @@ struct ContentView: View {
     @Query private var items: [Item]
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+        ZStack {
+            Rectangle()
+                .frame(width: .infinity, height: .infinity)
+                .aspectRatio(contentMode: .fill)
+                .foregroundStyle(.white)
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack {
+                    VStack {
+                        HStack {
+                            Text("Back to School 📚")
+                                .bold()
+                            
+                            Spacer()
+                            
+                            Text("Visa alla")
+                                .foregroundStyle(.pink)
+                        }
+                        .frame(maxWidth: 370)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(alignment: .bottom) { // Add spacing if needed
+                                AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
+                                AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
+                                AdCard(image: "trygghansa", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "trygghansa_logo")
+                                AdCard(image: "sats", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "sats_logo")
+                                AdCard(image: "jotex", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "jotex_logo")
+                                AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
+                                AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
+                            }       // Add horizontal padding if needed
+                        }
+                        .frame(maxWidth: 380)
+                    }
+                    
+                    
+                    
+                    VStack {
+                        HStack {
+                            Text("Back to School 📚")
+                                .bold()
+                            
+                            Spacer()
+                            
+                            Text("Visa alla")
+                                .foregroundStyle(.pink)
+                        }
+                        .frame(maxWidth: 370)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(alignment: .bottom) { // Add spacing if needed
+                                AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
+                                AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
+                                AdCard(image: "trygghansa", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "trygghansa_logo")
+                                AdCard(image: "sats", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "sats_logo")
+                                AdCard(image: "jotex", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "jotex_logo")
+                                AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
+                                AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
+                            }       // Add horizontal padding if needed
+                        }
+                        .frame(maxWidth: 380)
+                    }
+                    
+                    
+                    
+                    
+                    VStack {
+                        HStack {
+                            Text("Back to School 📚")
+                                .bold()
+                            
+                            Spacer()
+                            
+                            Text("Visa alla")
+                                .foregroundStyle(.pink)
+                        }
+                        .frame(maxWidth: 370)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(alignment: .bottom) { // Add spacing if needed
+                                AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
+                                AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
+                                AdCard(image: "trygghansa", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "trygghansa_logo")
+                                AdCard(image: "sats", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "sats_logo")
+                                AdCard(image: "jotex", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "jotex_logo")
+                                AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
+                                AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
+                            }       // Add horizontal padding if needed
+                        }
+                        .frame(maxWidth: 380)
+                    }
+                    
+                    
+                    
+                    
+                    
+                    VStack {
+                        HStack {
+                            Text("Back to School 📚")
+                                .bold()
+                            
+                            Spacer()
+                            
+                            Text("Visa alla")
+                                .foregroundStyle(.pink)
+                        }
+                        .frame(maxWidth: 370)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(alignment: .bottom) { // Add spacing if needed
+                                AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
+                                AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
+                                AdCard(image: "trygghansa", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "trygghansa_logo")
+                                AdCard(image: "sats", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "sats_logo")
+                                AdCard(image: "jotex", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "jotex_logo")
+                                AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
+                                AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
+                            }       // Add horizontal padding if needed
+                        }
+                        .frame(maxWidth: 380)
                     }
                 }
-                .onDelete(perform: deleteItems)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+            
+            // top bar
+            ZStack {
+                
             }
-        } detail: {
-            Text("Select an item")
+            
+            // bottom bar
+            ZStack {
+                
+            }
         }
     }
 
