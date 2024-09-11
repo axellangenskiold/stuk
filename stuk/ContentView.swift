@@ -136,10 +136,36 @@ struct ContentView: View {
                     .foregroundStyle(.white)
                     .frame(width: .infinity, height: 200)
                     .aspectRatio(contentMode: .fill)
-                    .padding(.bottom, 820)
                     .shadow(radius: 1)
+                
+                HStack {
+                    Image("bars")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipped()
+                    
+                    Spacer()
+                    
+                    Image("stuk")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 40)
+                        .clipped()
+                    
+                    Spacer()
+                    
+                    Image("search")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 50, height: 50)
+                        .clipped()
+                }
+                .padding(.top, 130)
+                .padding(.horizontal, 10)
             }
             .frame(maxHeight: .infinity, alignment: .top)
+            .padding(.bottom, 820)
 //
 //            // bottom bar
             ZStack {
