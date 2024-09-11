@@ -128,14 +128,25 @@ struct ContentView: View {
                 }
             }
             
-            // top bar
+            
+            //top bar
             ZStack {
-                
+                Rectangle()
+                    .foregroundStyle(.white)
+                    .frame(width: .infinity, height: 200)
+                    .aspectRatio(contentMode: .fill)
+                    .padding(.bottom, 800)
+                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             }
             
             // bottom bar
             ZStack {
-                
+                Rectangle()
+                    .foregroundStyle(.white)
+                    .frame(width: .infinity, height: 200)
+                    .aspectRatio(contentMode: .fill)
+                    .padding(.top, 860)
+                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             }
         }
     }
