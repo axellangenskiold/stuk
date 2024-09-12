@@ -4,6 +4,7 @@ import SwiftData
 struct HomeView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    @Binding var path: NavigationPath
     
     @State var isHome: Bool = true
     @State var isCalender: Bool = false
@@ -11,6 +12,8 @@ struct HomeView: View {
     @State var isTickets: Bool = false
     @State var isProfile: Bool = false
     @State var isRabatt: Bool = true
+    
+    
     
     @State var current: String = "home"
 
@@ -259,6 +262,15 @@ struct HomeView: View {
             }
             .frame(maxHeight: .infinity, alignment: .bottom)
         }
+            .navigationDestination(for: Destination.self) { destination in
+                switch destination {
+                case .calenderView: CalenderView(path: $path)
+                case .ticketView : TicketView(path: $path)
+                case .cardView : CardView(path: $path)
+                case .profileView : ProfileView(path: $path)
+                case .homeView : HomeView(path: $path)
+                }
+            }
     }
 
     private func addItem() {
@@ -278,6 +290,6 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(path: .constant(NavigationPath()))
         .modelContainer(for: Item.self, inMemory: true)
 }

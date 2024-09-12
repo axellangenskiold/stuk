@@ -1,5 +1,5 @@
 //
-//  CardView.swift
+//  TicketView.swift
 //  stuk
 //
 //  Created by Axel Langenskiöld on 2024-09-12.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CardView: View {
+struct TicketView: View {
     @Binding var path: NavigationPath
     
     var body: some View {
@@ -16,5 +16,5 @@ struct CardView: View {
 }
 
 #Preview {
-    CardView(path: .constant(NavigationPath()))
+    TicketView(path: .constant(NavigationPath()))
 }

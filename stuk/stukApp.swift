@@ -10,6 +10,7 @@ import SwiftData
 
 @main
 struct stukApp: App {
+    @State private var path = NavigationPath()
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -25,7 +26,7 @@ struct stukApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView(path: $path)
         }
         .modelContainer(sharedModelContainer)
     }
