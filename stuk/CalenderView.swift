@@ -57,7 +57,7 @@ struct CalenderView: View {
                         }
                         
                         Spacer()
-                    }
+                    } //Grey circles
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack {
                             CalenderCard(image: "kryckans", event: "Kryckans Hörna", nation: "Malmö Nation")
@@ -152,12 +152,22 @@ struct CalenderView: View {
                         .shadow(radius: 1)
                     
                     HStack {
-                        Image(isHome ? "home_black" : "home_grey")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40, height: 40)
-                            .clipped()
-                            .padding(14)
+                        
+                        Button(action: {
+                            var transaction = Transaction()
+                            transaction.disablesAnimations = true
+                            withTransaction(transaction) {
+                                path.append(Destination.homeView)
+                            }
+                            
+                        }) {
+                            Image(isHome ? "home_black" : "home_grey")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 40, height: 40)
+                                .clipped()
+                                .padding(14)
+                        }
                         
                         Image(isCalender ? "calender_black" : "calender_grey")
                             .resizable()
@@ -192,6 +202,7 @@ struct CalenderView: View {
                 .frame(maxHeight: .infinity, alignment: .bottom)
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

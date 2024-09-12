@@ -18,7 +18,7 @@ struct HomeView: View {
     @State var current: String = "home"
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             ZStack {
                 Rectangle()
                     .frame(width: .infinity, height: .infinity)
