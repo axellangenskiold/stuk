@@ -18,14 +18,14 @@ struct AdCard: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundStyle(.white)
-                .frame(width: 180, height: 220)
+                .frame(width: 170, height: 220)
                 .overlay() {
                     ZStack {
                         VStack {
                             Image(image)
                                 .resizable()
                                 .scaledToFill()
-                                .frame(width: 180, height: 100)
+                                .frame(width: 170, height: 100)
                                 .clipped()
                                 .clipShape(RoundedCorner(radius: 10, corners: [.topLeft, .topRight]))
                             Spacer()
@@ -45,9 +45,9 @@ struct AdCard: View {
                                     .font(.custom("Arial", size: 12))
                                     .bold()
                             }
-                            .frame(width: 180, height: 22)
+                            .frame(width: 170, height: 22)
                         }
-                        .frame(width: 180, height: 220)
+                        .frame(width: 170, height: 220)
                         
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
@@ -64,10 +64,10 @@ struct AdCard: View {
                         .padding(.bottom, 20)
                         
                     }
-                    .frame(width: 180, height: 22)
+                    .frame(width: 170, height: 22)
                 }
         }
-        .padding(5)
+        .padding(2)
         .shadow(radius: 1)
     }
 }

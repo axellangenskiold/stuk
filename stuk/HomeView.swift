@@ -51,6 +51,124 @@ struct HomeView: View {
                             }
                             .frame(maxWidth: 380)
                         }
+                        .padding(.leading, 5)
+                        
+                        
+                        
+                        VStack {
+                            HStack {
+                                Text("Hot deals 🔥")
+                                    .bold()
+                                
+                                Spacer()
+                                
+                                Text("Visa alla")
+                                    .foregroundStyle(.pink)
+                            }
+                            .frame(maxWidth: 370)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(alignment: .bottom) { // Add spacing if needed
+                                    AdCard(image: "sats", bottomColor: .blue, bottomText: "kampanj", addText: "Upp till 30% rabatt", companyLogo: "sats_logo")
+                                    AdCard(image: "hm", bottomColor: .pink, bottomText: "tävling", addText: "Kampanj, 10% rabatt", companyLogo: "hm_logo")
+                                    AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "10% studentrabatt", companyLogo: "apple_logo")
+                                    AdCard(image: "jotex", bottomColor: .blue, bottomText: "kampanj", addText: "20% studentrabatt", companyLogo: "jotex_logo")
+                                    AdCard(image: "rituals", bottomColor: .pink, bottomText: "tävling", addText: "Upp till 40% rabatt", companyLogo: "rituals_logo")
+                                    AdCard(image: "trygghansa", bottomColor: .green, bottomText: "skolstart", addText: "Kampanj, 10% rabatt", companyLogo: "trygghansa_logo")
+                                    AdCard(image: "storytel", bottomColor: .blue, bottomText: "kampanj", addText: "30% rabatt", companyLogo: "storytel_logo")
+                                }       // Add horizontal padding if needed
+                            }
+                            .frame(maxWidth: 380)
+                        }
+                        .padding(.leading, 5)
+                        
+                        
+                        
+                        
+                        VStack {
+                            HStack {
+                                Text("Populära rabatter")
+                                    .bold()
+                                
+                                Spacer()
+                                
+                                Text("Visa alla")
+                                    .foregroundStyle(.pink)
+                            }
+                            .frame(maxWidth: 370)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(alignment: .bottom) { // Add spacing if needed
+                                    AdCard(image: "hm", bottomColor: .green, bottomText: "kampanj", addText: "20% studentrabatt", companyLogo: "hm_logo")
+                                    AdCard(image: "storytel", bottomColor: .pink, bottomText: "tävling", addText: "Upp till 40% rabatt", companyLogo: "storytel_logo")
+                                    AdCard(image: "apple", bottomColor: .blue, bottomText: "skolstart", addText: "30% rabatt", companyLogo: "apple_logo")
+                                    AdCard(image: "jotex", bottomColor: .green, bottomText: "tävling", addText: "Kampanj, 10% rabatt", companyLogo: "jotex_logo")
+                                    AdCard(image: "trygghansa", bottomColor: .blue, bottomText: "skolstart", addText: "Upp till 30% rabatt", companyLogo: "trygghansa_logo")
+                                    AdCard(image: "sats", bottomColor: .pink, bottomText: "kampanj", addText: "10% studentrabatt", companyLogo: "sats_logo")
+                                    AdCard(image: "rituals", bottomColor: .green, bottomText: "tävling", addText: "Upp till 40% rabatt", companyLogo: "rituals_logo")
+                                }       // Add horizontal padding if needed
+                            }
+                            .frame(maxWidth: 380)
+                        }
+                        .padding(.leading, 5)
+                        
+                        
+                        
+                        
+                        
+                        VStack {
+                            HStack {
+                                Text("Studentrabatter för dig")
+                                    .bold()
+                                
+                                Spacer()
+                                
+                                Text("Visa alla")
+                                    .foregroundStyle(.pink)
+                            }
+                            .frame(maxWidth: 370)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(alignment: .bottom) { // Add spacing if needed
+                                    AdCard(image: "apple", bottomColor: .pink, bottomText: "kampanj", addText: "Upp till 30% rabatt", companyLogo: "apple_logo")
+                                    AdCard(image: "hm", bottomColor: .blue, bottomText: "tävling", addText: "30% rabatt", companyLogo: "hm_logo")
+                                    AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "10% studentrabatt", companyLogo: "storytel_logo")
+                                    AdCard(image: "rituals", bottomColor: .blue, bottomText: "kampanj", addText: "Kampanj, 10% rabatt", companyLogo: "rituals_logo")
+                                    AdCard(image: "trygghansa", bottomColor: .green, bottomText: "tävling", addText: "Upp till 40% rabatt", companyLogo: "trygghansa_logo")
+                                    AdCard(image: "jotex", bottomColor: .pink, bottomText: "skolstart", addText: "Upp till 30% rabatt", companyLogo: "jotex_logo")
+                                    AdCard(image: "sats", bottomColor: .blue, bottomText: "skolstart", addText: "20% studentrabatt", companyLogo: "sats_logo")
+                                }       // Add horizontal padding if needed
+                            }
+                            .frame(maxWidth: 380)
+                        }
+                        .padding(.leading, 5)
+                        
+                        VStack {
+                            HStack {
+                                Text("Populärt just nu")
+                                    .bold()
+                                
+                                Spacer()
+                                
+                                Text("Visa alla")
+                                    .foregroundStyle(.pink)
+                            }
+                            .frame(maxWidth: 370)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(alignment: .bottom) { // Add spacing if needed
+                                    AdCard(image: "jotex", bottomColor: .green, bottomText: "kampanj", addText: "10% studentrabatt", companyLogo: "jotex_logo")
+                                    AdCard(image: "sats", bottomColor: .pink, bottomText: "tävling", addText: "Upp till 30% rabatt", companyLogo: "sats_logo")
+                                    AdCard(image: "hm", bottomColor: .blue, bottomText: "skolstart", addText: "Kampanj, 10% rabatt", companyLogo: "hm_logo")
+                                    AdCard(image: "apple", bottomColor: .green, bottomText: "tävling", addText: "20% studentrabatt", companyLogo: "apple_logo")
+                                    AdCard(image: "trygghansa", bottomColor: .blue, bottomText: "kampanj", addText: "Upp till 40% rabatt", companyLogo: "trygghansa_logo")
+                                    AdCard(image: "storytel", bottomColor: .pink, bottomText: "skolstart", addText: "30% rabatt", companyLogo: "storytel_logo")
+                                    AdCard(image: "rituals", bottomColor: .green, bottomText: "tävling", addText: "Upp till 30% rabatt", companyLogo: "rituals_logo")
+                                }       // Add horizontal padding if needed
+                            }
+                            .frame(maxWidth: 380)
+                        }
+                        .padding(.leading, 5)
                         
                         
                         
@@ -68,76 +186,18 @@ struct HomeView: View {
                             
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(alignment: .bottom) { // Add spacing if needed
-                                    AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
-                                    AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
-                                    AdCard(image: "trygghansa", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "trygghansa_logo")
-                                    AdCard(image: "sats", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "sats_logo")
-                                    AdCard(image: "jotex", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "jotex_logo")
-                                    AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
-                                    AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
+                                    AdCard(image: "storytel", bottomColor: .blue, bottomText: "tävling", addText: "Upp till 40% rabatt", companyLogo: "storytel_logo")
+                                    AdCard(image: "hm", bottomColor: .green, bottomText: "kampanj", addText: "10% studentrabatt", companyLogo: "hm_logo")
+                                    AdCard(image: "trygghansa", bottomColor: .pink, bottomText: "skolstart", addText: "20% studentrabatt", companyLogo: "trygghansa_logo")
+                                    AdCard(image: "apple", bottomColor: .blue, bottomText: "kampanj", addText: "Upp till 30% rabatt", companyLogo: "apple_logo")
+                                    AdCard(image: "sats", bottomColor: .green, bottomText: "tävling", addText: "Kampanj, 10% rabatt", companyLogo: "sats_logo")
+                                    AdCard(image: "rituals", bottomColor: .pink, bottomText: "skolstart", addText: "Upp till 30% rabatt", companyLogo: "rituals_logo")
+                                    AdCard(image: "jotex", bottomColor: .green, bottomText: "kampanj", addText: "30% rabatt", companyLogo: "jotex_logo")
                                 }       // Add horizontal padding if needed
                             }
                             .frame(maxWidth: 380)
                         }
-                        
-                        
-                        
-                        
-                        VStack {
-                            HStack {
-                                Text("Back to School 📚")
-                                    .bold()
-                                
-                                Spacer()
-                                
-                                Text("Visa alla")
-                                    .foregroundStyle(.pink)
-                            }
-                            .frame(maxWidth: 370)
-                            
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(alignment: .bottom) { // Add spacing if needed
-                                    AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
-                                    AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
-                                    AdCard(image: "trygghansa", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "trygghansa_logo")
-                                    AdCard(image: "sats", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "sats_logo")
-                                    AdCard(image: "jotex", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "jotex_logo")
-                                    AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
-                                    AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
-                                }       // Add horizontal padding if needed
-                            }
-                            .frame(maxWidth: 380)
-                        }
-                        
-                        
-                        
-                        
-                        
-                        VStack {
-                            HStack {
-                                Text("Back to School 📚")
-                                    .bold()
-                                
-                                Spacer()
-                                
-                                Text("Visa alla")
-                                    .foregroundStyle(.pink)
-                            }
-                            .frame(maxWidth: 370)
-                            
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(alignment: .bottom) { // Add spacing if needed
-                                    AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
-                                    AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
-                                    AdCard(image: "trygghansa", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "trygghansa_logo")
-                                    AdCard(image: "sats", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "sats_logo")
-                                    AdCard(image: "jotex", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "jotex_logo")
-                                    AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
-                                    AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
-                                }       // Add horizontal padding if needed
-                            }
-                            .frame(maxWidth: 380)
-                        }
+                        .padding(.leading, 5)
                     }
                 }
                 .padding(.top, 120)
