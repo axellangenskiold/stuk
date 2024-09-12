@@ -126,17 +126,51 @@ struct ContentView: View {
                         .frame(maxWidth: 380)
                     }
                 }
+                .frame(maxHeight: .infinity)
             }
-            .padding(.top, 220)
+            .padding(.top, 250)
             
             
 //            top bar
             ZStack {
                 Rectangle()
                     .foregroundStyle(.white)
-                    .frame(width: .infinity, height: 200)
+                    .frame(width: .infinity, height: 230)
                     .aspectRatio(contentMode: .fill)
                     .shadow(radius: 1)
+                
+                Rectangle()
+                    .foregroundStyle(.white)
+                    .frame(width: .infinity, height: 155)
+                    .aspectRatio(contentMode: .fill)
+                    .shadow(radius: 1)
+                
+                HStack {
+                    VStack {
+                        Text("Rabatter")
+                            .bold()
+                            .font(.custom("Arial", size: 17))
+                        
+                        Rectangle()
+                            .foregroundColor(.black)
+                            .frame(width: 90, height: 2)
+                    }
+                    .padding(.horizontal, 50)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        Text("Lokalt")
+                            .bold()
+                            .font(.custom("Arial", size: 17))
+                        
+                        Rectangle()
+                            .foregroundColor(.black)
+                            .frame(width: 90, height: 2)
+                    }
+                    .padding(.horizontal, 50)
+                }
+                .padding(.top, 201)
                 
                 HStack {
                     Image("bars")
@@ -161,7 +195,7 @@ struct ContentView: View {
                         .frame(width: 50, height: 50)
                         .clipped()
                 }
-                .padding(.top, 130)
+                .padding(.top, 105)
                 .padding(.horizontal, 10)
             }
             .frame(maxHeight: .infinity, alignment: .top)
