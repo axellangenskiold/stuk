@@ -26,7 +26,7 @@ struct stukApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView(path: $path)
+            HomeView()
         }
         .modelContainer(sharedModelContainer)
     }

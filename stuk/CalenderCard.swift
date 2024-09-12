@@ -36,26 +36,34 @@ struct CalenderCard: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundStyle(.white)
-                .frame(width: 360, height: 300)
+                .frame(width: 360, height: 240)
+                .shadow(radius: 1)
                 .overlay() {
                     VStack {
                         Image(image)
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 180, height: 100)
+                            .frame(width: 360, height: 180)
                             .clipped()
                             .clipShape(RoundedCorner(radius: 10, corners: [.topLeft, .topRight]))
-                        
-                        Text(dates.randomElement()!)
-                            .foregroundStyle(.gray)
-                            .font(.custom("Arial", size: 10))
-                        
-                        Text(event)
-                            .font(.custom("Arial", size: 14))
-                        
-                        Text(nation)
-                            .foregroundStyle(.gray)
-                            .font(.custom("Arial", size: 10))
+                        HStack {
+                            VStack(alignment: .leading, content: {
+                                Text(dates.randomElement()!)
+                                    .foregroundStyle(.gray)
+                                    .font(.custom("Arial", size: 10))
+                                
+                                Text(event)
+                                    .font(.custom("Arial", size: 14))
+                                    .bold()
+                                
+                                Text(nation)
+                                    .foregroundStyle(.gray)
+                                    .font(.custom("Arial", size: 10))
+                            })
+                            .padding(.leading, 10)
+                            Spacer()
+                        }
+                        .padding(.vertical, 5)
                     }
                 }
         }
@@ -63,5 +71,5 @@ struct CalenderCard: View {
 }
 
 #Preview {
-    CalenderCard(image: "jotex", event: "Malmö nations körkort", nation: "Malmö Nation")
+    CalenderCard(image: "kryckans", event: "Kryckans Hörna", nation: "Malmö Nation")
 }
