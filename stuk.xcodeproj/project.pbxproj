@@ -16,6 +16,10 @@
 		1A201C3F2C85F46100A07848 /* stukUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C3E2C85F46100A07848 /* stukUITests.swift */; };
 		1A201C412C85F46100A07848 /* stukUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C402C85F46100A07848 /* stukUITestsLaunchTests.swift */; };
 		1ACA76DC2C9230BB001EBBB1 /* AdCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA76DB2C9230BB001EBBB1 /* AdCard.swift */; };
+		1ACA76E02C9336C3001EBBB1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA76DF2C9336C3001EBBB1 /* ProfileView.swift */; };
+		1ACA76E22C933704001EBBB1 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA76E12C933704001EBBB1 /* CalenderView.swift */; };
+		1ACA76E42C933726001EBBB1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA76E32C933726001EBBB1 /* CardView.swift */; };
+		1ACA76E62C933745001EBBB1 /* TicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA76E52C933745001EBBB1 /* TicketView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		1A201C3E2C85F46100A07848 /* stukUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stukUITests.swift; sourceTree = "<group>"; };
 		1A201C402C85F46100A07848 /* stukUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stukUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1ACA76DB2C9230BB001EBBB1 /* AdCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCard.swift; sourceTree = "<group>"; };
+		1ACA76DF2C9336C3001EBBB1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		1ACA76E12C933704001EBBB1 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
+		1ACA76E32C933726001EBBB1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		1ACA76E52C933745001EBBB1 /* TicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,7 @@
 		1A201C152C85F45F00A07848 = {
 			isa = PBXGroup;
 			children = (
+				1ACA76E52C933745001EBBB1 /* TicketView.swift */,
 				1A201C202C85F45F00A07848 /* stuk */,
 				1A201C332C85F46100A07848 /* stukTests */,
 				1A201C3D2C85F46100A07848 /* stukUITests */,
@@ -104,6 +113,9 @@
 				1A201C272C85F46100A07848 /* Assets.xcassets */,
 				1ACA76DB2C9230BB001EBBB1 /* AdCard.swift */,
 				1A201C292C85F46100A07848 /* Preview Content */,
+				1ACA76DF2C9336C3001EBBB1 /* ProfileView.swift */,
+				1ACA76E12C933704001EBBB1 /* CalenderView.swift */,
+				1ACA76E32C933726001EBBB1 /* CardView.swift */,
 			);
 			path = stuk;
 			sourceTree = "<group>";
@@ -263,9 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ACA76E42C933726001EBBB1 /* CardView.swift in Sources */,
+				1ACA76E02C9336C3001EBBB1 /* ProfileView.swift in Sources */,
+				1ACA76E62C933745001EBBB1 /* TicketView.swift in Sources */,
 				1A201C242C85F45F00A07848 /* HomeView.swift in Sources */,
 				1A201C262C85F45F00A07848 /* Item.swift in Sources */,
 				1ACA76DC2C9230BB001EBBB1 /* AdCard.swift in Sources */,
+				1ACA76E22C933704001EBBB1 /* CalenderView.swift in Sources */,
 				1A201C222C85F45F00A07848 /* stukApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

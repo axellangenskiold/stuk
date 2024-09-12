@@ -10,6 +10,7 @@ struct HomeView: View {
     @State var isCard: Bool = false
     @State var isTickets: Bool = false
     @State var isProfile: Bool = false
+    @State var isRabatt: Bool = true
     
     @State var current: String = "home"
 
@@ -40,8 +41,8 @@ struct HomeView: View {
                                 AdCard(image: "trygghansa", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "trygghansa_logo")
                                 AdCard(image: "sats", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "sats_logo")
                                 AdCard(image: "jotex", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "jotex_logo")
-                                AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
-                                AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
+                                AdCard(image: "hm", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "hm_logo")
+                                AdCard(image: "rituals", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "rituals_logo")
                             }       // Add horizontal padding if needed
                         }
                         .frame(maxWidth: 380)
@@ -134,9 +135,9 @@ struct HomeView: View {
                         .frame(maxWidth: 380)
                     }
                 }
-                .frame(maxHeight: .infinity)
             }
-            .padding(.top, 250)
+            .padding(.top, 120)
+            .frame(maxHeight: 800)
             
             
 //            top bar
@@ -160,7 +161,7 @@ struct HomeView: View {
                             .font(.custom("Arial", size: 17))
                         
                         Rectangle()
-                            .foregroundColor(.black)
+                            .foregroundColor(isRabatt ? .black : .white)
                             .frame(width: 90, height: 2)
                     }
                     .padding(.horizontal, 50)
@@ -173,7 +174,7 @@ struct HomeView: View {
                             .font(.custom("Arial", size: 17))
                         
                         Rectangle()
-                            .foregroundColor(.black)
+                            .foregroundColor(isRabatt ? .white : .black)
                             .frame(width: 90, height: 2)
                     }
                     .padding(.horizontal, 50)
