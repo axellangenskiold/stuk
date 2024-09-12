@@ -1,9 +1,17 @@
 import SwiftUI
 import SwiftData
 
-struct ContentView: View {
+struct HomeView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    
+    @State var isHome: Bool = true
+    @State var isCalender: Bool = false
+    @State var isCard: Bool = false
+    @State var isTickets: Bool = false
+    @State var isProfile: Bool = false
+    
+    @State var current: String = "home"
 
     var body: some View {
         ZStack {
@@ -209,6 +217,44 @@ struct ContentView: View {
                     .aspectRatio(contentMode: .fill)
                     .padding(.top, 860)
                     .shadow(radius: 1)
+                
+                HStack {
+                    Image(isHome ? "home_black" : "home_grey")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipped()
+                        .padding(14)
+                    
+                    Image(isCalender ? "calender_black" : "calender_grey")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipped()
+                        .padding(14)
+                    
+                    Image("card_grey")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipped()
+                        .padding(14)
+                    
+                    Image(isTickets ? "tickets_black" : "tickets_grey")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipped()
+                        .padding(14)
+                    
+                    Image(isProfile ? "profile_black" : "profile_grey")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipped()
+                        .padding(14)
+                }
+                .padding(.top, 720)
             }
             .frame(maxHeight: .infinity, alignment: .bottom)
         }
@@ -231,6 +277,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    HomeView()
         .modelContainer(for: Item.self, inMemory: true)
 }
