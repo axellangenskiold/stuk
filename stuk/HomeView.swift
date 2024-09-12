@@ -143,6 +143,8 @@ struct HomeView: View {
                         }
                         .padding(.leading, 5)
                         
+                        
+                        
                         VStack {
                             HStack {
                                 Text("Populärt just nu")
@@ -174,7 +176,7 @@ struct HomeView: View {
                         
                         VStack {
                             HStack {
-                                Text("Back to School 📚")
+                                Text("Autumn deals 🍁")
                                     .bold()
                                 
                                 Spacer()

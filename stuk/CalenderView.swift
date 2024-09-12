@@ -157,7 +157,9 @@ struct CalenderView: View {
                             var transaction = Transaction()
                             transaction.disablesAnimations = true
                             withTransaction(transaction) {
-                                path.append(Destination.homeView)
+                                while path.count > 1 {
+                                    path.removeLast()
+                                }
                             }
                             
                         }) {
