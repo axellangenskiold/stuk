@@ -37,10 +37,19 @@ struct CardView: View {
                     Spacer()
                     
                     HStack {
-                        Text("Stäng")
-                            .foregroundStyle(.white)
-                            .font(.custom("Arial", size: 22))
-                            .padding(.trailing, 60)
+                        Button(action: {
+                            var transaction = Transaction()
+                            transaction.disablesAnimations = true
+                            withTransaction(transaction) {
+                                path.removeLast()
+                            }
+                        }) {
+                            Text("Stäng")
+                                .foregroundStyle(.white)
+                                .font(.custom("Arial", size: 22))
+                                .padding(.trailing, 60)
+                        }
+                        
                         
                         ZStack {
                             Circle()
@@ -72,8 +81,8 @@ struct CardView: View {
                     }
                 }
             }
-            .navigationBarHidden(true)
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     func flipCard() {
