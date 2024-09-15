@@ -16,69 +16,67 @@ struct CardView: View {
     let durationDelay : CGFloat = 0.15
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                MovingBackground()
-            
-                VStack {
-                    Spacer()
-                    ZStack {
-                        FlipableCardView(degree: $frontDegree, isFake: false)
-                        FlipableCardView(degree: $backDegree, isFake: true)
-                    }
-                    .onTapGesture {
-                        flipCard()
-                    }
-                    
+        ZStack {
+            MovingBackground()
+        
+            VStack {
+                Spacer()
+                ZStack {
+                    FlipableCardView(degree: $frontDegree, isFake: false)
+                    FlipableCardView(degree: $backDegree, isFake: true)
                 }
+                .onTapGesture {
+                    flipCard()
+                }
+                .padding(.bottom, 100)
+            }
+            
+            
+            VStack {
+                Spacer()
                 
-                
-                VStack {
-                    Spacer()
-                    
-                    HStack {
-                        Button(action: {
-                            var transaction = Transaction()
-                            transaction.disablesAnimations = true
-                            withTransaction(transaction) {
-                                path.removeLast()
-                            }
-                        }) {
-                            Text("Stäng")
-                                .foregroundStyle(.white)
-                                .font(.custom("Arial", size: 22))
-                                .padding(.trailing, 60)
+                HStack {
+                    Button(action: {
+                        var transaction = Transaction()
+                        transaction.disablesAnimations = true
+                        withTransaction(transaction) {
+                            path.removeLast()
                         }
-                        
-                        
-                        ZStack {
-                            Circle()
-                                .frame(width: 35)
-                                .foregroundStyle(.white)
-                            
-                            Text("1")
-                            
-                        }
-                        
-                        ZStack {
-                            Circle()
-                                .frame(width: 32)
-                                .foregroundStyle(.black)
-                            
-                            Text("2")
-                                .foregroundStyle(.white)
-                            
-                        }
-                        
-                        Image("qr")
-                            .resizable()
-                            .frame(width: 29, height: 29)
-                            .padding(.leading, 60)
-                        
-                        Image("refresh")
-                            .resizable()
-                            .frame(width: 30, height: 35)
+                    }) {
+                        Text("Stäng")
+                            .foregroundStyle(.white)
+                            .font(.custom("Arial", size: 22))
+                            .padding(.trailing, 65)
                     }
+                    
+                    
+                    ZStack {
+                        Circle()
+                            .frame(width: 35)
+                            .foregroundStyle(.white)
+                        
+                        Text("1")
+                        
+                    }
+                    
+                    ZStack {
+                        Circle()
+                            .frame(width: 32)
+                            .foregroundStyle(.black)
+                        
+                        Text("2")
+                            .foregroundStyle(.white)
+                        
+                    }
+                    
+                    Image("qr")
+                        .resizable()
+                        .frame(width: 29, height: 29)
+                        .padding(.leading, 65)
+                    
+                    Image("refresh")
+                        .resizable()
+                        .frame(width: 30, height: 35)
                 }
             }
         }
