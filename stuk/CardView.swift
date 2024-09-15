@@ -1,10 +1,3 @@
-//
-//  CardView.swift
-//  stuk
-//
-//  Created by Axel Langenskiöld on 2024-09-12.
-//
-
 import SwiftUI
 
 struct CardView: View {
@@ -13,7 +6,9 @@ struct CardView: View {
     @State private var isFlipped = true
     @State var frontDegree = 0.0
     @State var backDegree = -90.0
-    let durationDelay : CGFloat = 0.15
+    let durationDelay: CGFloat = 0.15
+    @State var isLoadingCard = false // State to track if loading card is shown
+    @State var isShowingQR = false // State to track if the QR image is shown
     
     var body: some View {
         ZStack {
@@ -31,7 +26,6 @@ struct CardView: View {
                 .padding(.bottom, 100)
             }
             
-            
             VStack {
                 Spacer()
                 
@@ -48,7 +42,6 @@ struct CardView: View {
                             .font(.custom("Arial", size: 22))
                             .padding(.trailing, 65)
                     }
-                    
                     
                     ZStack {
                         Circle()
@@ -73,11 +66,57 @@ struct CardView: View {
                         .resizable()
                         .frame(width: 29, height: 29)
                         .padding(.leading, 65)
+                        .onTapGesture {
+                            withAnimation {
+                                isShowingQR = true // Show the QR card when QR image is pressed
+                            }
+                        }
                     
                     Image("refresh")
                         .resizable()
                         .frame(width: 30, height: 35)
+                        .onTapGesture {
+                            showLoadingCard() // Show loading card when refresh is pressed
+                        }
                 }
+            }
+            
+            // Show the QR card full screen when isShowingQR is true
+            if isShowingQR {
+                ZStack {
+                    Color.black.opacity(0.7)
+                    
+                    VStack {
+                        Image("qrcard")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 370)
+                            .onTapGesture {
+                                // Prevent the card from closing when it's tapped
+                            }
+                    }
+                }
+                .edgesIgnoringSafeArea(.all)
+                .onTapGesture {
+                    // Close the QR card when tapping outside the image
+                    withAnimation {
+                        isShowingQR = false
+                    }
+                }
+            }
+            
+            // Show the loading card when isLoadingCard is true
+            if isLoadingCard {
+                ZStack {
+                    Color.STUK_GRAY.opacity(1)
+                    
+                    VStack {
+                        Image("loadingcard")
+                            .resizable()
+                            .scaledToFit()
+                    }
+                }
+                .edgesIgnoringSafeArea(.all)
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -94,8 +133,7 @@ struct CardView: View {
                     backDegree = 0
                 }
             
-        }
-        else {
+        } else {
             withAnimation(.linear(duration: durationDelay)) {
                 backDegree = -90
             }
@@ -106,6 +144,16 @@ struct CardView: View {
         }
     }
     
+    func showLoadingCard() {
+        isLoadingCard = true
+        
+        // Automatically close the loading card after 3 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            withAnimation {
+                isLoadingCard = false
+            }
+        }
+    }
 }
 
 #Preview {
