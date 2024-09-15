@@ -39,7 +39,7 @@ struct NationCard: View {
                 .shadow(radius: 1)
         }
         .onAppear{
-            withAnimation(.linear(duration: 4.0).repeatForever(autoreverses: false)) {
+            withAnimation(.linear(duration: 2.0).repeatForever(autoreverses: false)) {
                 rotation = 360
             }
         }

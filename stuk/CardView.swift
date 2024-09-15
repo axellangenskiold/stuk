@@ -13,20 +13,66 @@ struct CardView: View {
     @State private var isFlipped = true
     @State var frontDegree = 0.0
     @State var backDegree = -90.0
-    let durationDelay : CGFloat = 0.3
+    let durationDelay : CGFloat = 0.15
     
     var body: some View {
-        ZStack {
-            MovingBackground()
-            
+        NavigationView {
             ZStack {
-                FlipableCardView(degree: $frontDegree, isFake: false)
-                FlipableCardView(degree: $backDegree, isFake: true)
+                MovingBackground()
+            
+                VStack {
+                    Spacer()
+                    ZStack {
+                        FlipableCardView(degree: $frontDegree, isFake: false)
+                        FlipableCardView(degree: $backDegree, isFake: true)
+                    }
+                    .onTapGesture {
+                        flipCard()
+                    }
+                    
+                }
+                
+                
+                VStack {
+                    Spacer()
+                    
+                    HStack {
+                        Text("Stäng")
+                            .foregroundStyle(.white)
+                            .font(.custom("Arial", size: 22))
+                            .padding(.trailing, 60)
+                        
+                        ZStack {
+                            Circle()
+                                .frame(width: 35)
+                                .foregroundStyle(.white)
+                            
+                            Text("1")
+                            
+                        }
+                        
+                        ZStack {
+                            Circle()
+                                .frame(width: 32)
+                                .foregroundStyle(.black)
+                            
+                            Text("2")
+                                .foregroundStyle(.white)
+                            
+                        }
+                        
+                        Image("qr")
+                            .resizable()
+                            .frame(width: 29, height: 29)
+                            .padding(.leading, 60)
+                        
+                        Image("refresh")
+                            .resizable()
+                            .frame(width: 30, height: 35)
+                    }
+                }
             }
-            .padding(.top, 41)
-            .onTapGesture {
-                flipCard()
-            }
+            .navigationBarHidden(true)
         }
     }
     
