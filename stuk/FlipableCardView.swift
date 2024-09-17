@@ -15,7 +15,7 @@ struct FlipableCardView: View {
         NationCard(isFake: isFake)
         .rotation3DEffect(
             Angle(degrees: degree),
-            axis: /*@START_MENU_TOKEN@*/(x: 0.0, y: 1.0, z: 0.0)/*@END_MENU_TOKEN@*/
+            axis: (x: 0.0, y: 1.0, z: 0.0)
         )
     }
 }

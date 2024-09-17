@@ -39,8 +39,8 @@ struct CardView: View {
                     }) {
                         Text("Stäng")
                             .foregroundStyle(.white)
-                            .font(.custom("Arial", size: 22))
-                            .padding(.trailing, 65)
+                            .font(.custom("Arial", size: 20))
+                            .padding(.trailing, 60)
                     }
                     
                     ZStack {
@@ -49,8 +49,10 @@ struct CardView: View {
                             .foregroundStyle(.white)
                         
                         Text("1")
+                            .foregroundStyle(.black)
                         
                     }
+                    .padding(.trailing, 0)
                     
                     ZStack {
                         Circle()
@@ -61,11 +63,23 @@ struct CardView: View {
                             .foregroundStyle(.white)
                         
                     }
+                    .padding(.horizontal, 0)
+                    
+                    ZStack {
+                        Circle()
+                            .frame(width: 32)
+                            .foregroundStyle(.black)
+                        
+                        Text("3")
+                            .foregroundStyle(.white)
+                        
+                    }
+                    .padding(.leading, 0)
                     
                     Image("qr")
                         .resizable()
                         .frame(width: 29, height: 29)
-                        .padding(.leading, 65)
+                        .padding(.leading, 60)
                         .onTapGesture {
                             withAnimation {
                                 isShowingQR = true // Show the QR card when QR image is pressed

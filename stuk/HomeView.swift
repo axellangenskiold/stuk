@@ -29,6 +29,7 @@ struct HomeView: View {
                         VStack {
                             HStack {
                                 Text("Back to School 📚")
+                                    .foregroundStyle(.black)
                                     .bold()
                                 
                                 Spacer()
@@ -58,6 +59,7 @@ struct HomeView: View {
                         VStack {
                             HStack {
                                 Text("Hot deals 🔥")
+                                    .foregroundStyle(.black)
                                     .bold()
                                 
                                 Spacer()
@@ -88,6 +90,7 @@ struct HomeView: View {
                         VStack {
                             HStack {
                                 Text("Populära rabatter")
+                                    .foregroundStyle(.black)
                                     .bold()
                                 
                                 Spacer()
@@ -119,6 +122,7 @@ struct HomeView: View {
                         VStack {
                             HStack {
                                 Text("Studentrabatter för dig")
+                                    .foregroundStyle(.black)
                                     .bold()
                                 
                                 Spacer()
@@ -148,6 +152,7 @@ struct HomeView: View {
                         VStack {
                             HStack {
                                 Text("Populärt just nu")
+                                    .foregroundStyle(.black)
                                     .bold()
                                 
                                 Spacer()
@@ -177,6 +182,7 @@ struct HomeView: View {
                         VStack {
                             HStack {
                                 Text("Autumn deals 🍁")
+                                    .foregroundStyle(.black)
                                     .bold()
                                 
                                 Spacer()

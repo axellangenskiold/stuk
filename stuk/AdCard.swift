@@ -31,6 +31,7 @@ struct AdCard: View {
                             Spacer()
                             
                             Text(addText)
+                                .foregroundStyle(.black)
                                 .font(.custom("Arial", size: 16))
                                 .bold()
                                 .frame(maxWidth: 160)
