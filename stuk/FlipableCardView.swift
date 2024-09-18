@@ -22,5 +22,5 @@ struct FlipableCardView: View {
 }
 
 #Preview {
-    FlipableCardView(degree: .constant(180), isFake: true, circle: .constant(0))
+    FlipableCardView(degree: .constant(180), isFake: true, circle: .constant(1))
 }

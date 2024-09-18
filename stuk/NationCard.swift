@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct NationCard: View {
-    @State var isFake: Bool = false
+    @State var isFake: Bool = true
     @State var rotation: CGFloat = 0.0
     @Binding var circle: Int
+    
+    private let name: String = "Axel Langenskiöld"  //ÄNDRA NAMN HÄR
+    
+    private let personNbr: String = "020118-3713"   //ÄNDRA PERSONNUMMER HÄR
     
     
     var body: some View {
@@ -28,12 +32,47 @@ struct NationCard: View {
                                 .clipped()
                                 .clipShape(RoundedCorner(radius: 10))
                         } else {
-                            Image(imageBack())
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 378, height: 378*1.6)
-                                .clipped()
-                                .clipShape(RoundedCorner(radius: 10))
+                            ZStack {
+                                Image(imageBack())
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 378, height: 378*1.6)
+                                    .clipped()
+                                    .clipShape(RoundedCorner(radius: 10))
+                                
+                                
+                                
+                                VStack {
+                                    HStack {
+                                        VStack(alignment: .leading) {
+                                            Text(name)
+                                                .bold()
+                                                .font(.custom("Arial", size: 16))
+                                                .lineLimit(1)
+                                            
+                                            Text(personNbr)
+                                                .bold()
+                                                .font(.custom("Arial", size: 16))
+                                                .padding(.bottom, 11)
+                                            
+                                            Text("GILTIGT TILL: 2024-12-31")
+                                                .bold()
+                                                .font(.custom("Arial", size: 12))
+                                                .lineLimit(1)
+                                        }
+                                        .rotationEffect(.degrees(90))
+                                        .padding(.top, 76)
+                                        .padding(.leading, 5)
+                                        
+                                        Spacer()
+                                    }
+                                    .padding(0)
+                                    
+                                    Spacer()
+                                }
+                                .frame(width: 400, height: 378*1.6)
+                            }
+                            
                         }
                     }
                 }
@@ -74,5 +113,5 @@ struct NationCard: View {
 }
 
 #Preview {
-    NationCard(circle: .constant(0))
+    NationCard(circle: .constant(1))
 }
