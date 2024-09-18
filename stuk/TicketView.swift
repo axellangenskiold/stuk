@@ -11,9 +11,9 @@ struct TicketView: View {
     @Binding var path: NavigationPath
     
     @State var isHome: Bool = false
-    @State var isCalender: Bool = true
+    @State var isCalender: Bool = false
     @State var isCard: Bool = false
-    @State var isTickets: Bool = false
+    @State var isTickets: Bool = true
     @State var isProfile: Bool = false
     @State var isRabatt: Bool = true
     
@@ -105,12 +105,21 @@ struct TicketView: View {
                             .padding(14)
                     }
                     
-                    Image(isCalender ? "calender_black" : "calender_grey")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 40, height: 40)
-                        .clipped()
-                        .padding(14)
+                    Button(action: {
+                        var transaction = Transaction()
+                        transaction.disablesAnimations = true
+                        withTransaction(transaction) {
+                            path.append(Destination.calenderView)
+                        }
+                        
+                    }) {
+                        Image(isCalender ? "calender_black" : "calender_grey")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40, height: 40)
+                            .clipped()
+                            .padding(14)
+                    }
                     
                     Button(action: {
                         var transaction = Transaction()
@@ -128,21 +137,12 @@ struct TicketView: View {
                             .padding(14)
                     }
                     
-                    Button(action: {
-                        var transaction = Transaction()
-                        transaction.disablesAnimations = true
-                        withTransaction(transaction) {
-                            path.append(Destination.ticketView)
-                        }
-                        
-                    }) {
-                        Image(isTickets ? "tickets_black" : "tickets_grey")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40, height: 40)
-                            .clipped()
-                            .padding(14)
-                    }
+                    Image(isTickets ? "tickets_black" : "tickets_grey")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipped()
+                        .padding(14)
                     
                     Button(action: {
                         var transaction = Transaction()
