@@ -49,16 +49,19 @@ struct NationCard: View {
                                                 .bold()
                                                 .font(.custom("Arial", size: 16))
                                                 .lineLimit(1)
+                                                .foregroundStyle(.black)
                                             
                                             Text(personNbr)
                                                 .bold()
                                                 .font(.custom("Arial", size: 16))
                                                 .padding(.bottom, 11)
+                                                .foregroundStyle(.black)
                                             
                                             Text("GILTIGT TILL: 2024-12-31")
                                                 .bold()
                                                 .font(.custom("Arial", size: 12))
                                                 .lineLimit(1)
+                                                .foregroundStyle(.black)
                                         }
                                         .rotationEffect(.degrees(90))
                                         .padding(.top, 76)
