@@ -18,216 +18,214 @@ struct CalenderView: View {
     @State var isRabatt: Bool = true
     
     var body: some View {
-        NavigationView {
+        ZStack {
+            Rectangle()
+                .frame(width: .infinity, height: .infinity)
+                .foregroundStyle(.white)
+            VStack {
+                HStack {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15)
+                            .foregroundStyle(.gray)
+                            .frame(width: 100, height: 30)
+                            .padding(.leading, 15)
+                        
+                        
+                        Text("Lund")
+                            .font(.custom("Arial", size: 15))
+                    }
+                    
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15)
+                            .foregroundStyle(.gray)
+                            .frame(width: 100, height: 30)
+                        
+                        
+                        Text("Datum")
+                            .font(.custom("Arial", size: 15))
+                    }
+                    
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15)
+                            .foregroundStyle(.gray)
+                            .frame(width: 100, height: 30)
+                        
+                        
+                        Text("Filter")
+                            .font(.custom("Arial", size: 15))
+                    }
+                    
+                    Spacer()
+                } //Grey circles
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack {
+                        CalenderCard(image: "kryckans", event: "Kryckans Hörna", nation: "Malmö Nation")
+                        CalenderCard(image: "afternoontea", event: "Afternoon Tea", nation: "Helsingkrona Nation")
+                        CalenderCard(image: "tapas", event: "Tapas Torsdag", nation: "Västgöta Nation")
+                        CalenderCard(image: "torsdagspuben", event: "Torsdagspuben på Sydskånska", nation: "Sydskånska nation")
+                        CalenderCard(image: "downtown", event: "DOWNTOWN", nation: "Östgöta Nation")
+                        CalenderCard(image: "novishperiod", event: "Novishnollning", nation: "Malmö Nation")
+                    }
+                }
+            }
+            .padding(.top, 120)
+            .frame(maxHeight: 800)
+            
+            //            top bar
             ZStack {
                 Rectangle()
-                    .frame(width: .infinity, height: .infinity)
                     .foregroundStyle(.white)
-                VStack {
-                    HStack {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 15)
-                                .foregroundStyle(.gray)
-                                .frame(width: 100, height: 30)
-                                .padding(.leading, 15)
-                            
-                            
-                            Text("Lund")
-                                .font(.custom("Arial", size: 15))
-                        }
-                        
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 15)
-                                .foregroundStyle(.gray)
-                                .frame(width: 100, height: 30)
-                            
-                            
-                            Text("Datum")
-                                .font(.custom("Arial", size: 15))
-                        }
-                        
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 15)
-                                .foregroundStyle(.gray)
-                                .frame(width: 100, height: 30)
-                            
-                            
-                            Text("Filter")
-                                .font(.custom("Arial", size: 15))
-                        }
-                        
-                        Spacer()
-                    } //Grey circles
-                    ScrollView(.vertical, showsIndicators: false) {
-                        VStack {
-                            CalenderCard(image: "kryckans", event: "Kryckans Hörna", nation: "Malmö Nation")
-                            CalenderCard(image: "afternoontea", event: "Afternoon Tea", nation: "Helsingkrona Nation")
-                            CalenderCard(image: "tapas", event: "Tapas Torsdag", nation: "Västgöta Nation")
-                            CalenderCard(image: "torsdagspuben", event: "Torsdagspuben på Sydskånska", nation: "Sydskånska nation")
-                            CalenderCard(image: "downtown", event: "DOWNTOWN", nation: "Östgöta Nation")
-                            CalenderCard(image: "novishperiod", event: "Novishnollning", nation: "Malmö Nation")
-                        }
-                    }
-                }
-                .padding(.top, 120)
-                .frame(maxHeight: 800)
+                    .frame(width: .infinity, height: 230)
+                    .aspectRatio(contentMode: .fill)
+                    .shadow(radius: 1)
                 
-                //            top bar
-                ZStack {
-                    Rectangle()
-                        .foregroundStyle(.white)
-                        .frame(width: .infinity, height: 230)
-                        .aspectRatio(contentMode: .fill)
-                        .shadow(radius: 1)
-                    
-                    Rectangle()
-                        .foregroundStyle(.white)
-                        .frame(width: .infinity, height: 155)
-                        .aspectRatio(contentMode: .fill)
-                        .shadow(radius: 1)
-                    
-                    HStack {
-                        VStack {
-                            Text("Evenemang")
-                                .bold()
-                                .font(.custom("Arial", size: 16))
-                            
-                            Rectangle()
-                                .foregroundColor(isRabatt ? .black : .white)
-                                .frame(width: 90, height: 2)
-                        }
-                        .padding(.horizontal, 50)
+                Rectangle()
+                    .foregroundStyle(.white)
+                    .frame(width: .infinity, height: 155)
+                    .aspectRatio(contentMode: .fill)
+                    .shadow(radius: 1)
+                
+                HStack {
+                    VStack {
+                        Text("Evenemang")
+                            .bold()
+                            .font(.custom("Arial", size: 16))
                         
-                        Spacer()
-                        
-                        VStack {
-                            Text("Utforska")
-                                .bold()
-                                .font(.custom("Arial", size: 16))
-                            
-                            Rectangle()
-                                .foregroundColor(isRabatt ? .white : .black)
-                                .frame(width: 90, height: 2)
-                        }
-                        .padding(.horizontal, 50)
+                        Rectangle()
+                            .foregroundColor(isRabatt ? .black : .white)
+                            .frame(width: 90, height: 2)
                     }
-                    .padding(.top, 201)
+                    .padding(.horizontal, 50)
                     
-                    HStack {
-                        Image("bars")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40, height: 40)
-                            .clipped()
+                    Spacer()
+                    
+                    VStack {
+                        Text("Utforska")
+                            .bold()
+                            .font(.custom("Arial", size: 16))
                         
-                        Spacer()
-                        
-                        Image("stuk")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 100, height: 40)
-                            .clipped()
-                        
-                        Spacer()
-                        
-                        Image("search")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 50, height: 50)
-                            .clipped()
+                        Rectangle()
+                            .foregroundColor(isRabatt ? .white : .black)
+                            .frame(width: 90, height: 2)
                     }
-                    .padding(.top, 105)
-                    .padding(.horizontal, 10)
+                    .padding(.horizontal, 50)
                 }
-                .frame(maxHeight: .infinity, alignment: .top)
-                .padding(.bottom, 820)
-                //
-                //            // bottom bar
-                ZStack {
-                    Rectangle()
-                        .foregroundStyle(.white)
-                        .frame(width: .infinity, height: 200)
-                        .aspectRatio(contentMode: .fill)
-                        .padding(.top, 860)
-                        .shadow(radius: 1)
+                .padding(.top, 201)
+                
+                HStack {
+                    Image("bars")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipped()
                     
-                    HStack {
-                        
-                        Button(action: {
-                            var transaction = Transaction()
-                            transaction.disablesAnimations = true
-                            withTransaction(transaction) {
-                                path.removeLast()
-                            }
-                            
-                        }) {
-                            Image(isHome ? "home_black" : "home_grey")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 40, height: 40)
-                                .clipped()
-                                .padding(14)
+                    Spacer()
+                    
+                    Image("stuk")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 40)
+                        .clipped()
+                    
+                    Spacer()
+                    
+                    Image("search")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 50, height: 50)
+                        .clipped()
+                }
+                .padding(.top, 105)
+                .padding(.horizontal, 10)
+            }
+            .frame(maxHeight: .infinity, alignment: .top)
+            .padding(.bottom, 820)
+            //
+            //            // bottom bar
+            ZStack {
+                Rectangle()
+                    .foregroundStyle(.white)
+                    .frame(width: .infinity, height: 200)
+                    .aspectRatio(contentMode: .fill)
+                    .padding(.top, 860)
+                    .shadow(radius: 1)
+                
+                HStack {
+                    
+                    Button(action: {
+                        var transaction = Transaction()
+                        transaction.disablesAnimations = true
+                        withTransaction(transaction) {
+                            path.removeLast()
                         }
                         
-                        Image(isCalender ? "calender_black" : "calender_grey")
+                    }) {
+                        Image(isHome ? "home_black" : "home_grey")
                             .resizable()
                             .scaledToFill()
                             .frame(width: 40, height: 40)
                             .clipped()
                             .padding(14)
-                        
-                        Button(action: {
-                            var transaction = Transaction()
-                            transaction.disablesAnimations = true
-                            withTransaction(transaction) {
-                                path.append(Destination.cardView)
-                            }
-                            
-                        }) {
-                            Image("card_grey")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 40, height: 40)
-                                .clipped()
-                                .padding(14)
-                        }
-                        
-                        Button(action: {
-                            var transaction = Transaction()
-                            transaction.disablesAnimations = true
-                            withTransaction(transaction) {
-                                path.append(Destination.ticketView)
-                            }
-                            
-                        }) {
-                            Image(isTickets ? "tickets_black" : "tickets_grey")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 40, height: 40)
-                                .clipped()
-                                .padding(14)
-                        }
-                        
-                        Button(action: {
-                            var transaction = Transaction()
-                            transaction.disablesAnimations = true
-                            withTransaction(transaction) {
-                                path.append(Destination.profileView)
-                            }
-                            
-                        }) {
-                            Image(isProfile ? "profile_black" : "profile_grey")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 40, height: 40)
-                                .clipped()
-                                .padding(14)
-                        }
                     }
-                    .padding(.top, 720)
+                    
+                    Image(isCalender ? "calender_black" : "calender_grey")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipped()
+                        .padding(14)
+                    
+                    Button(action: {
+                        var transaction = Transaction()
+                        transaction.disablesAnimations = true
+                        withTransaction(transaction) {
+                            path.append(Destination.cardView)
+                        }
+                        
+                    }) {
+                        Image("card_grey")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40, height: 40)
+                            .clipped()
+                            .padding(14)
+                    }
+                    
+                    Button(action: {
+                        var transaction = Transaction()
+                        transaction.disablesAnimations = true
+                        withTransaction(transaction) {
+                            path.append(Destination.ticketView)
+                        }
+                        
+                    }) {
+                        Image(isTickets ? "tickets_black" : "tickets_grey")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40, height: 40)
+                            .clipped()
+                            .padding(14)
+                    }
+                    
+                    Button(action: {
+                        var transaction = Transaction()
+                        transaction.disablesAnimations = true
+                        withTransaction(transaction) {
+                            path.append(Destination.profileView)
+                        }
+                        
+                    }) {
+                        Image(isProfile ? "profile_black" : "profile_grey")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40, height: 40)
+                            .clipped()
+                            .padding(14)
+                    }
                 }
-                .frame(maxHeight: .infinity, alignment: .bottom)
+                .padding(.top, 720)
             }
+            .frame(maxHeight: .infinity, alignment: .bottom)
         }
         .navigationBarBackButtonHidden(true)
     }
