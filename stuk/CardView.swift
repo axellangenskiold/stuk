@@ -10,6 +10,8 @@ struct CardView: View {
     @State var isLoadingCard = false // State to track if loading card is shown
     @State var isShowingQR = false // State to track if the QR image is shown
     
+    @State var circle: Int = 1
+    
     var body: some View {
         ZStack {
             MovingBackground()
@@ -17,8 +19,8 @@ struct CardView: View {
             VStack {
                 Spacer()
                 ZStack {
-                    FlipableCardView(degree: $frontDegree, isFake: false)
-                    FlipableCardView(degree: $backDegree, isFake: true)
+                    FlipableCardView(degree: $frontDegree, isFake: false, circle: circle)
+                    FlipableCardView(degree: $backDegree, isFake: true, circle: circle)
                 }
                 .onTapGesture {
                     flipCard()
@@ -43,38 +45,53 @@ struct CardView: View {
                             .padding(.trailing, 60)
                     }
                     
-                    ZStack {
-                        Circle()
-                            .frame(width: 35)
-                            .foregroundStyle(.white)
-                        
-                        Text("1")
-                            .foregroundStyle(.black)
-                        
+                    Button(action: {
+                        circle = 1
+                    }) {
+                        ZStack {
+                            Circle()
+                                .frame(width: 35)
+                                .foregroundStyle(circle == 1 ? .white : .black)
+                            
+                            Text("1")
+                                .foregroundStyle(circle == 1 ? .black : .white)
+                            
+                        }
+                        .padding(.trailing, 0)
                     }
-                    .padding(.trailing, 0)
+                    .disabled(circle == 1)
                     
-                    ZStack {
-                        Circle()
-                            .frame(width: 32)
-                            .foregroundStyle(.black)
-                        
-                        Text("2")
-                            .foregroundStyle(.white)
-                        
+                    Button(action: {
+                        circle = 2
+                    }) {
+                        ZStack {
+                            Circle()
+                                .frame(width: 35)
+                                .foregroundStyle(circle == 2 ? .white : .black)
+                            
+                            Text("2")
+                                .foregroundStyle(circle == 2 ? .black : .white)
+                            
+                        }
+                        .padding(.trailing, 0)
                     }
-                    .padding(.horizontal, 0)
+                    .disabled(circle == 2)
                     
-                    ZStack {
-                        Circle()
-                            .frame(width: 32)
-                            .foregroundStyle(.black)
-                        
-                        Text("3")
-                            .foregroundStyle(.white)
-                        
+                    Button(action: {
+                        circle = 3
+                    }) {
+                        ZStack {
+                            Circle()
+                                .frame(width: 35)
+                                .foregroundStyle(circle == 3 ? .white : .black)
+                            
+                            Text("3")
+                                .foregroundStyle(circle == 3 ? .black : .white)
+                            
+                        }
+                        .padding(.trailing, 0)
                     }
-                    .padding(.leading, 0)
+                    .disabled(circle == 3)
                     
                     Image("qr")
                         .resizable()
