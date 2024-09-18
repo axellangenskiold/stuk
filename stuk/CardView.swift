@@ -19,8 +19,8 @@ struct CardView: View {
             VStack {
                 Spacer()
                 ZStack {
-                    FlipableCardView(degree: $frontDegree, isFake: false, circle: circle)
-                    FlipableCardView(degree: $backDegree, isFake: true, circle: circle)
+                    FlipableCardView(degree: $frontDegree, isFake: false, circle: $circle)
+                    FlipableCardView(degree: $backDegree, isFake: true, circle: $circle)
                 }
                 .onTapGesture {
                     flipCard()
@@ -42,7 +42,8 @@ struct CardView: View {
                         Text("Stäng")
                             .foregroundStyle(.white)
                             .font(.custom("Arial", size: 20))
-                            .padding(.trailing, 60)
+                            .padding(.leading, 0)
+                            .padding(.trailing, 48)
                     }
                     
                     Button(action: {
@@ -50,7 +51,7 @@ struct CardView: View {
                     }) {
                         ZStack {
                             Circle()
-                                .frame(width: 35)
+                                .frame(width: 32)
                                 .foregroundStyle(circle == 1 ? .white : .black)
                             
                             Text("1")
@@ -66,14 +67,14 @@ struct CardView: View {
                     }) {
                         ZStack {
                             Circle()
-                                .frame(width: 35)
+                                .frame(width: 32)
                                 .foregroundStyle(circle == 2 ? .white : .black)
                             
                             Text("2")
                                 .foregroundStyle(circle == 2 ? .black : .white)
                             
                         }
-                        .padding(.trailing, 0)
+                        .padding(.horizontal, 0)
                     }
                     .disabled(circle == 2)
                     
@@ -82,21 +83,21 @@ struct CardView: View {
                     }) {
                         ZStack {
                             Circle()
-                                .frame(width: 35)
+                                .frame(width: 32)
                                 .foregroundStyle(circle == 3 ? .white : .black)
                             
                             Text("3")
                                 .foregroundStyle(circle == 3 ? .black : .white)
                             
                         }
-                        .padding(.trailing, 0)
+                        .padding(.leading, 0)
                     }
                     .disabled(circle == 3)
                     
                     Image("qr")
                         .resizable()
                         .frame(width: 29, height: 29)
-                        .padding(.leading, 60)
+                        .padding(.leading, 48)
                         .onTapGesture {
                             withAnimation {
                                 isShowingQR = true // Show the QR card when QR image is pressed

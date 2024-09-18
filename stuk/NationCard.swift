@@ -10,28 +10,28 @@ import SwiftUI
 struct NationCard: View {
     @State var isFake: Bool = false
     @State var rotation: CGFloat = 0.0
-    @State var circle: Int
+    @Binding var circle: Int
     
     
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundStyle(.white)
-                .frame(width: 380, height: 380*1.6)
+                .frame(width: 378, height: 378*1.6)
                 .overlay() {
                     ZStack {
                         if !isFake {
-                            Image("nationcard")
+                            Image(image())
                                 .resizable()
                                 .scaledToFill()
-                                .frame(width: 380, height: 380*1.6)
+                                .frame(width: 378, height: 378*1.6)
                                 .clipped()
                                 .clipShape(RoundedCorner(radius: 10))
                         } else {
-                            Image("nationcard_back")
+                            Image(imageBack())
                                 .resizable()
                                 .scaledToFill()
-                                .frame(width: 380, height: 380*1.6)
+                                .frame(width: 378, height: 378*1.6)
                                 .clipped()
                                 .clipShape(RoundedCorner(radius: 10))
                         }
@@ -46,7 +46,7 @@ struct NationCard: View {
         }
     }
     
-    private func image(for circle: Int) -> String {
+    private func image() -> String {
         switch circle {
         case 1:
             return "malmocard"
@@ -60,10 +60,19 @@ struct NationCard: View {
     }
     
     private func imageBack() -> String {
-        return ""
+        switch circle {
+        case 1:
+            return "malmocard_back"
+        case 2:
+            return "nationcard_back"
+        case 3:
+            return "studentlundcard_back"
+        default:
+            return "defaultcard_back" // Add a default case to handle other values
+        }
     }
 }
 
 #Preview {
-    NationCard(circle: 0)
+    NationCard(circle: .constant(0))
 }

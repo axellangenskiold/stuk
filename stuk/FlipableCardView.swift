@@ -13,7 +13,7 @@ struct FlipableCardView: View {
     @Binding var circle: Int
     
     var body: some View {
-        NationCard(isFake: isFake, circle: circle)
+        NationCard(isFake: isFake, circle: $circle)
         .rotation3DEffect(
             Angle(degrees: degree),
             axis: (x: 0.0, y: 1.0, z: 0.0)
