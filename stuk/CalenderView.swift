@@ -176,26 +176,53 @@ struct CalenderView: View {
                             .clipped()
                             .padding(14)
                         
-                        Image("card_grey")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40, height: 40)
-                            .clipped()
-                            .padding(14)
+                        Button(action: {
+                            var transaction = Transaction()
+                            transaction.disablesAnimations = true
+                            withTransaction(transaction) {
+                                path.append(Destination.cardView)
+                            }
+                            
+                        }) {
+                            Image("card_grey")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 40, height: 40)
+                                .clipped()
+                                .padding(14)
+                        }
                         
-                        Image(isTickets ? "tickets_black" : "tickets_grey")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40, height: 40)
-                            .clipped()
-                            .padding(14)
+                        Button(action: {
+                            var transaction = Transaction()
+                            transaction.disablesAnimations = true
+                            withTransaction(transaction) {
+                                path.append(Destination.cardView)
+                            }
+                            
+                        }) {
+                            Image(isTickets ? "tickets_black" : "tickets_grey")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 40, height: 40)
+                                .clipped()
+                                .padding(14)
+                        }
                         
-                        Image(isProfile ? "profile_black" : "profile_grey")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40, height: 40)
-                            .clipped()
-                            .padding(14)
+                        Button(action: {
+                            var transaction = Transaction()
+                            transaction.disablesAnimations = true
+                            withTransaction(transaction) {
+                                path.append(Destination.cardView)
+                            }
+                            
+                        }) {
+                            Image(isProfile ? "profile_black" : "profile_grey")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 40, height: 40)
+                                .clipped()
+                                .padding(14)
+                        }
                     }
                     .padding(.top, 720)
                 }
