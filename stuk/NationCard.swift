@@ -10,6 +10,7 @@ import SwiftUI
 struct NationCard: View {
     @State var isFake: Bool = false
     @State var rotation: CGFloat = 0.0
+    @State var circle: Int
     
     
     var body: some View {
@@ -44,8 +45,25 @@ struct NationCard: View {
             }
         }
     }
+    
+    private func image(for circle: Int) -> String {
+        switch circle {
+        case 1:
+            return "malmocard"
+        case 2:
+            return "nationcard"
+        case 3:
+            return "studentlundcard"
+        default:
+            return "defaultcard" // Add a default case to handle other values
+        }
+    }
+    
+    private func imageBack() -> String {
+        return ""
+    }
 }
 
 #Preview {
-    NationCard()
+    NationCard(circle: 0)
 }

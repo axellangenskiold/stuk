@@ -10,9 +10,10 @@ import SwiftUI
 struct FlipableCardView: View {
     @Binding var degree: Double
     var isFake: Bool
+    @Binding var circle: Int
     
     var body: some View {
-        NationCard(isFake: isFake)
+        NationCard(isFake: isFake, circle: circle)
         .rotation3DEffect(
             Angle(degrees: degree),
             axis: (x: 0.0, y: 1.0, z: 0.0)
@@ -21,5 +22,5 @@ struct FlipableCardView: View {
 }
 
 #Preview {
-    FlipableCardView(degree: .constant(180), isFake: true)
+    FlipableCardView(degree: .constant(180), isFake: true, circle: .constant(0))
 }
