@@ -196,7 +196,7 @@ struct CalenderView: View {
                             var transaction = Transaction()
                             transaction.disablesAnimations = true
                             withTransaction(transaction) {
-                                path.append(Destination.cardView)
+                                path.append(Destination.ticketView)
                             }
                             
                         }) {
@@ -212,7 +212,7 @@ struct CalenderView: View {
                             var transaction = Transaction()
                             transaction.disablesAnimations = true
                             withTransaction(transaction) {
-                                path.append(Destination.cardView)
+                                path.append(Destination.profileView)
                             }
                             
                         }) {
