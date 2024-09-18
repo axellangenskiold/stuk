@@ -10,8 +10,154 @@ import SwiftUI
 struct TicketView: View {
     @Binding var path: NavigationPath
     
+    @State var isHome: Bool = false
+    @State var isCalender: Bool = true
+    @State var isCard: Bool = false
+    @State var isTickets: Bool = false
+    @State var isProfile: Bool = false
+    @State var isRabatt: Bool = true
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Rectangle()
+                .frame(width: .infinity, height: .infinity)
+                .foregroundStyle(.white)
+            
+            VStack {
+                
+            }
+            
+            //            top bar
+            ZStack {
+                Rectangle()
+                    .foregroundStyle(.white)
+                    .frame(width: .infinity, height: 230)
+                    .aspectRatio(contentMode: .fill)
+                    .shadow(radius: 1)
+                
+                Rectangle()
+                    .foregroundStyle(.white)
+                    .frame(width: .infinity, height: 155)
+                    .aspectRatio(contentMode: .fill)
+                    .shadow(radius: 1)
+
+                
+                HStack {
+                    Image("bars")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipped()
+                    
+                    Spacer()
+                    
+                    Image("stuk")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 40)
+                        .clipped()
+                    
+                    Spacer()
+                    
+                    Image("search")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 50, height: 50)
+                        .clipped()
+                }
+                .padding(.top, 105)
+                .padding(.horizontal, 10)
+            }
+            .frame(maxHeight: .infinity, alignment: .top)
+            .padding(.bottom, 820)
+            //
+            //            // bottom bar
+            ZStack {
+                Rectangle()
+                    .foregroundStyle(.white)
+                    .frame(width: .infinity, height: 200)
+                    .aspectRatio(contentMode: .fill)
+                    .padding(.top, 860)
+                    .shadow(radius: 1)
+                
+                HStack {
+                    
+                    Button(action: {
+                        var transaction = Transaction()
+                        transaction.disablesAnimations = true
+                        withTransaction(transaction) {
+                            path.removeLast()
+                        }
+                        
+                    }) {
+                        Image(isHome ? "home_black" : "home_grey")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40, height: 40)
+                            .clipped()
+                            .padding(14)
+                    }
+                    
+                    Image(isCalender ? "calender_black" : "calender_grey")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipped()
+                        .padding(14)
+                    
+                    Button(action: {
+                        var transaction = Transaction()
+                        transaction.disablesAnimations = true
+                        withTransaction(transaction) {
+                            path.append(Destination.cardView)
+                        }
+                        
+                    }) {
+                        Image("card_grey")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40, height: 40)
+                            .clipped()
+                            .padding(14)
+                    }
+                    
+                    Button(action: {
+                        var transaction = Transaction()
+                        transaction.disablesAnimations = true
+                        withTransaction(transaction) {
+                            path.append(Destination.ticketView)
+                        }
+                        
+                    }) {
+                        Image(isTickets ? "tickets_black" : "tickets_grey")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40, height: 40)
+                            .clipped()
+                            .padding(14)
+                    }
+                    
+                    Button(action: {
+                        var transaction = Transaction()
+                        transaction.disablesAnimations = true
+                        withTransaction(transaction) {
+                            path.append(Destination.profileView)
+                        }
+                        
+                    }) {
+                        Image(isProfile ? "profile_black" : "profile_grey")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 40, height: 40)
+                            .clipped()
+                            .padding(14)
+                    }
+                }
+                .padding(.top, 720)
+            }
+            .frame(maxHeight: .infinity, alignment: .bottom)
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

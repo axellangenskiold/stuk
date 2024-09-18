@@ -15,6 +15,7 @@
 		1A201C352C85F46100A07848 /* stukTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C342C85F46100A07848 /* stukTests.swift */; };
 		1A201C3F2C85F46100A07848 /* stukUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C3E2C85F46100A07848 /* stukUITests.swift */; };
 		1A201C412C85F46100A07848 /* stukUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C402C85F46100A07848 /* stukUITestsLaunchTests.swift */; };
+		1A2E93962C9B737E00FD5380 /* TicketCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2E93952C9B737E00FD5380 /* TicketCard.swift */; };
 		1ACA76DC2C9230BB001EBBB1 /* AdCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA76DB2C9230BB001EBBB1 /* AdCard.swift */; };
 		1ACA76E02C9336C3001EBBB1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA76DF2C9336C3001EBBB1 /* ProfileView.swift */; };
 		1ACA76E22C933704001EBBB1 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA76E12C933704001EBBB1 /* CalenderView.swift */; };
@@ -56,6 +57,7 @@
 		1A201C3A2C85F46100A07848 /* stukUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stukUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A201C3E2C85F46100A07848 /* stukUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stukUITests.swift; sourceTree = "<group>"; };
 		1A201C402C85F46100A07848 /* stukUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stukUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1A2E93952C9B737E00FD5380 /* TicketCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCard.swift; sourceTree = "<group>"; };
 		1ACA76DB2C9230BB001EBBB1 /* AdCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCard.swift; sourceTree = "<group>"; };
 		1ACA76DF2C9336C3001EBBB1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1ACA76E12C933704001EBBB1 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				1ACA76E92C9338AD001EBBB1 /* Destination.swift */,
 				1ACA76F12C9373C0001EBBB1 /* FlipableCardView.swift */,
 				1ACA76F32C9374CA001EBBB1 /* MovingBackground.swift */,
+				1A2E93952C9B737E00FD5380 /* TicketCard.swift */,
 			);
 			path = stuk;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				1ACA76EA2C9338AD001EBBB1 /* Destination.swift in Sources */,
 				1A201C222C85F45F00A07848 /* stukApp.swift in Sources */,
 				1ACA76F02C9351FB001EBBB1 /* CalenderCard.swift in Sources */,
+				1A2E93962C9B737E00FD5380 /* TicketCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
