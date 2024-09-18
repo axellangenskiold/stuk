@@ -17,15 +17,22 @@ struct TicketView: View {
     @State var isProfile: Bool = false
     @State var isRabatt: Bool = true
     
+    var ads: [String] = ["apple", "hm", "ica", "jotex", "storytel", "sats", "rituals", "trygghansa"]
+    
     var body: some View {
         ZStack {
             Rectangle()
                 .frame(width: .infinity, height: .infinity)
                 .foregroundStyle(.white)
             
-            VStack {
-                
+            ScrollView { // Make content scrollable
+                VStack {
+                    ForEach(ads, id: \.self) { ad in
+                        TicketCard(image: ad) // Use your TicketCard for each ad
+                    }
+                }
             }
+            .frame(height: 650)
             
             //            top bar
             ZStack {
