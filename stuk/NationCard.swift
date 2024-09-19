@@ -12,10 +12,6 @@ struct NationCard: View {
     @State var rotation: CGFloat = 0.0
     @Binding var circle: Int
     
-    private let name: String = "Axel Langenskiöld"  //ÄNDRA NAMN HÄR
-    
-    private let personNbr: String = "020118-3713"   //ÄNDRA PERSONNUMMER HÄR
-    
     
     var body: some View {
         ZStack {
@@ -45,13 +41,13 @@ struct NationCard: View {
                                 VStack {
                                     HStack {
                                         VStack(alignment: .leading) {
-                                            Text(name)
+                                            Text(Shared.shared.name)
                                                 .bold()
                                                 .font(.custom("Arial", size: 16))
                                                 .lineLimit(1)
                                                 .foregroundStyle(.black)
                                             
-                                            Text(personNbr)
+                                            Text(Shared.shared.personNbr)
                                                 .bold()
                                                 .font(.custom("Arial", size: 16))
                                                 .padding(.bottom, 11)
