@@ -16,18 +16,19 @@ struct ProfileView: View {
     @State var isTickets: Bool = false
     @State var isProfile: Bool = true
     
+    
     var body: some View {
         ZStack {
             Rectangle()
                 .frame(width: .infinity, height: .infinity)
-                .foregroundStyle(.white)
+                .foregroundStyle(.bakegrey)
+            
             ScrollView {
                 VStack {
                     ZStack {
                         Rectangle()
-                            .frame(width: 400, height: 800)
+                            .frame(width: 400, height: 300)
                             .foregroundStyle(.bakegrey)
-                            .padding(.bottom, 100)
                         
                         VStack {
                             ZStack {
@@ -35,15 +36,91 @@ struct ProfileView: View {
                                     .frame(width: 80)
                                     .foregroundStyle(.bakeblue)
                                 
+                                Text(Shared.shared.initials)
+                                    .bold()
+                                    .foregroundStyle(.bakerblue)
+                                    .font(.custom("Arial", size: 30))
+                            }
+                            .padding(.bottom, 30)
+                            
+                            Text(Shared.shared.name)
+                                .bold()
+                                .font(.custom("Arial", size: 20))
+                                .foregroundStyle(.black)
+                                .padding(.bottom, 5)
+                            
+                            Text(Shared.shared.email)
+                                .font(.custom("Arial", size: 12))
+                                .foregroundStyle(.gray)
+                                .padding(.bottom, 20)
+                            
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 15)
+                                    .foregroundStyle(.black)
+                                    .frame(width: 160, height: 30)
                                 
+                                
+                                Text("Redigera profil")
+                                    .bold()
+                                    .font(.custom("Arial", size: 15))
+                                    .foregroundStyle(.white)
                             }
                         }
                     }
                     
+                    ZStack {
+                        Rectangle()
+                            .frame(width: 400, height: 600)
+                            .foregroundStyle(.white)
+                            .padding(.bottom, 60)
+                        VStack {
+                            HStack {
+                                Text("Mina medlemskap")
+                                    .bold()
+                                    .foregroundStyle(.black)
+                                    .font(.custom("Arial", size: 20))
+                                    .padding(.leading, 10)
+                                
+                                Spacer()
+                            }
+                            
+                            Image("profilecard")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 380, height: 200)
+                                .clipped()
+                                .clipShape(RoundedCorner(radius: 10, corners: .allCorners))
+                            
+                            Image("profilecard2")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 380, height: 200)
+                                .clipped()
+                                .clipShape(RoundedCorner(radius: 10, corners: .allCorners))
+                        }
+                        .padding(.bottom, 200)
+                    }
+                    
                 }
             }
+            .frame(width: 400, height: 700)
             
-            
+            VStack {
+                HStack {
+                    Image(systemName: "gear")
+                        .font(.title2)
+                        .bold()
+                        .padding(.leading, 30)
+                    
+                    Spacer()
+                    
+                    Image(systemName: "ticket")
+                        .font(.title2)
+                        .bold()
+                        .padding(.trailing, 30)
+                }
+                .padding(.bottom, 780)
+            }
             
             
             //bottom bar
@@ -132,6 +209,7 @@ struct ProfileView: View {
             }
             .frame(maxHeight: .infinity, alignment: .bottom)
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
