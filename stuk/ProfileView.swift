@@ -111,6 +111,7 @@ struct ProfileView: View {
                         .font(.title2)
                         .bold()
                         .padding(.leading, 30)
+                        .foregroundStyle(.black)
                     
                     Spacer()
                     
@@ -118,8 +119,9 @@ struct ProfileView: View {
                         .font(.title2)
                         .bold()
                         .padding(.trailing, 30)
+                        .foregroundStyle(.black)
                 }
-                .padding(.bottom, 780)
+                .padding(.bottom, 750)
             }
             
             
