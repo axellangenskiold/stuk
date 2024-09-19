@@ -32,7 +32,7 @@ struct TicketView: View {
                     }
                 }
             }
-            .frame(height: 650)
+            .frame(height: 600)
             
             //            top bar
             ZStack {
@@ -41,6 +41,7 @@ struct TicketView: View {
                     .frame(width: .infinity, height: 230)
                     .aspectRatio(contentMode: .fill)
                     .shadow(radius: 1)
+                    .opacity(0)
                 
                 Rectangle()
                     .foregroundStyle(.white)

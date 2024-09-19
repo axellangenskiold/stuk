@@ -129,11 +129,11 @@
 				1ACA76DB2C9230BB001EBBB1 /* AdCard.swift */,
 				1ACA76EF2C9351FB001EBBB1 /* CalenderCard.swift */,
 				1ACA76F52C937A29001EBBB1 /* NationCard.swift */,
+				1A2E93952C9B737E00FD5380 /* TicketCard.swift */,
 				1A201C292C85F46100A07848 /* Preview Content */,
 				1ACA76E92C9338AD001EBBB1 /* Destination.swift */,
 				1ACA76F12C9373C0001EBBB1 /* FlipableCardView.swift */,
 				1ACA76F32C9374CA001EBBB1 /* MovingBackground.swift */,
-				1A2E93952C9B737E00FD5380 /* TicketCard.swift */,
 			);
 			path = stuk;
 			sourceTree = "<group>";
