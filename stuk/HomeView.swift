@@ -177,7 +177,33 @@ struct HomeView: View {
                         }
                         .padding(.leading, 5)
                         
-                        
+                        VStack {
+                            HStack {
+                                Text("Autumn deals 🍁")
+                                    .foregroundStyle(.black)
+                                    .bold()
+                                
+                                Spacer()
+                                
+                                Text("Visa alla")
+                                    .foregroundStyle(.pink)
+                            }
+                            .frame(maxWidth: 370)
+                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(alignment: .bottom) { // Add spacing if needed
+                                    AdCard(image: "storytel", bottomColor: .blue, bottomText: "tävling", addText: "Upp till 40% rabatt", companyLogo: "storytel_logo")
+                                    AdCard(image: "hm", bottomColor: .green, bottomText: "kampanj", addText: "10% studentrabatt", companyLogo: "hm_logo")
+                                    AdCard(image: "trygghansa", bottomColor: .pink, bottomText: "skolstart", addText: "20% studentrabatt", companyLogo: "trygghansa_logo")
+                                    AdCard(image: "apple", bottomColor: .blue, bottomText: "kampanj", addText: "Upp till 30% rabatt", companyLogo: "apple_logo")
+                                    AdCard(image: "sats", bottomColor: .green, bottomText: "tävling", addText: "Kampanj, 10% rabatt", companyLogo: "sats_logo")
+                                    AdCard(image: "rituals", bottomColor: .pink, bottomText: "skolstart", addText: "Upp till 30% rabatt", companyLogo: "rituals_logo")
+                                    AdCard(image: "jotex", bottomColor: .green, bottomText: "kampanj", addText: "30% rabatt", companyLogo: "jotex_logo")
+                                }       // Add horizontal padding if needed
+                            }
+                            .frame(maxWidth: 380)
+                        }
+                        .padding(.leading, 5)
                         
                         VStack {
                             HStack {
