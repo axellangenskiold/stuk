@@ -37,39 +37,40 @@ struct NationCard: View {
                                     .clipShape(RoundedCorner(radius: 10))
                                 
                                 
-                                
-                                VStack {
-                                    HStack {
-                                        VStack(alignment: .leading) {
-                                            Text(Shared.shared.name)
-                                                .bold()
-                                                .font(.custom("Arial", size: 16))
-                                                .lineLimit(1)
-                                                .foregroundStyle(.black)
+                                if (circle == 1) {
+                                    VStack {
+                                        HStack {
+                                            VStack(alignment: .leading) {
+                                                Text(Shared.shared.name)
+                                                    .bold()
+                                                    .font(.custom("Arial", size: 16))
+                                                    .lineLimit(1)
+                                                    .foregroundStyle(.black)
+                                                
+                                                Text(Shared.shared.personNbr)
+                                                    .bold()
+                                                    .font(.custom("Arial", size: 16))
+                                                    .padding(.bottom, 11)
+                                                    .foregroundStyle(.black)
+                                                
+                                                Text("GILTIGT TILL: 2024-12-31")
+                                                    .bold()
+                                                    .font(.custom("Arial", size: 12))
+                                                    .lineLimit(1)
+                                                    .foregroundStyle(.black)
+                                            }
+                                            .rotationEffect(.degrees(90))
+                                            .padding(.top, 76)
+                                            .padding(.leading, 5)
                                             
-                                            Text(Shared.shared.personNbr)
-                                                .bold()
-                                                .font(.custom("Arial", size: 16))
-                                                .padding(.bottom, 11)
-                                                .foregroundStyle(.black)
-                                            
-                                            Text("GILTIGT TILL: 2024-12-31")
-                                                .bold()
-                                                .font(.custom("Arial", size: 12))
-                                                .lineLimit(1)
-                                                .foregroundStyle(.black)
+                                            Spacer()
                                         }
-                                        .rotationEffect(.degrees(90))
-                                        .padding(.top, 76)
-                                        .padding(.leading, 5)
+                                        .padding(0)
                                         
                                         Spacer()
                                     }
-                                    .padding(0)
-                                    
-                                    Spacer()
+                                    .frame(width: 400, height: 378*1.6)
                                 }
-                                .frame(width: 400, height: 378*1.6)
                             }
                             
                         }

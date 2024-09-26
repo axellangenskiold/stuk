@@ -10,13 +10,13 @@ import Foundation
 class Shared {
     static let shared = Shared()
     
-    var name: String = "Axel Langenskiöld"
+    var name: String = "Mikael Bamberg"
     
-    var initials: String = "AL"
+    var initials: String = "MB"
     
-    var email: String = "axel@langenskiold.se"
+    var email: String = "mikaelbamberg@gmail.com"
     
-    var personNbr: String = "020117-3713"
+    var personNbr: String = "030605-7977"
     
     private init() {}
 }
