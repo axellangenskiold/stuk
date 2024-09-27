@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NationCard: View {
-    @State var isFake: Bool = true
+    @State var isFake: Bool = false
     @State var rotation: CGFloat = 0.0
     @Binding var circle: Int
     
@@ -27,6 +27,35 @@ struct NationCard: View {
                                 .frame(width: 378, height: 378*1.6)
                                 .clipped()
                                 .clipShape(RoundedCorner(radius: 10))
+                            
+                            
+                            if (circle == 2) {
+                                VStack {
+                                    HStack {
+                                        VStack(alignment: .leading) {
+                                            Text(Shared.shared.name)
+                                                .font(.custom("Arial", size: 16))
+                                                .lineLimit(1)
+                                                .foregroundStyle(.black)
+                                            
+                                            Text(Shared.shared.personNbr)
+                                                .font(.custom("Arial", size: 16))
+                                                .padding(.bottom, 11)
+                                                .foregroundStyle(.black)
+                                        }
+                                        .frame(width: 300)
+                                        .rotationEffect(.degrees(90))
+                                        .padding(.top, 69)
+                                        .padding(.trailing, 103)
+                                        
+                                        Spacer()
+                                    }
+                                    
+                                    Spacer()
+                                }
+                                .frame(width: 400, height: 378*1.6)
+                            }
+                        
                         } else {
                             ZStack {
                                 Image(imageBack())
@@ -59,13 +88,13 @@ struct NationCard: View {
                                                     .lineLimit(1)
                                                     .foregroundStyle(.black)
                                             }
+                                            .frame(width: 300)
                                             .rotationEffect(.degrees(90))
                                             .padding(.top, 76)
-                                            .padding(.leading, 5)
+                                            .padding(.trailing, 230)
                                             
                                             Spacer()
                                         }
-                                        .padding(0)
                                         
                                         Spacer()
                                     }
@@ -113,5 +142,5 @@ struct NationCard: View {
 }
 
 #Preview {
-    NationCard(circle: .constant(1))
+    NationCard(circle: .constant(2))
 }
