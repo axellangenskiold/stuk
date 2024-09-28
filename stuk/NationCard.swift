@@ -29,7 +29,7 @@ struct NationCard: View {
                                 .clipShape(RoundedCorner(radius: 10))
                             
                             
-                            if (circle == 2) {
+                            if (circle == 2 && !Shared.shared.isLangs) {
                                 VStack {
                                     HStack {
                                         VStack(alignment: .leading) {
@@ -119,7 +119,7 @@ struct NationCard: View {
         case 1:
             return "malmocard"
         case 2:
-            return "nationcard"
+            return (Shared.shared.isLangs ? "nationcard_lange" : "nationcard")
         case 3:
             return "studentlundcard"
         default:

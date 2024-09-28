@@ -26,5 +26,7 @@ class Shared {
     
     var personNbr: String = "020315-6975"
     
+    var isLangs: Bool = true
+    
     private init() {}
 }
