@@ -11,6 +11,7 @@ struct NationCard: View {
     @State var isFake: Bool = false
     @State var rotation: CGFloat = 0.0
     @Binding var circle: Int
+    @State var isLangs: Bool
     
     
     var body: some View {
@@ -29,7 +30,7 @@ struct NationCard: View {
                                 .clipShape(RoundedCorner(radius: 10))
                             
                             
-                            if (circle == 2 && !Shared.shared.isLangs) {
+                            if (circle == 2 && !isLangs) {
                                 VStack {
                                     HStack {
                                         VStack(alignment: .leading) {
@@ -119,7 +120,7 @@ struct NationCard: View {
         case 1:
             return "malmocard"
         case 2:
-            return (Shared.shared.isLangs ? "nationcard_lange" : "nationcard")
+            return (isLangs ? "nationcard_lange" : "nationcard")
         case 3:
             return "studentlundcard"
         default:
@@ -142,5 +143,5 @@ struct NationCard: View {
 }
 
 #Preview {
-    NationCard(circle: .constant(2))
+    NationCard(circle: .constant(2), isLangs: true)
 }

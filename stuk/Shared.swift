@@ -17,16 +17,31 @@ class Shared {
 //    var email: String = "moje.sahlin@gmail.com"
 //    
 //    var personNbr: String = "020526-8352"
+//
+//    var isLangs: Bool = false
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    var name: String = "Adam Ladenvall"
+//    var name: String = "Adam Ladenvall"
+//    
+//    var initials: String = "AL"
+//    
+//    var email: String = "adam.ladenvall@hotmail.com"
+//    
+//    var personNbr: String = "020315-6975"
+//    
+//    var isLangs: Bool = false
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+
+    var name: String = "Axel Langenskiöld"
     
     var initials: String = "AL"
     
-    var email: String = "adam.ladenvall@hotmail.com"
+    var email: String = "axel@langenskiold.se"
     
-    var personNbr: String = "020315-6975"
+    var personNbr: String = "020117-3713"
     
     var isLangs: Bool = true
+    
     
     private init() {}
 }
