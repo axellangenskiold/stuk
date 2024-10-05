@@ -10,6 +10,9 @@ import Foundation
 class Shared {
     static let shared = Shared()
     
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///MAURITZ SAHLIN MAURITZ SAHLIN MAURITZ SAHLIN
+    
 //    var name: String = "Mauritz Sahlin"
 //    
 //    var initials: String = "MS"
@@ -20,6 +23,7 @@ class Shared {
 //
 //    var isLangs: Bool = false
     /////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///ADAM LADENVALL ADAM LADENVALL ADAM LADENVALL
     
 //    var name: String = "Adam Ladenvall"
 //    
@@ -31,6 +35,7 @@ class Shared {
 //    
 //    var isLangs: Bool = false
     //////////////////////////////////////////////////////////////////////////////////////////////////
+    ///AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD
 
     var name: String = "Axel Langenskiöld"
     
