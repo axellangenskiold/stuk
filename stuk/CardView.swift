@@ -25,6 +25,28 @@ struct CardView: View {
                 .onTapGesture {
                     flipCard()
                 }
+                .gesture(
+                    DragGesture()
+                        .onEnded { value in
+                            if value.translation.width > 50 {
+                                // Swipe right
+                                if circle == 3 {
+                                    circle = 2
+                                }
+                                else if circle == 2 {
+                                    circle = 1
+                                }
+                            } else if value.translation.width < -50 {
+                                // Swipe left
+                                if circle == 1 {
+                                    circle = 2
+                                }
+                                else if circle == 2 {
+                                    circle = 3
+                                }
+                            }
+                        }
+                )
                 .padding(.bottom, 100)
             }
             
