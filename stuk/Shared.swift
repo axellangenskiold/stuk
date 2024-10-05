@@ -36,16 +36,28 @@ class Shared {
 //    var isLangs: Bool = false
     //////////////////////////////////////////////////////////////////////////////////////////////////
     ///AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD
-
-    var name: String = "Axel Langenskiöld"
+//
+//    var name: String = "Axel Langenskiöld"
+//    
+//    var initials: String = "AL"
+//    
+//    var email: String = "axel@langenskiold.se"
+//    
+//    var personNbr: String = "020117-3713"
+//    
+//    var isLangs: Bool = true
     
-    var initials: String = "AL"
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///MIKAEL BAMBERG
+    var name: String = "Mikael Bamberg"
     
-    var email: String = "axel@langenskiold.se"
+    var initials: String = "MB"
     
-    var personNbr: String = "020117-3713"
+    var email: String = "mikaelbamberg@gmail.com"
     
-    var isLangs: Bool = true
+    var personNbr: String = "030605-7977"
+    
+    var isLangs: Bool = false
     
     
     private init() {}
