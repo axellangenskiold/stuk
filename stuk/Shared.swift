@@ -49,15 +49,39 @@ class Shared {
     
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///MIKAEL BAMBERG
-    var name: String = "Mikael Bamberg"
+//    var name: String = "Mikael Bamberg"
+//    
+//    var initials: String = "MB"
+//    
+//    var email: String = "mikaelbamberg@gmail.com"
+//    
+//    var personNbr: String = "030605-7977"
+//    
+//    var isLangs: Bool = false
     
-    var initials: String = "MB"
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///OSCAR VON SCHMALENSEE
+    var name: String = "Oskar von Schmalensee"
     
-    var email: String = "mikaelbamberg@gmail.com"
+    var initials: String = "OS"
     
-    var personNbr: String = "030605-7977"
+    var email: String = "oscars.vonschmalensee@gmail.com"
+    
+    var personNbr: String = "0206727-7717"
     
     var isLangs: Bool = false
+    
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///OSKAR BLOMDAHL OSKAR BLOMDAHL OSKAR BLOMDAHL
+//    var name: String = "Oskar Blomdahl"
+//    
+//    var initials: String = "OS"
+//    
+//    var email: String = "oskarblomdahl.gmail.com"
+//    
+//    var personNbr: String = "030605-7977"
+//    
+//    var isLangs: Bool = false
     
     
     private init() {}
