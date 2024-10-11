@@ -44,17 +44,15 @@ struct NationCard: View {
                                                 .padding(.bottom, 11)
                                                 .foregroundStyle(.black)
                                         }
-                                        .frame(width: 300)
                                         .rotationEffect(.degrees(90))
-                                        .padding(.top, 69)
-                                        .padding(.trailing, 103)
                                         
                                         Spacer()
                                     }
+                                    .padding(.top, 77)
+                                    .padding(.leading, 60)
                                     
                                     Spacer()
                                 }
-                                .frame(width: 400, height: 378*1.6)
                             }
                         
                         } else {
@@ -143,5 +141,5 @@ struct NationCard: View {
 }
 
 #Preview {
-    NationCard(circle: .constant(2), isLangs: true)
+    NationCard(circle: .constant(2), isLangs: false)
 }
