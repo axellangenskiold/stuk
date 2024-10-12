@@ -10,7 +10,20 @@ import Foundation
 class Shared {
     static let shared = Shared()
     
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+    ///AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD
+//
+//    var name: String = "Axel Langenskiöld"
+//
+//    var initials: String = "AL"
+//
+//    var email: String = "axel@langenskiold.se"
+//
+//    var personNbr: String = "020117-3713"
+//
+//    var isLangs: Bool = true
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///MAURITZ SAHLIN MAURITZ SAHLIN MAURITZ SAHLIN
     
 //    var name: String = "Mauritz Sahlin"
@@ -34,19 +47,6 @@ class Shared {
 //    var personNbr: String = "020315-6975"
 //    
 //    var isLangs: Bool = false
-    //////////////////////////////////////////////////////////////////////////////////////////////////
-    ///AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD
-//
-//    var name: String = "Axel Langenskiöld"
-//    
-//    var initials: String = "AL"
-//    
-//    var email: String = "axel@langenskiold.se"
-//    
-//    var personNbr: String = "020117-3713"
-//    
-//    var isLangs: Bool = true
-    
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///MIKAEL BAMBERG
 //    var name: String = "Mikael Bamberg"
@@ -58,19 +58,17 @@ class Shared {
 //    var personNbr: String = "030605-7977"
 //    
 //    var isLangs: Bool = false
-    
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///OSCAR VON SCHMALENSEE
-    var name: String = "Oskar von Schmalensee"
-    
-    var initials: String = "OS"
-    
-    var email: String = "oscars.vonschmalensee@gmail.com"
-    
-    var personNbr: String = "0206727-7717"
-    
-    var isLangs: Bool = false
-    
+//    var name: String = "Oskar von Schmalensee"
+//    
+//    var initials: String = "OS"
+//    
+//    var email: String = "oscars.vonschmalensee@gmail.com"
+//    
+//    var personNbr: String = "0206727-7717"
+//    
+//    var isLangs: Bool = false
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///OSKAR BLOMDAHL OSKAR BLOMDAHL OSKAR BLOMDAHL
 //    var name: String = "Oskar Blomdahl"
@@ -82,6 +80,17 @@ class Shared {
 //    var personNbr: String = "030605-7977"
 //    
 //    var isLangs: Bool = false
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///EMIL SKÖLDBERG EMIL SKÖLDBERG EMIL SKÖLDBERG
+    var name: String = "Emil Sköldberg"
+
+    var initials: String = "ES"
+
+    var email: String = "emilskolberg@gmail.com"
+
+    var personNbr: String = "030202-0011"
+
+    var isLangs: Bool = false
     
     
     private init() {}
