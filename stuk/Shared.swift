@@ -14,15 +14,15 @@ class Shared {
     //////////////////////////////////////////////////////////////////////////////////////////////////
     ///AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD
 //
-//    var name: String = "Axel Langenskiöld"
-//
-//    var initials: String = "AL"
-//
-//    var email: String = "axel@langenskiold.se"
-//
-//    var personNbr: String = "020117-3713"
-//
-//    var isLangs: Bool = true
+    var name: String = "Axel Langenskiöld"
+
+    var initials: String = "AL"
+
+    var email: String = "axel@langenskiold.se"
+
+    var personNbr: String = "020117-3713"
+
+    var isLangs: Bool = true
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///MAURITZ SAHLIN MAURITZ SAHLIN MAURITZ SAHLIN
     
@@ -82,15 +82,15 @@ class Shared {
 //    var isLangs: Bool = false
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///EMIL SKÖLDBERG EMIL SKÖLDBERG EMIL SKÖLDBERG
-    var name: String = "Emil Sköldberg"
-
-    var initials: String = "ES"
-
-    var email: String = "emilskolberg@gmail.com"
-
-    var personNbr: String = "030202-0011"
-
-    var isLangs: Bool = false
+//    var name: String = "Emil Sköldberg"
+//
+//    var initials: String = "ES"
+//
+//    var email: String = "emilskolberg@gmail.com"
+//
+//    var personNbr: String = "030202-0011"
+//
+//    var isLangs: Bool = false
     
     
     private init() {}
