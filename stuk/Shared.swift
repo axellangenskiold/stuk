@@ -91,6 +91,7 @@ class Shared {
 //    var personNbr: String = "030202-0011"
 //
 //    var isLangs: Bool = false
+//
     
     
     private init() {}
