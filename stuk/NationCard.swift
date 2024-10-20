@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NationCard: View {
-    @State var isFake: Bool = false
+    @State var isFake: Bool = true
     @State var rotation: CGFloat = 0.0
     @Binding var circle: Int
     @State var isLangs: Bool
@@ -30,30 +30,7 @@ struct NationCard: View {
                                 .clipShape(RoundedCorner(radius: 10))
                             
                             
-                            if (circle == 2 && !isLangs) {
-                                VStack {
-                                    HStack {
-                                        VStack(alignment: .leading) {
-                                            Text(Shared.shared.name)
-                                                .font(.custom("Arial", size: 16))
-                                                .lineLimit(1)
-                                                .foregroundStyle(.black)
-                                            
-                                            Text(Shared.shared.personNbr)
-                                                .font(.custom("Arial", size: 16))
-                                                .padding(.bottom, 11)
-                                                .foregroundStyle(.black)
-                                        }
-                                        .rotationEffect(.degrees(90))
-                                        
-                                        Spacer()
-                                    }
-                                    .padding(.top, 77)
-                                    .padding(.leading, 60)
-                                    
-                                    Spacer()
-                                }
-                            }
+
                         
                         } else {
                             ZStack {
@@ -99,6 +76,39 @@ struct NationCard: View {
                                     }
                                     .frame(width: 400, height: 378*1.6)
                                 }
+                                if (circle == 2 && !isLangs) {
+                                    VStack {
+                                        HStack {
+                                            VStack(alignment: .leading) {
+                                                Text(Shared.shared.name)
+                                                    .font(.custom("Arial", size: 16))
+                                                    .lineLimit(1)
+                                                    .foregroundStyle(.black)
+                                                
+                                                Text(Shared.shared.personNbr)
+                                                    .font(.custom("Arial", size: 16))
+                                                    .padding(.bottom, 11)
+                                                    .foregroundStyle(.black)
+                                                
+                                                Text("GILTIGT TILL: 2024-12-31")
+                                                    .bold()
+                                                    .font(.custom("Arial", size: 12))
+                                                    .lineLimit(1)
+                                                    .foregroundStyle(.black)
+                                                    .opacity(0)
+                                            }
+                                            .frame(width: 300)
+                                            .rotationEffect(.degrees(90))
+                                            .padding(.top, 76)
+                                            .padding(.trailing, 119)
+
+                                            Spacer()
+                                        }
+                                        
+                                        Spacer()
+                                    }
+                                    .frame(width: 400, height: 378*1.6)
+                                }
                             }
                             
                         }
@@ -118,9 +128,9 @@ struct NationCard: View {
         case 1:
             return "malmocard"
         case 2:
-            return (isLangs ? "nationcard_lange" : "nationcard")
+            return "nationcard_back"
         case 3:
-            return "studentlundcard"
+            return "studentlundcard_back"
         default:
             return "defaultcard" // Add a default case to handle other values
         }
@@ -131,9 +141,9 @@ struct NationCard: View {
         case 1:
             return "malmocard_back"
         case 2:
-            return "nationcard_back"
+            return (isLangs ? "nationcard_lange" : "nationcard")
         case 3:
-            return "studentlundcard_back"
+            return "studentlundcard"
         default:
             return "defaultcard_back" // Add a default case to handle other values
         }
@@ -141,5 +151,5 @@ struct NationCard: View {
 }
 
 #Preview {
-    NationCard(circle: .constant(2), isLangs: false)
+    NationCard(isFake: true, circle: .constant(2), isLangs: false)
 }

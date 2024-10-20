@@ -28,7 +28,7 @@ struct CardView: View {
                 .gesture(
                     DragGesture()
                         .onEnded { value in
-                            if value.translation.width > 50 {
+                            if value.translation.width > 40 {
                                 // Swipe right
                                 if circle == 3 {
                                     circle = 2
@@ -36,7 +36,7 @@ struct CardView: View {
                                 else if circle == 2 {
                                     circle = 1
                                 }
-                            } else if value.translation.width < -50 {
+                            } else if value.translation.width < -40 {
                                 // Swipe left
                                 if circle == 1 {
                                     circle = 2

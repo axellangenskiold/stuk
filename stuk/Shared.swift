@@ -10,20 +10,32 @@ import Foundation
 class Shared {
     static let shared = Shared()
     
-    
+    //21 chars
     //////////////////////////////////////////////////////////////////////////////////////////////////
     ///AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD
 //
-    var name: String = "Axel Langenskiöld"
-
-    var initials: String = "AL"
-
-    var email: String = "axel@langenskiold.se"
-
-    var personNbr: String = "020117-3713"
-
-    var isLangs: Bool = true
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+//    var name: String = "Axel Langenskiöld"
+//
+//    var initials: String = "AL"
+//
+//    var email: String = "axel@langenskiold.se"
+//
+//    var personNbr: String = "020117-3713"
+//
+//    var isLangs: Bool = true
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+    ///VICTOR EKSTORM VICTOR EKSTORM VICTOR EKSTORM
+//
+//    var name: String = "Victor Ekstorm"
+//
+//    var initials: String = "VE"
+//
+//    var email: String = "victor.ekstorm@gamil.com"
+//
+//    var personNbr: String = "020322-6691"
+//
+//    var isLangs: Bool = false
+//    ////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///MAURITZ SAHLIN MAURITZ SAHLIN MAURITZ SAHLIN
     
 //    var name: String = "Mauritz Sahlin"
@@ -49,15 +61,15 @@ class Shared {
 //    var isLangs: Bool = false
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///MIKAEL BAMBERG
-//    var name: String = "Mikael Bamberg"
-//    
-//    var initials: String = "MB"
-//    
-//    var email: String = "mikaelbamberg@gmail.com"
-//    
-//    var personNbr: String = "030605-7977"
-//    
-//    var isLangs: Bool = false
+    var name: String = "Mikael Bamberg"
+    
+    var initials: String = "MB"
+    
+    var email: String = "mikaelbamberg@gmail.com"
+    
+    var personNbr: String = "030605-7977"
+    
+    var isLangs: Bool = false
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///OSCAR VON SCHMALENSEE
 //    var name: String = "Oskar von Schmalensee"
