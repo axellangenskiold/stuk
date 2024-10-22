@@ -14,27 +14,27 @@ class Shared {
     //////////////////////////////////////////////////////////////////////////////////////////////////
     ///AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD
 
-    var name: String = "Axel Langenskiöld"
-
-    var initials: String = "AL"
-
-    var email: String = "axel@langenskiold.se"
-
-    var personNbr: String = "020117-3713"
-
-    var isLangs: Bool = true
+//    var name: String = "Axel Langenskiöld"
+//
+//    var initials: String = "AL"
+//
+//    var email: String = "axel@langenskiold.se"
+//
+//    var personNbr: String = "020117-3713"
+//
+//    var isLangs: Bool = true
     //////////////////////////////////////////////////////////////////////////////////////////////////
     ///VICTOR EKSTORM VICTOR EKSTORM VICTOR EKSTORM
-//
-//    var name: String = "Victor Ekstorm"
-//
-//    var initials: String = "VE"
-//
-//    var email: String = "victor.ekstorm@gamil.com"
-//
-//    var personNbr: String = "020322-6691"
-//
-//    var isLangs: Bool = false
+
+    var name: String = "Victor Ekstorm"
+
+    var initials: String = "VE"
+
+    var email: String = "victor.ekstorm@gamil.com"
+
+    var personNbr: String = "020322-6691"
+
+    var isLangs: Bool = false
 //    ////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///MAURITZ SAHLIN MAURITZ SAHLIN MAURITZ SAHLIN
     
