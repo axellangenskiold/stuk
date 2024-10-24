@@ -99,7 +99,7 @@ struct NationCard: View {
                                             }
                                             .frame(width: 300)
                                             .rotationEffect(.degrees(90))
-                                            .padding(.top, 76)
+                                            .padding(.top, Shared.shared.secondPadding)
                                             .padding(.trailing, 119)
 
                                             Spacer()

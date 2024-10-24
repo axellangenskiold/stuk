@@ -2,8 +2,6 @@ import SwiftUI
 import SwiftData
 
 struct HomeView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
     @State var path = NavigationPath()
     
     @State var isHome: Bool = true
@@ -404,25 +402,9 @@ struct HomeView: View {
             }
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }
 }
 
 #Preview {
     //path: .constant(NavigationPath())
     HomeView()
-        .modelContainer(for: Item.self, inMemory: true)
 }

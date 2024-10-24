@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1A201C222C85F45F00A07848 /* stukApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C212C85F45F00A07848 /* stukApp.swift */; };
 		1A201C242C85F45F00A07848 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C232C85F45F00A07848 /* HomeView.swift */; };
-		1A201C262C85F45F00A07848 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C252C85F45F00A07848 /* Item.swift */; };
 		1A201C282C85F46100A07848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A201C272C85F46100A07848 /* Assets.xcassets */; };
 		1A201C2B2C85F46100A07848 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A201C2A2C85F46100A07848 /* Preview Assets.xcassets */; };
 		1A201C352C85F46100A07848 /* stukTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A201C342C85F46100A07848 /* stukTests.swift */; };
@@ -51,7 +50,6 @@
 		1A201C1E2C85F45F00A07848 /* stuk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stuk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A201C212C85F45F00A07848 /* stukApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stukApp.swift; sourceTree = "<group>"; };
 		1A201C232C85F45F00A07848 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		1A201C252C85F45F00A07848 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		1A201C272C85F46100A07848 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A201C2A2C85F46100A07848 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A201C302C85F46100A07848 /* stukTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stukTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +126,6 @@
 				1ACA76E32C933726001EBBB1 /* CardView.swift */,
 				1ACA76EB2C9338D9001EBBB1 /* TicketView.swift */,
 				1ACA76DF2C9336C3001EBBB1 /* ProfileView.swift */,
-				1A201C252C85F45F00A07848 /* Item.swift */,
 				1A201C272C85F46100A07848 /* Assets.xcassets */,
 				1ACA76DB2C9230BB001EBBB1 /* AdCard.swift */,
 				1ACA76EF2C9351FB001EBBB1 /* CalenderCard.swift */,
@@ -304,7 +301,6 @@
 				1ACA76E42C933726001EBBB1 /* CardView.swift in Sources */,
 				1ACA76E02C9336C3001EBBB1 /* ProfileView.swift in Sources */,
 				1A201C242C85F45F00A07848 /* HomeView.swift in Sources */,
-				1A201C262C85F45F00A07848 /* Item.swift in Sources */,
 				1ACA76DC2C9230BB001EBBB1 /* AdCard.swift in Sources */,
 				1ACA76F42C9374CA001EBBB1 /* MovingBackground.swift in Sources */,
 				1ACA76E22C933704001EBBB1 /* CalenderView.swift in Sources */,
@@ -485,7 +481,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,7 +510,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
