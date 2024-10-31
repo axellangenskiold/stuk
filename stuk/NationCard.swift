@@ -109,6 +109,40 @@ struct NationCard: View {
                                     }
                                     .frame(width: 400, height: 378*1.6)
                                 }
+                                
+                                if (circle == 3 && !isLangs) {
+                                    VStack {
+                                        HStack {
+                                            VStack(alignment: .leading) {
+                                                Text(Shared.shared.name)
+                                                    .font(.custom("Arial", size: 16))
+                                                    .lineLimit(1)
+                                                    .foregroundStyle(.black)
+                                                
+                                                Text(Shared.shared.personNbr)
+                                                    .font(.custom("Arial", size: 16))
+                                                    .padding(.bottom, 11)
+                                                    .foregroundStyle(.black)
+                                                
+                                                Text("GILTIGT TILL: 2024-12-31")
+                                                    .bold()
+                                                    .font(.custom("Arial", size: 12))
+                                                    .lineLimit(1)
+                                                    .foregroundStyle(.black)
+                                                    .opacity(0)
+                                            }
+                                            .frame(width: 300)
+                                            .rotationEffect(.degrees(90))
+                                            .padding(.top, Shared.shared.secondPadding)
+                                            .padding(.trailing, 119)
+
+                                            Spacer()
+                                        }
+                                        
+                                        Spacer()
+                                    }
+                                    .frame(width: 400, height: 378*1.6)
+                                }
                             }
                             
                         }

@@ -13,18 +13,18 @@ class Shared {
     //21 chars
     //////////////////////////////////////////////////////////////////////////////////////////////////
     ///AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD
-
-    var name: String = "Axel Langenskiöld"
-
-    var initials: String = "AL"
-
-    var email: String = "axel@langenskiold.se"
-
-    var personNbr: String = "020117-3713"
-
-    var isLangs: Bool = true
-    
-    var secondPadding: CGFloat = 0
+//
+//    var name: String = "Axel Langenskiöld"
+//
+//    var initials: String = "AL"
+//
+//    var email: String = "axel@langenskiold.se"
+//
+//    var personNbr: String = "020117-3713"
+//
+//    var isLangs: Bool = true
+//    
+//    var secondPadding: CGFloat = 0
     //////////////////////////////////////////////////////////////////////////////////////////////////
     ///VICTOR EKSTORM VICTOR EKSTORM VICTOR EKSTORM
 
@@ -83,17 +83,17 @@ class Shared {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///OSCAR VON SCHMALENSEE
-//    var name: String = "Oskar von Schmalensee"
-//    
-//    var initials: String = "OS"
-//    
-//    var email: String = "oscars.vonschmalensee@gmail.com"
-//    
-//    var personNbr: String = "0206727-7717"
-//    
-//    var isLangs: Bool = false
-//
-//    var secondPadding: CGFloat = 94
+    var name: String = "Oskar von Schmalensee"
+    
+    var initials: String = "OS"
+    
+    var email: String = "oscars.vonschmalensee@gmail.com"
+    
+    var personNbr: String = "0206727-7717"
+    
+    var isLangs: Bool = false
+
+    var secondPadding: CGFloat = 94
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///OSKAR BLOMDAHL OSKAR BLOMDAHL OSKAR BLOMDAHL
 //    var name: String = "Oskar Blomdahl"
@@ -102,11 +102,11 @@ class Shared {
 //    
 //    var email: String = "oskarblomdahl.gmail.com"
 //    
-//    var personNbr: String = "030605-7977"
+//    var personNbr: String = "020401-5994"
 //    
 //    var isLangs: Bool = false
 //    
-//    var secondPadding: CGFloat = 78
+//    var secondPadding: CGFloat = 74
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///EMIL SKÖLDBERG EMIL SKÖLDBERG EMIL SKÖLDBERG
 //    var name: String = "Emil Sköldberg"
