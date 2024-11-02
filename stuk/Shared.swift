@@ -126,11 +126,12 @@ class Shared {
 
     var email: String = "hampus.stalhandske@gmail.com"
 
-    var personNbr: String = "YYMMDD-XXXX"    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< RENENS PERSONNUMMER HÄR
+    var personNbr: String = "020302-6653"
 
     var isLangs: Bool = false
 
-    var secondPadding: CGFloat = 82
+    var secondPadding: CGFloat = 78
+    
     
     private init() {}
 }
