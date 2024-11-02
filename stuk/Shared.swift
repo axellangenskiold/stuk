@@ -83,17 +83,17 @@ class Shared {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///OSCAR VON SCHMALENSEE
-    var name: String = "Oskar von Schmalensee"
-    
-    var initials: String = "OS"
-    
-    var email: String = "oscars.vonschmalensee@gmail.com"
-    
-    var personNbr: String = "0206727-7717"
-    
-    var isLangs: Bool = false
-
-    var secondPadding: CGFloat = 94
+//    var name: String = "Oskar von Schmalensee"
+//    
+//    var initials: String = "OS"
+//    
+//    var email: String = "oscars.vonschmalensee@gmail.com"
+//    
+//    var personNbr: String = "0206727-7717"
+//    
+//    var isLangs: Bool = false
+//
+//    var secondPadding: CGFloat = 94
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///OSKAR BLOMDAHL OSKAR BLOMDAHL OSKAR BLOMDAHL
 //    var name: String = "Oskar Blomdahl"
@@ -118,8 +118,19 @@ class Shared {
 //    var personNbr: String = "030202-0011"
 //
 //    var isLangs: Bool = false
-//
-    
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///HAMPUS STÅLHANDSKE HAMPUS STÅLHANDSKE HAMPUS STÅLHANDSKE
+    var name: String = "Hampus Stålhandske"
+
+    var initials: String = "HS"
+
+    var email: String = "hampus.stalhandske@gmail.com"
+
+    var personNbr: String = "YYMMDD-XXXX"    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< RENENS PERSONNUMMER HÄR
+
+    var isLangs: Bool = false
+
+    var secondPadding: CGFloat = 82
     
     private init() {}
 }
