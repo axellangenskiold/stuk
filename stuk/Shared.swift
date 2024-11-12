@@ -69,17 +69,17 @@ class Shared {
 //    var secondPadding: CGFloat = 78
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///MIKAEL BAMBERG
-//    var name: String = "Mikael Bamberg"
-//    
-//    var initials: String = "MB"
-//    
-//    var email: String = "mikaelbamberg@gmail.com"
-//    
-//    var personNbr: String = "030605-7977"
-//    
-//    var isLangs: Bool = false
-//
-//    var secondPadding: CGFloat = 78
+    var name: String = "Mikael Bamberg"
+    
+    var initials: String = "MB"
+    
+    var email: String = "mikaelbamberg@gmail.com"
+    
+    var personNbr: String = "030605-7977"
+    
+    var isLangs: Bool = false
+
+    var secondPadding: CGFloat = 75
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///OSCAR VON SCHMALENSEE
@@ -120,17 +120,17 @@ class Shared {
 //    var isLangs: Bool = false
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///HAMPUS STÅLHANDSKE HAMPUS STÅLHANDSKE HAMPUS STÅLHANDSKE
-    var name: String = "Hampus Stålhandske"
-
-    var initials: String = "HS"
-
-    var email: String = "hampus.stalhandske@gmail.com"
-
-    var personNbr: String = "020302-6653"
-
-    var isLangs: Bool = false
-
-    var secondPadding: CGFloat = 78
+//    var name: String = "Hampus Stålhandske"
+//
+//    var initials: String = "HS"
+//
+//    var email: String = "hampus.stalhandske@gmail.com"
+//
+//    var personNbr: String = "020302-6653"
+//
+//    var isLangs: Bool = false
+//
+//    var secondPadding: CGFloat = 78
     
     
     private init() {}

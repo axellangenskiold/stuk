@@ -111,6 +111,11 @@ struct NationCard: View {
                                 }
                                 
                                 if (circle == 3 && !isLangs) {
+                                    Rectangle()
+                                        .foregroundColor(.white)
+                                        .frame(width: 50, height : 200)
+                                        .position(CGPoint(x: 150, y: 100))
+                                        .shadow(radius: 0)
                                     VStack {
                                         HStack {
                                             VStack(alignment: .leading) {
@@ -134,7 +139,7 @@ struct NationCard: View {
                                             .frame(width: 300)
                                             .rotationEffect(.degrees(90))
                                             .padding(.top, Shared.shared.secondPadding)
-                                            .padding(.trailing, 119)
+                                            .padding(.trailing, 140)
 
                                             Spacer()
                                         }
