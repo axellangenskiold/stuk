@@ -12,6 +12,9 @@ struct CardView: View {
     
     @State var circle: Int = 1
     
+    @State private var dragOffset: CGFloat = 0.0 // Tracks the drag gesture
+    @State private var isDragging = false
+    
     var body: some View {
         ZStack {
             MovingBackground()
@@ -26,26 +29,17 @@ struct CardView: View {
                     flipCard()
                 }
                 .gesture(
-                    DragGesture()
-                        .onEnded { value in
-                            if value.translation.width > 40 {
-                                // Swipe right
-                                if circle == 3 {
-                                    circle = 2
-                                }
-                                else if circle == 2 {
-                                    circle = 1
-                                }
-                            } else if value.translation.width < -40 {
-                                // Swipe left
-                                if circle == 1 {
-                                    circle = 2
-                                }
-                                else if circle == 2 {
-                                    circle = 3
-                                }
+                    withAnimation(.linear) {
+                        DragGesture()
+                            .onChanged { value in
+                                isDragging = true
+                                dragOffset = value.translation.width
                             }
-                        }
+                            .onEnded { value in
+                                isDragging = false
+                                handleDragEnd(value: value)
+                            }
+                    }
                 )
                 .padding(.bottom, 100)
             }
@@ -207,6 +201,36 @@ struct CardView: View {
                 isLoadingCard = false
             }
         }
+    }
+    
+    private func offset(for cardIndex: Int) -> CGFloat {
+        let positionDifference = CGFloat(cardIndex - circle)
+        return dragOffset + positionDifference * UIScreen.main.bounds.width
+    }
+    
+    // Calculate the opacity for each card
+    private func opacity(for cardIndex: Int) -> Double {
+        abs(cardIndex - circle) > 1 ? 0 : 1
+    }
+    
+    // Ensure the active card is on top
+    private func zIndex(for cardIndex: Int) -> Double {
+        cardIndex == circle ? 1 : 0
+    }
+    
+    // Handle when the drag gesture ends
+    private func handleDragEnd(value: DragGesture.Value) {
+        let threshold: CGFloat = 100.0
+        if value.translation.width > threshold && circle > 1 {
+            // Swiped right
+            circle -= 1
+        } else if value.translation.width < -threshold && circle < 3 {
+            // Swiped left
+            circle += 1
+        }
+        
+        // Snap back to the current card
+        dragOffset = 0
     }
 }
 

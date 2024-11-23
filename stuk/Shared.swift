@@ -13,18 +13,18 @@ class Shared {
     //21 chars
     //////////////////////////////////////////////////////////////////////////////////////////////////
     ///AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD
-//
-//    var name: String = "Axel Langenskiöld"
-//
-//    var initials: String = "AL"
-//
-//    var email: String = "axel@langenskiold.se"
-//
-//    var personNbr: String = "020117-3713"
-//
-//    var isLangs: Bool = true
-//    
-//    var secondPadding: CGFloat = 0
+
+    var name: String = "Axel Langenskiöld"
+
+    var initials: String = "AL"
+
+    var email: String = "axel@langenskiold.se"
+
+    var personNbr: String = "020117-3713"
+
+    var isLangs: Bool = true
+    
+    var secondPadding: CGFloat = 0
     //////////////////////////////////////////////////////////////////////////////////////////////////
     ///VICTOR EKSTORM VICTOR EKSTORM VICTOR EKSTORM
 
@@ -69,17 +69,17 @@ class Shared {
 //    var secondPadding: CGFloat = 78
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///MIKAEL BAMBERG
-    var name: String = "Mikael Bamberg"
-    
-    var initials: String = "MB"
-    
-    var email: String = "mikaelbamberg@gmail.com"
-    
-    var personNbr: String = "030605-7977"
-    
-    var isLangs: Bool = false
-
-    var secondPadding: CGFloat = 75
+//    var name: String = "Mikael Bamberg"
+//    
+//    var initials: String = "MB"
+//    
+//    var email: String = "mikaelbamberg@gmail.com"
+//    
+//    var personNbr: String = "030605-7977"
+//    
+//    var isLangs: Bool = false
+//
+//    var secondPadding: CGFloat = 75
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///OSCAR VON SCHMALENSEE
