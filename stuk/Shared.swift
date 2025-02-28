@@ -22,12 +22,12 @@ class Shared {
 
     var personNbr: String = "020117-3713"
 
-    var isLangs: Bool = true
+    var isLangs: Bool = false
     
     var firstPadding: CGFloat = 73
     
     var secondPadding: CGFloat = 0
-    //////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     ///VICTOR EKSTORM VICTOR EKSTORM VICTOR EKSTORM
 
 //    var name: String = "Victor Ekstorm"
@@ -124,6 +124,10 @@ class Shared {
 //    var personNbr: String = "030202-0011"
 //
 //    var isLangs: Bool = false
+//    
+//    var firstPadding: CGFloat = 74
+//
+//    var secondPadding: CGFloat = 82
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     ///HAMPUS STÅLHANDSKE HAMPUS STÅLHANDSKE HAMPUS STÅLHANDSKE
 //    var name: String = "Hampus Stålhandske"
@@ -174,6 +178,21 @@ class Shared {
 //    var personNbr: String = "021010-2653"
 //
 //    var isLangs: Bool = false
+//
+//    var secondPadding: CGFloat = 77
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///MICHAEL ROSENQVIST MICHAEL ROSENQVIST MICHAEL ROSENQVIST
+//    var name: String = "Michael Rosenqvist"
+//
+//    var initials: String = "MR"
+//
+//    var email: String = "michael.rosenqvist@gmail.com"
+//
+//    var personNbr: String = "020611-1031"
+//
+//    var isLangs: Bool = false
+//    
+//    var firstPadding: CGFloat = 80
 //
 //    var secondPadding: CGFloat = 77
 

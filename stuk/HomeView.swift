@@ -398,6 +398,7 @@ struct HomeView: View {
                 case .cardView : CardView(path: $path)
                 case .profileView : ProfileView(path: $path)
                 case .homeView : HomeView()
+                case .setNameView : SetNameView()
                 }
             }
         }

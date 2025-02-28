@@ -13,4 +13,5 @@ enum Destination: Hashable, Equatable {
     case cardView
     case ticketView
     case profileView
+    case setNameView
 }

@@ -107,11 +107,15 @@ struct ProfileView: View {
             
             VStack {
                 HStack {
-                    Image(systemName: "gear")
-                        .font(.title2)
-                        .bold()
-                        .padding(.leading, 30)
-                        .foregroundStyle(.black)
+                    Button(action: {
+                        path.append(Destination.setNameView)
+                    }, label: {
+                        Image(systemName: "gear")
+                            .font(.title2)
+                            .bold()
+                            .padding(.leading, 30)
+                            .foregroundStyle(.black)
+                    })
                     
                     Spacer()
                     
