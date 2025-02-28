@@ -17,17 +17,16 @@ struct NationCard: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
-                .foregroundStyle(.white)
+                .foregroundStyle(.white.opacity(0))
                 .frame(width: 378, height: 378*1.6)
                 .overlay() {
                     ZStack {
                         if !isFake {
                             Image(image())
                                 .resizable()
-                                .scaledToFill()
-                                .frame(width: 378, height: 378*1.6)
                                 .clipped()
-                                .clipShape(RoundedCorner(radius: 10))
+                                .frame(width: 376, height: 376*1.6)
+                                .shadow(radius: 0)
                             
                             
 
@@ -36,10 +35,8 @@ struct NationCard: View {
                             ZStack {
                                 Image(imageBack())
                                     .resizable()
-                                    .scaledToFill()
                                     .frame(width: 378, height: 378*1.6)
-                                    .clipped()
-                                    .clipShape(RoundedCorner(radius: 10))
+                                    .shadow(radius: 0)
                                 
                                 
                                 if (circle == 1) {
@@ -47,27 +44,25 @@ struct NationCard: View {
                                         HStack {
                                             VStack(alignment: .leading) {
                                                 Text(Shared.shared.name)
-                                                    .bold()
-                                                    .font(.custom("Arial", size: 16))
+                                                    .font(.custom("Arial", size: 14))
                                                     .lineLimit(1)
                                                     .foregroundStyle(.black)
+                                                    .padding(.bottom, 1)
                                                 
                                                 Text(Shared.shared.personNbr)
-                                                    .bold()
-                                                    .font(.custom("Arial", size: 16))
-                                                    .padding(.bottom, 11)
+                                                    .font(.custom("Arial", size: 13))
+                                                    .padding(.bottom, 13)
                                                     .foregroundStyle(.black)
                                                 
-                                                Text("GILTIGT TILL: 2024-12-31")
-                                                    .bold()
-                                                    .font(.custom("Arial", size: 12))
+                                                Text("GILTIGT TILL: 2025-08-31")
+                                                    .font(.custom("Arial", size: 11))
                                                     .lineLimit(1)
                                                     .foregroundStyle(.black)
                                             }
                                             .frame(width: 300)
                                             .rotationEffect(.degrees(90))
-                                            .padding(.top, 76)
-                                            .padding(.trailing, 230)
+                                            .padding(.top, Shared.shared.firstPadding)
+                                            .padding(.trailing, 240)
                                             
                                             Spacer()
                                         }
@@ -81,12 +76,12 @@ struct NationCard: View {
                                         HStack {
                                             VStack(alignment: .leading) {
                                                 Text(Shared.shared.name)
-                                                    .font(.custom("Arial", size: 16))
+                                                    .font(.custom("Arial", size: 14))
                                                     .lineLimit(1)
                                                     .foregroundStyle(.black)
                                                 
                                                 Text(Shared.shared.personNbr)
-                                                    .font(.custom("Arial", size: 16))
+                                                    .font(.custom("Arial", size: 14))
                                                     .padding(.bottom, 11)
                                                     .foregroundStyle(.black)
                                                 
@@ -113,8 +108,8 @@ struct NationCard: View {
                                 if (circle == 3 && !isLangs) {
                                     Rectangle()
                                         .foregroundColor(.white)
-                                        .frame(width: 50, height : 200)
-                                        .position(CGPoint(x: 150, y: 100))
+                                        .frame(width: 50, height: 200)
+                                        .position(CGPoint(x: 143, y: 110))
                                         .shadow(radius: 0)
                                     VStack {
                                         HStack {
