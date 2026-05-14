@@ -10,6 +10,12 @@ import Foundation
 class Shared {
     static let shared = Shared()
     
+    static func sanitizeString(_ input: String) -> String {
+        let lettersOnly = input.replacingOccurrences(of: "[^a-zA-Z ]", with: "", options: .regularExpression)
+        let formattedString = lettersOnly.replacingOccurrences(of: " ", with: "_")
+        return formattedString
+    }
+    
     //21 chars
     //////////////////////////////////////////////////////////////////////////////////////////////////
 //    /AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD AXEL LANGENSKIÖLD

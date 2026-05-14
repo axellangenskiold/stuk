@@ -119,11 +119,19 @@ struct ProfileView: View {
                     
                     Spacer()
                     
-                    Image(systemName: "ticket")
-                        .font(.title2)
-                        .bold()
-                        .padding(.trailing, 30)
-                        .foregroundStyle(.black)
+                    Button(action: {
+                        let defaults = UserDefaults.standard
+                        
+                        let isBigLangs = defaults.bool(forKey: "isBigLangs")
+
+                        defaults.set(!isBigLangs, forKey: "isBigLangs")
+                    }, label: {
+                        Image(systemName: "ticket")
+                            .font(.title2)
+                            .bold()
+                            .padding(.trailing, 30)
+                            .foregroundStyle(.black)
+                    })
                 }
                 .padding(.bottom, 750)
             }

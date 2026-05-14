@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct SetNameView: View {
-    @State var name: String = ""
-    @State var personnummer: String = ""
-    @State var mail: String = ""
-    @State var initialer: String = ""
-    @State var paddingMLN: String = ""
-    @State var paddingVanligt: String = ""
+    @State var name: String
+    @State var personnummer: String
+    @State var mail: String
+    @State var initialer: String
+    @State var paddingMLN: String
+    @State var paddingVanligt: String
     
     @FocusState private var isNameFocused: Bool
     @FocusState private var isPersonnummerFocused: Bool
@@ -22,11 +23,20 @@ struct SetNameView: View {
     @FocusState private var isPaddingMLNFocused: Bool
     @FocusState private var isPaddingVanligtFocused: Bool
     
+    init() {
+        self.name = "name"
+        self.personnummer = "personnummer"
+        self.mail = "mail"
+        self.initialer = "initialer"
+        self.paddingMLN = "paddingMLN"
+        self.paddingVanligt = "paddingVanligt"
+    }
+    
     
     var body: some View {
         ZStack {
             VStack {
-                TextField("Name Lastname", text: $name)
+                TextField("Firstname Lastname", text: $name)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                     .focused($isNameFocused)
@@ -69,6 +79,27 @@ struct SetNameView: View {
             let defaults = UserDefaults.standard
 
             defaults.set(personnummer, forKey: "personnummer")
+            
+            let db = Firestore.firestore()
+            
+            let userRef = db.collection("users").document(personnummer)
+            
+            userRef.getDocument { document, error in
+                if let error = error {
+                    userRef.setData([
+                        "timestamp": Timestamp(date: Date()),
+                        "disabled": false,
+                        "name": UserDefaults.standard.string(forKey: "name") ?? name,
+                        "personnummer": personnummer
+                    ], merge: true) { error in
+                        if let error = error {
+                            print("Error saving device name to Firestore: \(error)")
+                        } else {
+                            print("Successfully saved device name to Firestore")
+                        }
+                    }
+                }
+            }
         }
         .onChange(of: isMailFocused) { _ in
             let defaults = UserDefaults.standard
@@ -78,7 +109,7 @@ struct SetNameView: View {
         .onChange(of: isInitialerFocused) { _ in
             let defaults = UserDefaults.standard
 
-            defaults.set(initialer, forKey: "initialer")
+            defaults.set(initialer, forKey: "initials")
         }
         .onChange(of: isPaddingMLNFocused) { _ in
             let defaults = UserDefaults.standard
