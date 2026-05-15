@@ -3,409 +3,254 @@ import SwiftData
 
 struct HomeView: View {
     @State var path = NavigationPath()
-    
-    @State var isHome: Bool = true
-    @State var isCalender: Bool = false
-    @State var isCard: Bool = false
-    @State var isTickets: Bool = false
-    @State var isProfile: Bool = false
-    @State var isRabatt: Bool = true
-    
-    
-    
-    @State var current: String = "home"
+    @State private var showSideMenu = false
+    @State private var heroPage = 0
 
     var body: some View {
         NavigationStack(path: $path) {
-            ZStack {
-                Rectangle()
-                    .frame(width: .infinity, height: .infinity)
-                    .foregroundStyle(.white)
-                
+            ZStack(alignment: .leading) {
+                Color.black.ignoresSafeArea()
+
                 ScrollView(.vertical, showsIndicators: false) {
-                    VStack {
-                        VStack {
-                            HStack {
-                                Text("Back to School 📚")
-                                    .foregroundStyle(.black)
-                                    .bold()
-                                
-                                Spacer()
-                                
-                                Text("Visa alla")
-                                    .foregroundStyle(.pink)
-                            }
-                            .frame(maxWidth: 370)
-                            
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(alignment: .bottom) { // Add spacing if needed
-                                    AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "storytel_logo")
-                                    AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "apple_logo")
-                                    AdCard(image: "trygghansa", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "trygghansa_logo")
-                                    AdCard(image: "sats", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "sats_logo")
-                                    AdCard(image: "jotex", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "jotex_logo")
-                                    AdCard(image: "hm", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "hm_logo")
-                                    AdCard(image: "rituals", bottomColor: .green, bottomText: "skolstart", addText: "Upp till 10% rabatt", companyLogo: "rituals_logo")
-                                }       // Add horizontal padding if needed
-                            }
-                            .frame(maxWidth: 380)
+                    VStack(spacing: 0) {
+                        heroSection
+                        searchBar
+                            .padding(.top, 18)
+                            .padding(.horizontal, 16)
+
+                        sectionHeader(title: "Hot deals", emoji: "🔥") {
+                            path.append(Destination.hotDealsList)
                         }
-                        .padding(.leading, 5)
-                        
-                        
-                        
-                        VStack {
-                            HStack {
-                                Text("Hot deals 🔥")
-                                    .foregroundStyle(.black)
-                                    .bold()
-                                
-                                Spacer()
-                                
-                                Text("Visa alla")
-                                    .foregroundStyle(.pink)
+                        .padding(.top, 22)
+
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 14) {
+                                Button { path.append(Destination.dealDetail) } label: {
+                                    DealCard(image: "samsung", displayName: "SAMSUNG", title: "50% studentrabatt", fallbackColor: Color(red: 0.05, green: 0.18, blue: 0.05))
+                                }
+                                .buttonStyle(.plain)
+                                DealCard(image: "viaplay", displayName: "viaplay", title: "Viaplay Total - 50% studentrabatt i 3 månader", fallbackColor: Color(red: 0.32, green: 0.05, blue: 0.10))
+                                DealCard(image: "storytel", displayName: "storytel", title: "Prova gratis 45 dagar + 50% studentrabatt", fallbackColor: Color(red: 0.20, green: 0.35, blue: 0.40))
                             }
-                            .frame(maxWidth: 370)
-                            
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(alignment: .bottom) { // Add spacing if needed
-                                    AdCard(image: "sats", bottomColor: .blue, bottomText: "kampanj", addText: "Upp till 30% rabatt", companyLogo: "sats_logo")
-                                    AdCard(image: "hm", bottomColor: .pink, bottomText: "tävling", addText: "Kampanj, 10% rabatt", companyLogo: "hm_logo")
-                                    AdCard(image: "apple", bottomColor: .green, bottomText: "skolstart", addText: "10% studentrabatt", companyLogo: "apple_logo")
-                                    AdCard(image: "jotex", bottomColor: .blue, bottomText: "kampanj", addText: "20% studentrabatt", companyLogo: "jotex_logo")
-                                    AdCard(image: "rituals", bottomColor: .pink, bottomText: "tävling", addText: "Upp till 40% rabatt", companyLogo: "rituals_logo")
-                                    AdCard(image: "trygghansa", bottomColor: .green, bottomText: "skolstart", addText: "Kampanj, 10% rabatt", companyLogo: "trygghansa_logo")
-                                    AdCard(image: "storytel", bottomColor: .blue, bottomText: "kampanj", addText: "30% rabatt", companyLogo: "storytel_logo")
-                                }       // Add horizontal padding if needed
-                            }
-                            .frame(maxWidth: 380)
+                            .padding(.horizontal, 16)
                         }
-                        .padding(.leading, 5)
-                        
-                        
-                        
-                        
-                        VStack {
-                            HStack {
-                                Text("Populära rabatter")
-                                    .foregroundStyle(.black)
-                                    .bold()
-                                
-                                Spacer()
-                                
-                                Text("Visa alla")
-                                    .foregroundStyle(.pink)
+                        .padding(.top, 8)
+
+                        sectionHeader(title: "Populära rabatter", emoji: "🛍") { }
+                            .padding(.top, 26)
+
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 14) {
+                                DealCard(image: "hallon", displayName: "hallon", title: "Från 19 kr/mån i 5 månader", fallbackColor: Color(red: 0.80, green: 0.50, blue: 0.65))
+                                DealCard(image: "iciw", displayName: "ICIW", title: "20% studentrabatt", fallbackColor: Color(red: 0.55, green: 0.40, blue: 0.40))
+                                DealCard(image: "lindex", displayName: "LINDEX", title: "25% rabatt", fallbackColor: Color(red: 0.55, green: 0.70, blue: 0.85))
                             }
-                            .frame(maxWidth: 370)
-                            
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(alignment: .bottom) { // Add spacing if needed
-                                    AdCard(image: "hm", bottomColor: .green, bottomText: "kampanj", addText: "20% studentrabatt", companyLogo: "hm_logo")
-                                    AdCard(image: "storytel", bottomColor: .pink, bottomText: "tävling", addText: "Upp till 40% rabatt", companyLogo: "storytel_logo")
-                                    AdCard(image: "apple", bottomColor: .blue, bottomText: "skolstart", addText: "30% rabatt", companyLogo: "apple_logo")
-                                    AdCard(image: "jotex", bottomColor: .green, bottomText: "tävling", addText: "Kampanj, 10% rabatt", companyLogo: "jotex_logo")
-                                    AdCard(image: "trygghansa", bottomColor: .blue, bottomText: "skolstart", addText: "Upp till 30% rabatt", companyLogo: "trygghansa_logo")
-                                    AdCard(image: "sats", bottomColor: .pink, bottomText: "kampanj", addText: "10% studentrabatt", companyLogo: "sats_logo")
-                                    AdCard(image: "rituals", bottomColor: .green, bottomText: "tävling", addText: "Upp till 40% rabatt", companyLogo: "rituals_logo")
-                                }       // Add horizontal padding if needed
-                            }
-                            .frame(maxWidth: 380)
+                            .padding(.horizontal, 16)
                         }
-                        .padding(.leading, 5)
-                        
-                        
-                        
-                        
-                        
-                        VStack {
-                            HStack {
-                                Text("Studentrabatter för dig")
-                                    .foregroundStyle(.black)
-                                    .bold()
-                                
-                                Spacer()
-                                
-                                Text("Visa alla")
-                                    .foregroundStyle(.pink)
+                        .padding(.top, 8)
+
+                        sectionHeaderWithBadge(title: "Nya studentrabatter") { }
+                            .padding(.top, 26)
+
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 14) {
+                                DealCard(image: "apple", displayName: "Apple", title: "10% studentrabatt", fallbackColor: Color(white: 0.10), showTag: false)
+                                DealCard(image: "hm", displayName: "H&M", title: "15% studentrabatt", fallbackColor: Color(white: 0.10), showTag: false)
+                                DealCard(image: "rituals", displayName: "Rituals", title: "20% studentrabatt", fallbackColor: Color(white: 0.10), showTag: false)
                             }
-                            .frame(maxWidth: 370)
-                            
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(alignment: .bottom) { // Add spacing if needed
-                                    AdCard(image: "apple", bottomColor: .pink, bottomText: "kampanj", addText: "Upp till 30% rabatt", companyLogo: "apple_logo")
-                                    AdCard(image: "hm", bottomColor: .blue, bottomText: "tävling", addText: "30% rabatt", companyLogo: "hm_logo")
-                                    AdCard(image: "storytel", bottomColor: .green, bottomText: "skolstart", addText: "10% studentrabatt", companyLogo: "storytel_logo")
-                                    AdCard(image: "rituals", bottomColor: .blue, bottomText: "kampanj", addText: "Kampanj, 10% rabatt", companyLogo: "rituals_logo")
-                                    AdCard(image: "trygghansa", bottomColor: .green, bottomText: "tävling", addText: "Upp till 40% rabatt", companyLogo: "trygghansa_logo")
-                                    AdCard(image: "jotex", bottomColor: .pink, bottomText: "skolstart", addText: "Upp till 30% rabatt", companyLogo: "jotex_logo")
-                                    AdCard(image: "sats", bottomColor: .blue, bottomText: "skolstart", addText: "20% studentrabatt", companyLogo: "sats_logo")
-                                }       // Add horizontal padding if needed
-                            }
-                            .frame(maxWidth: 380)
+                            .padding(.horizontal, 16)
                         }
-                        .padding(.leading, 5)
-                        
-                        
-                        
-                        VStack {
-                            HStack {
-                                Text("Populärt just nu")
-                                    .foregroundStyle(.black)
-                                    .bold()
-                                
-                                Spacer()
-                                
-                                Text("Visa alla")
-                                    .foregroundStyle(.pink)
-                            }
-                            .frame(maxWidth: 370)
-                            
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(alignment: .bottom) { // Add spacing if needed
-                                    AdCard(image: "jotex", bottomColor: .green, bottomText: "kampanj", addText: "10% studentrabatt", companyLogo: "jotex_logo")
-                                    AdCard(image: "sats", bottomColor: .pink, bottomText: "tävling", addText: "Upp till 30% rabatt", companyLogo: "sats_logo")
-                                    AdCard(image: "hm", bottomColor: .blue, bottomText: "skolstart", addText: "Kampanj, 10% rabatt", companyLogo: "hm_logo")
-                                    AdCard(image: "apple", bottomColor: .green, bottomText: "tävling", addText: "20% studentrabatt", companyLogo: "apple_logo")
-                                    AdCard(image: "trygghansa", bottomColor: .blue, bottomText: "kampanj", addText: "Upp till 40% rabatt", companyLogo: "trygghansa_logo")
-                                    AdCard(image: "storytel", bottomColor: .pink, bottomText: "skolstart", addText: "30% rabatt", companyLogo: "storytel_logo")
-                                    AdCard(image: "rituals", bottomColor: .green, bottomText: "tävling", addText: "Upp till 30% rabatt", companyLogo: "rituals_logo")
-                                }       // Add horizontal padding if needed
-                            }
-                            .frame(maxWidth: 380)
-                        }
-                        .padding(.leading, 5)
-                        
-                        VStack {
-                            HStack {
-                                Text("Autumn deals 🍁")
-                                    .foregroundStyle(.black)
-                                    .bold()
-                                
-                                Spacer()
-                                
-                                Text("Visa alla")
-                                    .foregroundStyle(.pink)
-                            }
-                            .frame(maxWidth: 370)
-                            
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(alignment: .bottom) { // Add spacing if needed
-                                    AdCard(image: "storytel", bottomColor: .blue, bottomText: "tävling", addText: "Upp till 40% rabatt", companyLogo: "storytel_logo")
-                                    AdCard(image: "hm", bottomColor: .green, bottomText: "kampanj", addText: "10% studentrabatt", companyLogo: "hm_logo")
-                                    AdCard(image: "trygghansa", bottomColor: .pink, bottomText: "skolstart", addText: "20% studentrabatt", companyLogo: "trygghansa_logo")
-                                    AdCard(image: "apple", bottomColor: .blue, bottomText: "kampanj", addText: "Upp till 30% rabatt", companyLogo: "apple_logo")
-                                    AdCard(image: "sats", bottomColor: .green, bottomText: "tävling", addText: "Kampanj, 10% rabatt", companyLogo: "sats_logo")
-                                    AdCard(image: "rituals", bottomColor: .pink, bottomText: "skolstart", addText: "Upp till 30% rabatt", companyLogo: "rituals_logo")
-                                    AdCard(image: "jotex", bottomColor: .green, bottomText: "kampanj", addText: "30% rabatt", companyLogo: "jotex_logo")
-                                }       // Add horizontal padding if needed
-                            }
-                            .frame(maxWidth: 380)
-                        }
-                        .padding(.leading, 5)
-                        
-                        VStack {
-                            HStack {
-                                Text("Autumn deals 🍁")
-                                    .foregroundStyle(.black)
-                                    .bold()
-                                
-                                Spacer()
-                                
-                                Text("Visa alla")
-                                    .foregroundStyle(.pink)
-                            }
-                            .frame(maxWidth: 370)
-                            
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(alignment: .bottom) { // Add spacing if needed
-                                    AdCard(image: "storytel", bottomColor: .blue, bottomText: "tävling", addText: "Upp till 40% rabatt", companyLogo: "storytel_logo")
-                                    AdCard(image: "hm", bottomColor: .green, bottomText: "kampanj", addText: "10% studentrabatt", companyLogo: "hm_logo")
-                                    AdCard(image: "trygghansa", bottomColor: .pink, bottomText: "skolstart", addText: "20% studentrabatt", companyLogo: "trygghansa_logo")
-                                    AdCard(image: "apple", bottomColor: .blue, bottomText: "kampanj", addText: "Upp till 30% rabatt", companyLogo: "apple_logo")
-                                    AdCard(image: "sats", bottomColor: .green, bottomText: "tävling", addText: "Kampanj, 10% rabatt", companyLogo: "sats_logo")
-                                    AdCard(image: "rituals", bottomColor: .pink, bottomText: "skolstart", addText: "Upp till 30% rabatt", companyLogo: "rituals_logo")
-                                    AdCard(image: "jotex", bottomColor: .green, bottomText: "kampanj", addText: "30% rabatt", companyLogo: "jotex_logo")
-                                }       // Add horizontal padding if needed
-                            }
-                            .frame(maxWidth: 380)
-                        }
-                        .padding(.leading, 5)
+                        .padding(.top, 8)
+
+                        Spacer(minLength: 120)
                     }
                 }
-                .padding(.top, 120)
-                .frame(maxHeight: 800)
-                
-                
-                //            top bar
-                ZStack {
-                    Rectangle()
-                        .foregroundStyle(.white)
-                        .frame(width: .infinity, height: 230)
-                        .aspectRatio(contentMode: .fill)
-                        .shadow(radius: 1)
-                    
-                    Rectangle()
-                        .foregroundStyle(.white)
-                        .frame(width: .infinity, height: 155)
-                        .aspectRatio(contentMode: .fill)
-                        .shadow(radius: 1)
-                    
-                    HStack {
-                        VStack {
-                            Text("Rabatter")
-                                .bold()
-                                .font(.custom("Arial", size: 17))
-                            
-                            Rectangle()
-                                .foregroundColor(isRabatt ? .black : .white)
-                                .frame(width: 90, height: 2)
-                        }
-                        .padding(.horizontal, 50)
-                        
-                        Spacer()
-                        
-                        VStack {
-                            Text("Lokalt")
-                                .bold()
-                                .font(.custom("Arial", size: 17))
-                            
-                            Rectangle()
-                                .foregroundColor(isRabatt ? .white : .black)
-                                .frame(width: 90, height: 2)
-                        }
-                        .padding(.horizontal, 50)
-                    }
-                    .padding(.top, 201)
-                    
-                    HStack {
-                        Image("bars")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40, height: 40)
-                            .clipped()
-                        
-                        Spacer()
-                        
-                        Image("stuk")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 100, height: 40)
-                            .clipped()
-                        
-                        Spacer()
-                        
-                        Image("search")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 50, height: 50)
-                            .clipped()
-                    }
-                    .padding(.top, 105)
-                    .padding(.horizontal, 10)
+
+                topBar
+
+                // Bottom bar overlay
+                VStack {
+                    Spacer()
+                    BottomTabBar(path: $path, current: .home)
                 }
-                .frame(maxHeight: .infinity, alignment: .top)
-                .padding(.bottom, 820)
-                //
-                //            // bottom bar
-                ZStack {
-                    Rectangle()
-                        .foregroundStyle(.white)
-                        .frame(width: .infinity, height: 200)
-                        .aspectRatio(contentMode: .fill)
-                        .padding(.top, 860)
-                        .shadow(radius: 1)
-                    
-                    HStack {
-                        Image(isHome ? "home_black" : "home_grey")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40, height: 40)
-                            .clipped()
-                            .padding(14)
-                        
-                        Button(action: {
-                            var transaction = Transaction()
-                            transaction.disablesAnimations = true
-                            withTransaction(transaction) {
-                                path.append(Destination.calenderView)
-                            }
-                            
-                        }) {
-                            Image(isCalender ? "calender_black" : "calender_grey")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 40, height: 40)
-                                .clipped()
-                                .padding(14)
+                .ignoresSafeArea(edges: .bottom)
+
+                // Side menu overlay
+                if showSideMenu {
+                    Color.black.opacity(0.35)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            withAnimation(.easeOut(duration: 0.25)) { showSideMenu = false }
                         }
-                        
-                        Button(action: {
-                            var transaction = Transaction()
-                            transaction.disablesAnimations = true
-                            withTransaction(transaction) {
-                                path.append(Destination.cardView)
-                            }
-                            
-                        }) {
-                            Image("card_grey")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 40, height: 40)
-                                .clipped()
-                                .padding(14)
-                        }
-                        
-                        Button(action: {
-                            var transaction = Transaction()
-                            transaction.disablesAnimations = true
-                            withTransaction(transaction) {
-                                path.append(Destination.ticketView)
-                            }
-                            
-                        }) {
-                            Image(isTickets ? "tickets_black" : "tickets_grey")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 40, height: 40)
-                                .clipped()
-                                .padding(14)
-                        }
-                        
-                        Button(action: {
-                            var transaction = Transaction()
-                            transaction.disablesAnimations = true
-                            withTransaction(transaction) {
-                                path.append(Destination.profileView)
-                            }
-                            
-                        }) {
-                            Image(isProfile ? "profile_black" : "profile_grey")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 40, height: 40)
-                                .clipped()
-                                .padding(14)
-                        }
-                    }
-                    .padding(.top, 720)
+                    SideMenuView(isOpen: $showSideMenu)
+                        .transition(.move(edge: .leading))
+                        .zIndex(2)
                 }
-                .frame(maxHeight: .infinity, alignment: .bottom)
             }
+            .navigationBarBackButtonHidden(true)
             .navigationDestination(for: Destination.self) { destination in
                 switch destination {
                 case .calenderView: CalenderView(path: $path)
-                case .ticketView : TicketView(path: $path)
-                case .cardView : CardView(path: $path)
-                case .profileView : ProfileView(path: $path)
-                case .homeView : HomeView()
-                case .setNameView : SetNameView()
+                case .ticketView:   TicketView(path: $path)
+                case .cardView:     CardView(path: $path)
+                case .profileView:  ProfileView(path: $path)
+                case .homeView:     HomeView()
+                case .setNameView:  SetNameView()
+                case .hotDealsList: HotDealsListView(path: $path)
+                case .dealDetail:   DealDetailView(path: $path)
+                case .nearbyView:   NearbyView(path: $path)
                 }
             }
         }
     }
+
+    // MARK: - Hero
+
+    private var heroSection: some View {
+        ZStack(alignment: .bottom) {
+            BrandImage(name: "hallon_hero", displayName: "hallon",
+                       fallbackColor: Color(red: 0.65, green: 0.55, blue: 0.50))
+                .frame(height: 620)
+                .clipped()
+                .overlay(
+                    LinearGradient(colors: [.clear, .black.opacity(0.55), .black],
+                                   startPoint: .center, endPoint: .bottom)
+                )
+
+            VStack(spacing: 14) {
+                HStack(spacing: 8) {
+                    Image(systemName: "leaf.fill")
+                        .foregroundStyle(.white)
+                    Text("hallon")
+                        .font(.system(size: 44, weight: .heavy))
+                        .foregroundStyle(.white)
+                }
+                .padding(.bottom, 4)
+
+                Text("Från 19 kr/mån i 5 månader -\ninklusive 50 GB välkomstsurf!")
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundStyle(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 24)
+
+                Button(action: { path.append(Destination.dealDetail) }) {
+                    Text("Till erbjudandet")
+                        .font(.system(size: 17, weight: .semibold))
+                        .foregroundStyle(Color(red: 0.30, green: 0.05, blue: 0.15))
+                        .padding(.horizontal, 36)
+                        .padding(.vertical, 14)
+                        .background(
+                            Capsule().fill(Color(red: 0.95, green: 0.70, blue: 0.85))
+                        )
+                }
+
+                HStack(spacing: 6) {
+                    Circle().fill(Color.white).frame(width: 7, height: 7)
+                    Circle().fill(Color.white.opacity(0.4)).frame(width: 7, height: 7)
+                }
+                .padding(.top, 6)
+            }
+            .padding(.bottom, 30)
+        }
+        .frame(height: 620)
+    }
+
+    // MARK: - Search bar
+
+    private var searchBar: some View {
+        HStack {
+            Text("Vad letar du efter?")
+                .foregroundStyle(Color.white.opacity(0.55))
+                .font(.system(size: 16))
+            Spacer()
+            Image(systemName: "magnifyingglass")
+                .foregroundStyle(Color.white.opacity(0.7))
+        }
+        .padding(.horizontal, 18)
+        .padding(.vertical, 14)
+        .background(
+            Capsule().fill(Color.white.opacity(0.12))
+        )
+    }
+
+    // MARK: - Top bar
+
+    private var topBar: some View {
+        VStack {
+            HStack {
+                Button(action: {
+                    withAnimation(.easeOut(duration: 0.25)) { showSideMenu = true }
+                }) {
+                    Image(systemName: "line.3.horizontal")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundStyle(.white)
+                        .frame(width: 42, height: 42)
+                        .background(Circle().fill(Color.black.opacity(0.45)))
+                }
+
+                Spacer()
+
+                Button(action: { path.append(Destination.nearbyView) }) {
+                    Image(systemName: "mappin.and.ellipse")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundStyle(.white)
+                        .frame(width: 42, height: 42)
+                        .background(Circle().fill(Color.black.opacity(0.45)))
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            Spacer()
+        }
+    }
+
+    // MARK: - Section headers
+
+    private func sectionHeader(title: String, emoji: String, action: @escaping () -> Void) -> some View {
+        HStack {
+            HStack(spacing: 6) {
+                Text(title)
+                    .foregroundStyle(.white)
+                    .font(.system(size: 22, weight: .heavy))
+                Text(emoji)
+                    .font(.system(size: 22))
+            }
+            Spacer()
+            Button(action: action) {
+                Text("Visa alla")
+                    .underline()
+                    .foregroundStyle(.white)
+                    .font(.system(size: 15))
+            }
+        }
+        .padding(.horizontal, 16)
+    }
+
+    private func sectionHeaderWithBadge(title: String, action: @escaping () -> Void) -> some View {
+        HStack {
+            HStack(spacing: 8) {
+                Text(title)
+                    .foregroundStyle(.white)
+                    .font(.system(size: 22, weight: .heavy))
+                Text("NEW")
+                    .font(.system(size: 10, weight: .heavy))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 3)
+                    .background(RoundedRectangle(cornerRadius: 4).fill(Color(red: 0.30, green: 0.50, blue: 0.85)))
+            }
+            Spacer()
+            Button(action: action) {
+                Text("Visa alla")
+                    .underline()
+                    .foregroundStyle(.white)
+                    .font(.system(size: 15))
+            }
+        }
+        .padding(.horizontal, 16)
+    }
 }
 
 #Preview {
-    //path: .constant(NavigationPath())
     HomeView()
 }

@@ -14,4 +14,7 @@ enum Destination: Hashable, Equatable {
     case ticketView
     case profileView
     case setNameView
+    case hotDealsList
+    case dealDetail
+    case nearbyView
 }

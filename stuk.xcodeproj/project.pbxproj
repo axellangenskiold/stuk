@@ -31,6 +31,12 @@
 		1ACA76F22C9373C0001EBBB1 /* FlipableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA76F12C9373C0001EBBB1 /* FlipableCardView.swift */; };
 		1ACA76F42C9374CA001EBBB1 /* MovingBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA76F32C9374CA001EBBB1 /* MovingBackground.swift */; };
 		1ACA76F62C937A29001EBBB1 /* NationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACA76F52C937A29001EBBB1 /* NationCard.swift */; };
+		FA00BA01CAFEBABE00000002 /* BottomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00BA01CAFEBABE00000001 /* BottomTabBar.swift */; };
+		FA00BA02CAFEBABE00000002 /* DealCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00BA02CAFEBABE00000001 /* DealCard.swift */; };
+		FA00BA03CAFEBABE00000002 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00BA03CAFEBABE00000001 /* SideMenuView.swift */; };
+		FA00BA04CAFEBABE00000002 /* HotDealsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00BA04CAFEBABE00000001 /* HotDealsListView.swift */; };
+		FA00BA05CAFEBABE00000002 /* DealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00BA05CAFEBABE00000001 /* DealDetailView.swift */; };
+		FA00BA06CAFEBABE00000002 /* NearbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00BA06CAFEBABE00000001 /* NearbyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +82,12 @@
 		1ACA76F12C9373C0001EBBB1 /* FlipableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipableCardView.swift; sourceTree = "<group>"; };
 		1ACA76F32C9374CA001EBBB1 /* MovingBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingBackground.swift; sourceTree = "<group>"; };
 		1ACA76F52C937A29001EBBB1 /* NationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationCard.swift; sourceTree = "<group>"; };
+		FA00BA01CAFEBABE00000001 /* BottomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBar.swift; sourceTree = "<group>"; };
+		FA00BA02CAFEBABE00000001 /* DealCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealCard.swift; sourceTree = "<group>"; };
+		FA00BA03CAFEBABE00000001 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		FA00BA04CAFEBABE00000001 /* HotDealsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotDealsListView.swift; sourceTree = "<group>"; };
+		FA00BA05CAFEBABE00000001 /* DealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailView.swift; sourceTree = "<group>"; };
+		FA00BA06CAFEBABE00000001 /* NearbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +160,12 @@
 				1A2E93992C9C043B00FD5380 /* Shared.swift */,
 				1A5E79CF2CB54E85000D3ACF /* BackgroundView2.swift */,
 				1A7C02C22D722A6B0046D93E /* SetNameView.swift */,
+				FA00BA01CAFEBABE00000001 /* BottomTabBar.swift */,
+				FA00BA02CAFEBABE00000001 /* DealCard.swift */,
+				FA00BA03CAFEBABE00000001 /* SideMenuView.swift */,
+				FA00BA04CAFEBABE00000001 /* HotDealsListView.swift */,
+				FA00BA05CAFEBABE00000001 /* DealDetailView.swift */,
+				FA00BA06CAFEBABE00000001 /* NearbyView.swift */,
 			);
 			path = stuk;
 			sourceTree = "<group>";
@@ -338,6 +356,12 @@
 				1A5E79D02CB54E85000D3ACF /* BackgroundView2.swift in Sources */,
 				1ACA76F02C9351FB001EBBB1 /* CalenderCard.swift in Sources */,
 				1A2E93962C9B737E00FD5380 /* TicketCard.swift in Sources */,
+				FA00BA01CAFEBABE00000002 /* BottomTabBar.swift in Sources */,
+				FA00BA02CAFEBABE00000002 /* DealCard.swift in Sources */,
+				FA00BA03CAFEBABE00000002 /* SideMenuView.swift in Sources */,
+				FA00BA04CAFEBABE00000002 /* HotDealsListView.swift in Sources */,
+				FA00BA05CAFEBABE00000002 /* DealDetailView.swift in Sources */,
+				FA00BA06CAFEBABE00000002 /* NearbyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
