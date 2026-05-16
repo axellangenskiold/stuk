@@ -4,7 +4,8 @@ import SwiftData
 struct HomeView: View {
     @State var path = NavigationPath()
     @State private var showSideMenu = false
-    @State private var heroPage = 0
+
+    private let heroDeals: [DealItem] = Array(DealStore.popular.prefix(2))
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -18,49 +19,41 @@ struct HomeView: View {
                             .padding(.top, 18)
                             .padding(.horizontal, 16)
 
-                        sectionHeader(title: "Hot deals", emoji: "🔥") {
-                            path.append(Destination.hotDealsList)
-                        }
-                        .padding(.top, 22)
+                        section(title: "Hot deals", emoji: "🔥",
+                                deals: DealStore.hotDeals,
+                                allRoute: .hotDealsList(category: nil))
 
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 14) {
-                                Button { path.append(Destination.dealDetail) } label: {
-                                    DealCard(image: "samsung", displayName: "SAMSUNG", title: "50% studentrabatt", fallbackColor: Color(red: 0.05, green: 0.18, blue: 0.05))
-                                }
-                                .buttonStyle(.plain)
-                                DealCard(image: "viaplay", displayName: "viaplay", title: "Viaplay Total - 50% studentrabatt i 3 månader", fallbackColor: Color(red: 0.32, green: 0.05, blue: 0.10))
-                                DealCard(image: "storytel", displayName: "storytel", title: "Prova gratis 45 dagar + 50% studentrabatt", fallbackColor: Color(red: 0.20, green: 0.35, blue: 0.40))
-                            }
-                            .padding(.horizontal, 16)
-                        }
-                        .padding(.top, 8)
+                        section(title: "Populära rabatter", emoji: "🛍",
+                                deals: DealStore.popular,
+                                allRoute: .hotDealsList(category: nil))
 
-                        sectionHeader(title: "Populära rabatter", emoji: "🛍") { }
-                            .padding(.top, 26)
+                        sectionBadge(title: "Nya studentrabatter",
+                                     deals: DealStore.newDeals,
+                                     allRoute: .hotDealsList(category: nil))
 
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 14) {
-                                DealCard(image: "hallon", displayName: "hallon", title: "Från 19 kr/mån i 5 månader", fallbackColor: Color(red: 0.80, green: 0.50, blue: 0.65))
-                                DealCard(image: "iciw", displayName: "ICIW", title: "20% studentrabatt", fallbackColor: Color(red: 0.55, green: 0.40, blue: 0.40))
-                                DealCard(image: "lindex", displayName: "LINDEX", title: "25% rabatt", fallbackColor: Color(red: 0.55, green: 0.70, blue: 0.85))
-                            }
-                            .padding(.horizontal, 16)
-                        }
-                        .padding(.top, 8)
+                        section(title: "TV & Streaming", emoji: "📺",
+                                deals: DealStore.tvStreaming,
+                                allRoute: .hotDealsList(category: "TV & Streaming"))
 
-                        sectionHeaderWithBadge(title: "Nya studentrabatter") { }
-                            .padding(.top, 26)
+                        section(title: "Mobil & Bredband", emoji: "",
+                                deals: DealStore.mobile,
+                                allRoute: .hotDealsList(category: "Mobil & Bredband"))
 
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 14) {
-                                DealCard(image: "apple", displayName: "Apple", title: "10% studentrabatt", fallbackColor: Color(white: 0.10), showTag: false)
-                                DealCard(image: "hm", displayName: "H&M", title: "15% studentrabatt", fallbackColor: Color(white: 0.10), showTag: false)
-                                DealCard(image: "rituals", displayName: "Rituals", title: "20% studentrabatt", fallbackColor: Color(white: 0.10), showTag: false)
-                            }
-                            .padding(.horizontal, 16)
-                        }
-                        .padding(.top, 8)
+                        section(title: "Kläder & Mode", emoji: "",
+                                deals: DealStore.fashion,
+                                allRoute: .hotDealsList(category: "Kläder & Mode"))
+
+                        section(title: "Hälsa & Apotek", emoji: "",
+                                deals: DealStore.health,
+                                allRoute: .hotDealsList(category: "Hälsa & Apotek"))
+
+                        section(title: "Sport & Träning", emoji: "",
+                                deals: DealStore.sport,
+                                allRoute: .hotDealsList(category: "Sport & Träning"))
+
+                        section(title: "Smycken & Accessoarer", emoji: "",
+                                deals: DealStore.jewelry,
+                                allRoute: .hotDealsList(category: "Smycken & Accessoarer"))
 
                         Spacer(minLength: 120)
                     }
@@ -68,23 +61,26 @@ struct HomeView: View {
 
                 topBar
 
-                // Bottom bar overlay
                 VStack {
                     Spacer()
                     BottomTabBar(path: $path, current: .home)
                 }
                 .ignoresSafeArea(edges: .bottom)
 
-                // Side menu overlay
                 if showSideMenu {
                     Color.black.opacity(0.35)
                         .ignoresSafeArea()
                         .onTapGesture {
                             withAnimation(.easeOut(duration: 0.25)) { showSideMenu = false }
                         }
-                    SideMenuView(isOpen: $showSideMenu)
-                        .transition(.move(edge: .leading))
-                        .zIndex(2)
+                    SideMenuView(isOpen: $showSideMenu) { category in
+                        withAnimation(.easeOut(duration: 0.25)) { showSideMenu = false }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                            path.append(Destination.hotDealsList(category: category))
+                        }
+                    }
+                    .transition(.move(edge: .leading))
+                    .zIndex(2)
                 }
             }
             .navigationBarBackButtonHidden(true)
@@ -96,9 +92,11 @@ struct HomeView: View {
                 case .profileView:  ProfileView(path: $path)
                 case .homeView:     HomeView()
                 case .setNameView:  SetNameView()
-                case .hotDealsList: HotDealsListView(path: $path)
-                case .dealDetail:   DealDetailView(path: $path)
+                case .hotDealsList(let cat): HotDealsListView(path: $path, category: cat)
+                case .dealDetail(let item):  DealDetailView(path: $path, item: item)
+                case .eventDetail(let e):    EventDetailView(path: $path, event: e)
                 case .nearbyView:   NearbyView(path: $path)
+                case .nearbyCity(let city):  NearbyCityView(path: $path, city: city)
                 }
             }
         }
@@ -107,9 +105,29 @@ struct HomeView: View {
     // MARK: - Hero
 
     private var heroSection: some View {
+        TabView {
+            ForEach(heroDeals) { deal in
+                heroCard(deal)
+            }
+        }
+        .tabViewStyle(.page(indexDisplayMode: .never))
+        .frame(height: 620)
+        .overlay(alignment: .bottom) {
+            HStack(spacing: 6) {
+                ForEach(0..<heroDeals.count, id: \.self) { i in
+                    Circle()
+                        .fill(Color.white.opacity(i == 0 ? 1.0 : 0.4))
+                        .frame(width: 7, height: 7)
+                }
+            }
+            .padding(.bottom, 10)
+        }
+    }
+
+    private func heroCard(_ deal: DealItem) -> some View {
         ZStack(alignment: .bottom) {
-            BrandImage(name: "hallon_hero", displayName: "hallon",
-                       fallbackColor: Color(red: 0.65, green: 0.55, blue: 0.50))
+            BrandImage(url: deal.imageURL, displayName: deal.brand,
+                       fallbackColor: deal.accentColor)
                 .frame(height: 620)
                 .clipped()
                 .overlay(
@@ -121,38 +139,35 @@ struct HomeView: View {
                 HStack(spacing: 8) {
                     Image(systemName: "leaf.fill")
                         .foregroundStyle(.white)
-                    Text("hallon")
+                    Text(deal.brand)
                         .font(.system(size: 44, weight: .heavy))
                         .foregroundStyle(.white)
                 }
                 .padding(.bottom, 4)
 
-                Text("Från 19 kr/mån i 5 månader -\ninklusive 50 GB välkomstsurf!")
+                Text(deal.title)
                     .font(.system(size: 20, weight: .bold))
                     .foregroundStyle(.white)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 24)
 
-                Button(action: { path.append(Destination.dealDetail) }) {
+                Button(action: { path.append(Destination.dealDetail(deal)) }) {
                     Text("Till erbjudandet")
                         .font(.system(size: 17, weight: .semibold))
                         .foregroundStyle(Color(red: 0.30, green: 0.05, blue: 0.15))
                         .padding(.horizontal, 36)
                         .padding(.vertical, 14)
                         .background(
-                            Capsule().fill(Color(red: 0.95, green: 0.70, blue: 0.85))
+                            Capsule().fill(deal.buttonColor)
                         )
                 }
-
-                HStack(spacing: 6) {
-                    Circle().fill(Color.white).frame(width: 7, height: 7)
-                    Circle().fill(Color.white.opacity(0.4)).frame(width: 7, height: 7)
-                }
-                .padding(.top, 6)
             }
-            .padding(.bottom, 30)
+            .padding(.bottom, 50)
         }
         .frame(height: 620)
+        .onTapGesture {
+            path.append(Destination.dealDetail(deal))
+        }
     }
 
     // MARK: - Search bar
@@ -168,9 +183,7 @@ struct HomeView: View {
         }
         .padding(.horizontal, 18)
         .padding(.vertical, 14)
-        .background(
-            Capsule().fill(Color.white.opacity(0.12))
-        )
+        .background(Capsule().fill(Color.white.opacity(0.12)))
     }
 
     // MARK: - Top bar
@@ -187,9 +200,7 @@ struct HomeView: View {
                         .frame(width: 42, height: 42)
                         .background(Circle().fill(Color.black.opacity(0.45)))
                 }
-
                 Spacer()
-
                 Button(action: { path.append(Destination.nearbyView) }) {
                     Image(systemName: "mappin.and.ellipse")
                         .font(.system(size: 18, weight: .semibold))
@@ -204,50 +215,86 @@ struct HomeView: View {
         }
     }
 
-    // MARK: - Section headers
+    // MARK: - Sections
 
-    private func sectionHeader(title: String, emoji: String, action: @escaping () -> Void) -> some View {
-        HStack {
-            HStack(spacing: 6) {
-                Text(title)
-                    .foregroundStyle(.white)
-                    .font(.system(size: 22, weight: .heavy))
-                Text(emoji)
-                    .font(.system(size: 22))
+    private func section(title: String, emoji: String, deals: [DealItem],
+                         allRoute: Destination) -> some View {
+        VStack(spacing: 8) {
+            HStack {
+                HStack(spacing: 6) {
+                    Text(title)
+                        .foregroundStyle(.white)
+                        .font(.system(size: 22, weight: .heavy))
+                    if !emoji.isEmpty {
+                        Text(emoji).font(.system(size: 22))
+                    }
+                }
+                Spacer()
+                Button(action: { path.append(allRoute) }) {
+                    Text("Visa alla")
+                        .underline()
+                        .foregroundStyle(.white)
+                        .font(.system(size: 15))
+                }
             }
-            Spacer()
-            Button(action: action) {
-                Text("Visa alla")
-                    .underline()
-                    .foregroundStyle(.white)
-                    .font(.system(size: 15))
+            .padding(.horizontal, 16)
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 14) {
+                    ForEach(deals) { deal in
+                        Button(action: { path.append(Destination.dealDetail(deal)) }) {
+                            DealCard(item: deal)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+                .padding(.horizontal, 16)
             }
         }
-        .padding(.horizontal, 16)
+        .padding(.top, 26)
     }
 
-    private func sectionHeaderWithBadge(title: String, action: @escaping () -> Void) -> some View {
-        HStack {
-            HStack(spacing: 8) {
-                Text(title)
-                    .foregroundStyle(.white)
-                    .font(.system(size: 22, weight: .heavy))
-                Text("NEW")
-                    .font(.system(size: 10, weight: .heavy))
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 3)
-                    .background(RoundedRectangle(cornerRadius: 4).fill(Color(red: 0.30, green: 0.50, blue: 0.85)))
+    private func sectionBadge(title: String, deals: [DealItem],
+                              allRoute: Destination) -> some View {
+        VStack(spacing: 8) {
+            HStack {
+                HStack(spacing: 8) {
+                    Text(title)
+                        .foregroundStyle(.white)
+                        .font(.system(size: 22, weight: .heavy))
+                    Text("NEW")
+                        .font(.system(size: 10, weight: .heavy))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 3)
+                        .background(
+                            RoundedRectangle(cornerRadius: 4)
+                                .fill(Color(red: 0.30, green: 0.50, blue: 0.85))
+                        )
+                }
+                Spacer()
+                Button(action: { path.append(allRoute) }) {
+                    Text("Visa alla")
+                        .underline()
+                        .foregroundStyle(.white)
+                        .font(.system(size: 15))
+                }
             }
-            Spacer()
-            Button(action: action) {
-                Text("Visa alla")
-                    .underline()
-                    .foregroundStyle(.white)
-                    .font(.system(size: 15))
+            .padding(.horizontal, 16)
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 14) {
+                    ForEach(deals) { deal in
+                        Button(action: { path.append(Destination.dealDetail(deal)) }) {
+                            DealCard(item: deal)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+                .padding(.horizontal, 16)
             }
         }
-        .padding(.horizontal, 16)
+        .padding(.top, 26)
     }
 }
 

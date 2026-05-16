@@ -37,6 +37,9 @@
 		FA00BA04CAFEBABE00000002 /* HotDealsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00BA04CAFEBABE00000001 /* HotDealsListView.swift */; };
 		FA00BA05CAFEBABE00000002 /* DealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00BA05CAFEBABE00000001 /* DealDetailView.swift */; };
 		FA00BA06CAFEBABE00000002 /* NearbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00BA06CAFEBABE00000001 /* NearbyView.swift */; };
+		FA00BA07CAFEBABE00000002 /* DealItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00BA07CAFEBABE00000001 /* DealItem.swift */; };
+		FA00BA08CAFEBABE00000002 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00BA08CAFEBABE00000001 /* EventItem.swift */; };
+		FA00BA09CAFEBABE00000002 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00BA09CAFEBABE00000001 /* EventDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,9 @@
 		FA00BA04CAFEBABE00000001 /* HotDealsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotDealsListView.swift; sourceTree = "<group>"; };
 		FA00BA05CAFEBABE00000001 /* DealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailView.swift; sourceTree = "<group>"; };
 		FA00BA06CAFEBABE00000001 /* NearbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyView.swift; sourceTree = "<group>"; };
+		FA00BA07CAFEBABE00000001 /* DealItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealItem.swift; sourceTree = "<group>"; };
+		FA00BA08CAFEBABE00000001 /* EventItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
+		FA00BA09CAFEBABE00000001 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +172,9 @@
 				FA00BA04CAFEBABE00000001 /* HotDealsListView.swift */,
 				FA00BA05CAFEBABE00000001 /* DealDetailView.swift */,
 				FA00BA06CAFEBABE00000001 /* NearbyView.swift */,
+				FA00BA07CAFEBABE00000001 /* DealItem.swift */,
+				FA00BA08CAFEBABE00000001 /* EventItem.swift */,
+				FA00BA09CAFEBABE00000001 /* EventDetailView.swift */,
 			);
 			path = stuk;
 			sourceTree = "<group>";
@@ -362,6 +371,9 @@
 				FA00BA04CAFEBABE00000002 /* HotDealsListView.swift in Sources */,
 				FA00BA05CAFEBABE00000002 /* DealDetailView.swift in Sources */,
 				FA00BA06CAFEBABE00000002 /* NearbyView.swift in Sources */,
+				FA00BA07CAFEBABE00000002 /* DealItem.swift in Sources */,
+				FA00BA08CAFEBABE00000002 /* EventItem.swift in Sources */,
+				FA00BA09CAFEBABE00000002 /* EventDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

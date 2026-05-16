@@ -13,6 +13,7 @@ struct CategoryItem: Identifiable {
 
 struct SideMenuView: View {
     @Binding var isOpen: Bool
+    var onSelect: (String) -> Void = { _ in }
 
     private let categories: [CategoryItem] = [
         .init(title: "Böcker & Kurslitteratur", symbol: "book"),
@@ -33,8 +34,7 @@ struct SideMenuView: View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            Color.black
-                .ignoresSafeArea()
+            Color.black.ignoresSafeArea()
 
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 0) {
@@ -46,14 +46,11 @@ struct SideMenuView: View {
                         .padding(.bottom, 18)
 
                     ForEach(categories) { cat in
-                        Button(action: {
-                            withAnimation(.easeOut(duration: 0.25)) { isOpen = false }
-                        }) {
+                        Button(action: { onSelect(cat.title) }) {
                             HStack(spacing: 18) {
                                 Image(systemName: cat.symbol)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 28, height: 28)
+                                    .font(.system(size: 22, weight: .regular))
+                                    .frame(width: 32, height: 32)
                                     .foregroundStyle(.white)
                                 Text(cat.title)
                                     .foregroundStyle(.white)

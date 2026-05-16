@@ -5,24 +5,70 @@
 
 import SwiftUI
 
-/// Renders a brand image if it exists in the asset catalog,
-/// otherwise falls back to a colored card with the brand name as a placeholder.
+/// Renders a brand image. Priority: remote URL → local asset → colored fallback with brand text.
 struct BrandImage: View {
-    let name: String
+    var url: String? = nil
+    var localName: String? = nil
     var displayName: String? = nil
     var fallbackColor: Color = Color(white: 0.13)
     var fontSize: CGFloat = 26
 
+    // Convenience initializers
+    init(name: String, displayName: String? = nil,
+         fallbackColor: Color = Color(white: 0.13), fontSize: CGFloat = 26) {
+        self.url = nil
+        self.localName = name
+        self.displayName = displayName
+        self.fallbackColor = fallbackColor
+        self.fontSize = fontSize
+    }
+
+    init(url: String?, displayName: String? = nil,
+         fallbackColor: Color = Color(white: 0.13), fontSize: CGFloat = 26) {
+        self.url = url
+        self.localName = nil
+        self.displayName = displayName
+        self.fallbackColor = fallbackColor
+        self.fontSize = fontSize
+    }
+
     var body: some View {
-        if UIImage(named: name) != nil {
-            Image(name)
-                .resizable()
-                .scaledToFill()
-        } else {
-            ZStack {
-                fallbackColor
-                Text((displayName ?? name).uppercased())
-                    .font(.system(size: fontSize, weight: .heavy, design: .default))
+        Group {
+            if let urlString = url, let nsurl = URL(string: urlString) {
+                AsyncImage(url: nsurl) { phase in
+                    switch phase {
+                    case .success(let img):
+                        img.resizable().scaledToFill()
+                    case .empty:
+                        loadingPlaceholder
+                    case .failure:
+                        placeholderView
+                    @unknown default:
+                        placeholderView
+                    }
+                }
+            } else if let local = localName, UIImage(named: local) != nil {
+                Image(local).resizable().scaledToFill()
+            } else {
+                placeholderView
+            }
+        }
+    }
+
+    private var loadingPlaceholder: some View {
+        ZStack {
+            fallbackColor
+            ProgressView()
+                .tint(.white.opacity(0.6))
+        }
+    }
+
+    private var placeholderView: some View {
+        ZStack {
+            fallbackColor
+            if let dn = displayName {
+                Text(dn.uppercased())
+                    .font(.system(size: fontSize, weight: .heavy))
                     .foregroundStyle(.white)
                     .multilineTextAlignment(.center)
                     .padding(8)
@@ -43,31 +89,34 @@ struct KampanjTag: View {
 }
 
 struct DealCard: View {
-    let image: String
-    let displayName: String
-    let title: String
-    var fallbackColor: Color = Color(white: 0.13)
+    let item: DealItem
     var width: CGFloat = 240
     var height: CGFloat = 300
-    var showTag: Bool = true
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             ZStack(alignment: .topTrailing) {
-                BrandImage(name: image, displayName: displayName, fallbackColor: fallbackColor)
-                    .frame(width: width, height: height)
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-
-                if showTag {
-                    KampanjTag()
-                        .padding(12)
+                ZStack(alignment: .bottom) {
+                    BrandImage(url: item.imageURL, displayName: nil,
+                               fallbackColor: item.accentColor)
+                        .frame(width: width, height: height)
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                    Text(item.brand.uppercased())
+                        .font(.system(size: 22, weight: .heavy))
+                        .foregroundStyle(.white)
+                        .shadow(radius: 2)
+                        .padding(.bottom, 18)
+                }
+                if item.isCampaign {
+                    KampanjTag().padding(12)
                 }
             }
-            Text(title)
+            Text(item.title)
                 .foregroundStyle(.white)
-                .font(.system(size: 18, weight: .bold))
+                .font(.system(size: 17, weight: .bold))
                 .frame(width: width, alignment: .center)
                 .multilineTextAlignment(.center)
+                .lineLimit(2)
                 .padding(.bottom, 4)
         }
         .frame(width: width)
@@ -75,26 +124,28 @@ struct DealCard: View {
 }
 
 struct GridDealCard: View {
-    let image: String
-    let displayName: String
-    let title: String
-    var fallbackColor: Color = Color(white: 0.13)
-    var showTag: Bool = true
+    let item: DealItem
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             ZStack(alignment: .topTrailing) {
-                BrandImage(name: image, displayName: displayName, fallbackColor: fallbackColor)
-                    .aspectRatio(0.78, contentMode: .fill)
-                    .frame(maxWidth: .infinity)
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
-
-                if showTag {
-                    KampanjTag()
-                        .padding(10)
+                ZStack(alignment: .bottom) {
+                    BrandImage(url: item.imageURL, displayName: nil,
+                               fallbackColor: item.accentColor)
+                        .aspectRatio(0.78, contentMode: .fill)
+                        .frame(maxWidth: .infinity)
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                    Text(item.brand.uppercased())
+                        .font(.system(size: 18, weight: .heavy))
+                        .foregroundStyle(.white)
+                        .shadow(radius: 2)
+                        .padding(.bottom, 14)
+                }
+                if item.isCampaign {
+                    KampanjTag().padding(10)
                 }
             }
-            Text(title)
+            Text(item.title)
                 .foregroundStyle(.white)
                 .font(.system(size: 15, weight: .bold))
                 .multilineTextAlignment(.center)
