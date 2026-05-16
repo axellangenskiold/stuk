@@ -13,4 +13,10 @@ enum Destination: Hashable, Equatable {
     case cardView
     case ticketView
     case profileView
+    case setNameView
+    case hotDealsList(category: String?)
+    case dealDetail(DealItem)
+    case eventDetail(EventItem)
+    case nearbyView
+    case nearbyCity(String)
 }

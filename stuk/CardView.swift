@@ -220,17 +220,17 @@ struct CardView: View {
     
     // Handle when the drag gesture ends
     private func handleDragEnd(value: DragGesture.Value) {
-        let threshold: CGFloat = 100.0
+        let threshold: CGFloat = 50.0
         if value.translation.width > threshold && circle > 1 {
             // Swiped right
             circle -= 1
         } else if value.translation.width < -threshold && circle < 3 {
             // Swiped left
             circle += 1
+        } else {
+            // Snap back to the current card
+            dragOffset = 0
         }
-        
-        // Snap back to the current card
-        dragOffset = 0
     }
 }
 
