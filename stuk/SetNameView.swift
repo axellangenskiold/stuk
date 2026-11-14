@@ -26,12 +26,13 @@ struct SetNameView: View {
     @FocusState private var isPaddingVanligtFocused: Bool
 
     init() {
-        self.name = "name"
-        self.personnummer = "personnummer"
-        self.mail = "mail"
-        self.initialer = "initialer"
-        self.paddingMLN = "paddingMLN"
-        self.paddingVanligt = "paddingVanligt"
+        let profile = Shared.shared
+        self.name = profile.name
+        self.personnummer = profile.personNbr
+        self.mail = profile.email
+        self.initialer = profile.initials
+        self.paddingMLN = String(Int(profile.firstPadding))
+        self.paddingVanligt = String(Int(profile.secondPadding))
     }
 
     var body: some View {

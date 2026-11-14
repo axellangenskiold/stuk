@@ -33,6 +33,26 @@ class Shared {
     var firstPadding: CGFloat = 73
     
     var secondPadding: CGFloat = 0
+
+    /// Apply personal build defaults before either the profile or Firebase reads them.
+    func configureForAxel(defaults: UserDefaults = .standard) {
+        name = "Axel Langenskiöld"
+        initials = "AL"
+        email = "axel@langenskiold.se"
+        personNbr = "020117-3713"
+        isLangs = true
+        firstPadding = 73
+        secondPadding = 0
+
+        defaults.set(name, forKey: "name")
+        defaults.set(personNbr, forKey: "personnummer")
+        defaults.set(email, forKey: "mail")
+        defaults.set(initials, forKey: "initials")
+        defaults.removeObject(forKey: "intials")
+        defaults.set(isLangs, forKey: "isBigLangs")
+        defaults.set(Double(firstPadding), forKey: "firstPadding")
+        defaults.set(Double(secondPadding), forKey: "secondPadding")
+    }
     ////////////////////////////////////////////////////////////////////////////////////////////////
     ///VICTOR EKSTORM VICTOR EKSTORM VICTOR EKSTORM
 

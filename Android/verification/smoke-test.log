@@ -1,0 +1,33 @@
+PASS Home starts offline with five navigation tabs
+PASS S22 layout uses the 390 point reference canvas without horizontal overflow
+PASS Profile uses the requested fixed name and email
+PASS Identity fields contain the exact requested values and are read only
+PASS Android Back returns from settings to profile
+PASS Every original event is available
+PASS Calendar selection updates
+PASS Calendar selection clears
+PASS Sort sheet updates its selection
+PASS Event detail contains original description and future dates
+PASS Event date selection works
+PASS All original coupons appear
+PASS Coupon sheet opens with the original description
+PASS Coupon sheet dismisses
+PASS All original categories appear
+PASS Category filters the deal grid
+PASS Deal page renders original terms and description
+PASS Saving a deal updates its control
+PASS Search returns matching original deals
+PASS Nearby lists the five original cities
+PASS City page opens
+PASS Card opens with original artwork
+PASS Card flips and uses the fixed identity
+PASS Second card selects correctly and preserves its face
+PASS Third card selects correctly
+PASS Physical swipe selects the next card
+PASS QR overlay uses the original bundled image
+PASS Android Back dismisses QR without leaving the card
+PASS Refresh displays original loading art
+PASS Refresh returns after two seconds
+PASS Closing the card returns home
+PASS Every bundled image on the screen decodes
+33 checks passed.

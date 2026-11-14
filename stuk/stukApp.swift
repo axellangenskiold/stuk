@@ -54,34 +54,14 @@ struct stukApp: App {
     @State private var path = NavigationPath()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
+    init() {
+        Shared.shared.configureForAxel()
+    }
+
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .onAppear {
-                    let defaults = UserDefaults.standard
-                    
-                    let fp = defaults.double(forKey: "firstPadding")
-                    Shared.shared.firstPadding = CGFloat(fp)
-                    
-                    let sp = defaults.double(forKey: "secondPadding")
-                    Shared.shared.secondPadding = CGFloat(sp)
-                    
-                    let name = defaults.string(forKey: "name")
-                    Shared.shared.name = name ?? "namn efternamn"
-                    
-                    let personNbr = defaults.string(forKey: "personnummer")
-                    Shared.shared.personNbr = personNbr ?? "DDMMYY-xxxx"
-                    
-                    let email = defaults.string(forKey: "mail")
-                    Shared.shared.email = email ?? "x@y.se"
-                    
-                    let initials = defaults.string(forKey: "intials")
-                    Shared.shared.initials = initials ?? "KD"
-                    
-                    let isBigLangs = defaults.bool(forKey: "isBigLangs")
-                    Shared.shared.isLangs = isBigLangs
-                    
-                }
+
         }
     }
 }

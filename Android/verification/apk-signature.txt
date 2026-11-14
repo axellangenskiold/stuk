@@ -1,0 +1,17 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=STUK Local Android, OU=Personal Build
+Signer #1 certificate SHA-256 digest: ccec6aacba7913f5972d3d02f491ab0e02af3f79d8e0a4646dc231f02a0a6d19
+Signer #1 certificate SHA-1 digest: 2725a0702534f65379be9e44293cc646279e898f
+Signer #1 certificate MD5 digest: 6614d4c3dd06e3a4ee5500e6d07b3b0f
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 2048
+Signer #1 public key SHA-256 digest: a138e8bf874ec89437ad763de04184f4b543e29d73300d1bb466d713a08e49fd
+Signer #1 public key SHA-1 digest: 243f0a342ffe1fd2a75fdbeea51f6dbddc582331
+Signer #1 public key MD5 digest: 0880daf3e9d0ab0daac451d7498da328

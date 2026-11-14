@@ -1,0 +1,31 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'se.stuk.rurik'
+    compileSdk 35
+    buildFeatures { buildConfig true }
+    defaultConfig {
+        applicationId 'se.stuk.rurik'
+        minSdk 28
+        targetSdk 35
+        versionCode 1
+        versionName '1.0'
+        testInstrumentationRunner 'android.test.InstrumentationTestRunner'
+    }
+    signingConfigs {
+        release {
+            storeFile rootProject.file('.signing/stuk-release.jks')
+            storePassword 'stuk-local-build'
+            keyAlias 'stuk'
+            keyPassword 'stuk-local-build'
+        }
+    }
+    buildTypes {
+        release { signingConfig signingConfigs.release }
+        debug { applicationIdSuffix '.debug' }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}

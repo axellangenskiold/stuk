@@ -1,0 +1,8 @@
+{
+  "model": "SM-S901B",
+  "android": "16",
+  "sdk": "36",
+  "installSucceeded": true,
+  "launch": "Starting: Intent { cmp=se.stuk.rurik/.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: se.stuk.rurik/.MainActivity\nTotalTime: 909\nWaitTime: 916\nComplete",
+  "pid": "3668"
+}
