@@ -1,0 +1,12 @@
+STUK for Samsung Galaxy S22
+
+Open STUK-Rurik-Hagman.apk on the phone.
+If Android asks, allow installation from the browser or file manager you used.
+Tap Install, then Open.
+
+The app includes the fixed Rurik Hagman profile and runs offline.
+No computer, Android Studio, or extra asset installation is needed after downloading.
+
+For a direct Wi-Fi download from the Mac, run:
+  python3 Android/scripts/share_apk.py
+Open the printed address on the phone while both devices use the same Wi-Fi.

@@ -1,0 +1,8 @@
+Starting: Intent { cmp=se.stuk.rurik/.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: se.stuk.rurik/.MainActivity
+TotalTime: 543
+WaitTime: 544
+Complete
+Release process running: 5568

@@ -1,0 +1,205 @@
+{
+  "count": 50,
+  "assets": [
+    {
+      "asset": "studentlundcard",
+      "sha256": "fa18023bac3d5f48f8a2468dab1faa1aed04f9362342725abf47a70702aea82e"
+    },
+    {
+      "asset": "profile_black",
+      "sha256": "b6f8b633de93cec46683b65b21a0e6b0acd8d81a1d02137d45f0cabd1792cfb6"
+    },
+    {
+      "asset": "profile_grey",
+      "sha256": "44be51cbf3d58a76bb7e2ec9336f93ca4bae0d09514803368bf0067214284c17"
+    },
+    {
+      "asset": "Image",
+      "sha256": "dde5477352a5dec76a2bf062e3d39b13bbd9ecf334ba0318f9dc9c41ea1698e9"
+    },
+    {
+      "asset": "ica_logo",
+      "sha256": "5447336f5dffc409c2057fca6278d9337e3054342183433fc9abdc3f02077041"
+    },
+    {
+      "asset": "afternoontea",
+      "sha256": "6a0e1aef3fe27a1823b365206668df0af1a238b046609345a66ac404ecdf419e"
+    },
+    {
+      "asset": "apple",
+      "sha256": "48bae981c5bd43f2b75935a251843e4f7ef9fa47c9d69c054bbbb0db4d60ab74"
+    },
+    {
+      "asset": "stuk_logo2",
+      "sha256": "fd14c9a0a829c441fcaa60e188645c4915dd183b97366ac015b3d5588c1c3b14"
+    },
+    {
+      "asset": "profilecard",
+      "sha256": "257947da6042166ac36b0e643081034c0663e92dc4db7ee758d451eacf8d1b12"
+    },
+    {
+      "asset": "tapas",
+      "sha256": "d417d45bf160f7c4e8de46e0d1ed2ded12a097a8e83c06f3c475d7dd2c196944"
+    },
+    {
+      "asset": "qr",
+      "sha256": "00a8fb230c86999dbc21f7cafa95881ca5db8e0fbafdd62d41a3b0e1affcd948"
+    },
+    {
+      "asset": "jotex_logo",
+      "sha256": "40869ff80bc78732eb716955fcd0034e0794c4a9d8687871ca43e586b659195d"
+    },
+    {
+      "asset": "rituals_logo",
+      "sha256": "1035df143694c2a47fc0b7bb596d5156e9aed6fa6f4471315d70995588ee8b98"
+    },
+    {
+      "asset": "studentlundcard_back",
+      "sha256": "4bc47f6a71d6f1233a2c36bee6860ebe3eed35b24b2bf49659228543118ed621"
+    },
+    {
+      "asset": "novishperiod",
+      "sha256": "b041c360a665059a82d216d558710057762d92e3f822212179a812e684b73eac"
+    },
+    {
+      "asset": "malmocard",
+      "sha256": "ea6587629ee25d410935856cd7ca5c3f75aaa74d2ec943d75b05bb7ac25009d7"
+    },
+    {
+      "asset": "ica",
+      "sha256": "345b1e2e47b14a71757faa9b5ccf4acc62091710d2d500ac30276a97da821381"
+    },
+    {
+      "asset": "hm",
+      "sha256": "759530093debe2cface54dfc0a9832865bf0e6c0642d555c67fcc607f0477020"
+    },
+    {
+      "asset": "nationcard",
+      "sha256": "3694ddc085a2d47cddc33657094f8ead00b47a9be5088455b1876ef40a9484ff"
+    },
+    {
+      "asset": "storytel_logo",
+      "sha256": "154356c06888ae5dc9c1d814c0a689414c01a57816f95b4a428b1c43cf6addee"
+    },
+    {
+      "asset": "card_grey",
+      "sha256": "2ccc2e934d4d0dbbdd3b69cc4a0ccf35a5905a737b67cfe8eeeab98bec091e06"
+    },
+    {
+      "asset": "kryckans",
+      "sha256": "d3eb7708b664ecc8aba82794179fa4d6524b82438ee693c2e243dd4a30d943f4"
+    },
+    {
+      "asset": "profilecard2",
+      "sha256": "daeff0da439a32c6b79ab1c9bf4625580b9208ddbbb484d6ec798f716b489861"
+    },
+    {
+      "asset": "calender_grey",
+      "sha256": "aed372295a7c6f4764ba4505f2a04114795e7cdf0ccaf31843c858bf39f8bdca"
+    },
+    {
+      "asset": "home_grey",
+      "sha256": "04a509d89a46aaff859f5fd56db1b7886b889efeff5683fb5957ed1133696b8f"
+    },
+    {
+      "asset": "torsdagspuben",
+      "sha256": "12000737437480565ca88cea1630ed13fd8aa3181da68114cc855b30724333cf"
+    },
+    {
+      "asset": "sats",
+      "sha256": "6495a50a1487c729b29d54e4774a3b1bbbc1b8552c54a420113e043eef864932"
+    },
+    {
+      "asset": "AppIcon",
+      "sha256": "7454d1696e534783888c8c53f81725e66c737686dd0481d172fdc7c79177f15d"
+    },
+    {
+      "asset": "storytel",
+      "sha256": "5518eabf2b02eb06ff53ec49324201c6199e4a03ea67b70faed65964a6d68e55"
+    },
+    {
+      "asset": "nationcard_lange",
+      "sha256": "841fe342d99411043267d384ffc8df3715a379ac832772846080e538a0b8c5dd"
+    },
+    {
+      "asset": "apple_logo",
+      "sha256": "a1cac717cc2424d19087b6ff92070da98a22fa243472fc6868168a51ba66542e"
+    },
+    {
+      "asset": "tickets_black",
+      "sha256": "1c6fdd808fa91ce800c86e1f90a7c42985d214820cd855624fe0faf25cec88e9"
+    },
+    {
+      "asset": "downtown",
+      "sha256": "2906beb8b84ea008214a42e75eac37622042d0f6a82bc42af3d68e4eebe2558d"
+    },
+    {
+      "asset": "sats_logo",
+      "sha256": "f90e17ab0b3e4ea0cadf56f32c7fe7913c624a22ee9fb77ea201eb4415ee3604"
+    },
+    {
+      "asset": "loadingcard",
+      "sha256": "139939e06264c88d74902a890e39ec0d62b039416b02c0965a3e1304bbba7185"
+    },
+    {
+      "asset": "stuk",
+      "sha256": "940c985692500bb276a573483fc0c0afbe982ee16b76ad94f2ff39bb2c70b982"
+    },
+    {
+      "asset": "nationcard_back",
+      "sha256": "b928829a7e856ec066c1bacff1890022bdb05f8541a43ef0b77959ae887180e8"
+    },
+    {
+      "asset": "tickets_grey",
+      "sha256": "5a82fc82a7171e3fa3b23ee359caa775ece4b1e798c0b7ffb7df0a478674e4c4"
+    },
+    {
+      "asset": "bars",
+      "sha256": "bc295ee966c563f6b44726d30d385238175354b18b87ddc9bee95ffb3e82ed8e"
+    },
+    {
+      "asset": "qrcard",
+      "sha256": "64528a9dff0dd292443077972e4ee4ef138a60e264e0ba32323bfecfba6b1569"
+    },
+    {
+      "asset": "calender_black",
+      "sha256": "cac71d1ecba86feb59858738c361b062128fa2abd9b23dfe1be02b08325bf51d"
+    },
+    {
+      "asset": "refresh",
+      "sha256": "89ccd822f0c3e8bf2d90deb2affcf7a07d3ae1678eb96198ebec139d6f8897f3"
+    },
+    {
+      "asset": "home_black",
+      "sha256": "8857593051e9af5b86057b911dbf3bbf0c9e4f3cf3f409937f8d23b21791ff13"
+    },
+    {
+      "asset": "trygghansa_logo",
+      "sha256": "218adee6d0e6ce2637ff852c14c22724b545c108331ced61e7d664bd41789f20"
+    },
+    {
+      "asset": "hm_logo",
+      "sha256": "fec7ef25c596bef2cb1bccb05b3c9f0c063257010fa5c63f8effae6d50b6232b"
+    },
+    {
+      "asset": "jotex",
+      "sha256": "1b5db2f0473cbd23c7437795d095cf361598f07f5949cb4ecb8969f05f518413"
+    },
+    {
+      "asset": "search",
+      "sha256": "8ed05a3b90c85419d50470dcdf27b06aa8df77c329055d13e8f81ec0cc665769"
+    },
+    {
+      "asset": "malmocard_back",
+      "sha256": "f08df9ee8fcaa84e6597e0e89f525c927416ada37f453fa2f1ba206f5826983d"
+    },
+    {
+      "asset": "trygghansa",
+      "sha256": "15fd7fffde6417831c44978b332124efa1946eb5db25706b9b1bbe4076707d2d"
+    },
+    {
+      "asset": "rituals",
+      "sha256": "3cda4f0f4252dfa72faaffcb0b748271f7b36031cb45d017d3ec2afc12d67dc9"
+    }
+  ]
+}
