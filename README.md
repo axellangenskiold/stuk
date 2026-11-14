@@ -1,1 +1,1 @@
-This is not to be used, unless you're a real G
+Virus, opsec, malware, probably
